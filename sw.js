@@ -1,13 +1,15 @@
 /* Offline support: precache the app shell, network-first for the page so updates arrive,
-   cache-first for everything else (including Google Fonts once fetched). */
-const VERSION = 'amirnet-v9';
+   cache-first for everything else (including Google Fonts once fetched).
+   Past-exam images live in their own cache ('amirnet-past') so app updates never wipe them. */
+const VERSION = 'amirnet-v4';
+const PAST_CACHE = 'amirnet-past';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== VERSION && k !== PAST_CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', e => {
   const req = e.request;
@@ -19,9 +21,10 @@ self.addEventListener('fetch', e => {
     );
     return;
   }
+  const isPast = new URL(req.url).pathname.indexOf('/past/') >= 0;
   e.respondWith(
     caches.match(req).then(hit => hit || fetch(req).then(res => {
-      if (res && (res.ok || res.type === 'opaque')) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
+      if (res && (res.ok || res.type === 'opaque')) { const copy = res.clone(); caches.open(isPast ? PAST_CACHE : VERSION).then(c => c.put(req, copy)); }
       return res;
     }))
   );
