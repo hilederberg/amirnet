@@ -357,6 +357,154 @@ h2{font-size:.78rem;letter-spacing:.04em;margin:4px 2px 0}
   .pxwarn:not([hidden]){animation:rise .7s var(--soft) both}
 }
 
+.hero-svg{width:100%;height:auto;display:block;overflow:visible}
+@media (prefers-reduced-motion:no-preference){
+  .hero-svg .body{animation:breathe 3.6s ease-in-out infinite;transform-origin:120px 270px}
+  .hero-svg .body.hover{animation:hover 3s ease-in-out infinite}
+  .hero-svg .shadow.hover{animation:shadowpulse 3s ease-in-out infinite;transform-origin:120px 276px}
+  @keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.005,.992)}}
+  @keyframes hover{0%,100%{transform:translateY(-6px)}50%{transform:translateY(-12px)}}
+  @keyframes shadowpulse{0%,100%{transform:scale(.85)}50%{transform:scale(.75)}}
+  .hero-svg .blink{animation:blink 4.2s infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+  .hero-svg .hair{animation:sway 4s ease-in-out infinite}
+  @keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(1.2deg)}}
+  .hero-svg .cloak{animation:cloak 5s ease-in-out infinite;transform-origin:120px 150px}
+  @keyframes cloak{0%,100%{transform:skewX(0)}50%{transform:skewX(-2.5deg)}}
+  .hero-svg .w-sway{animation:wsway 3.6s ease-in-out infinite}
+  @keyframes wsway{0%,100%{transform:rotate(0)}50%{transform:rotate(-2deg)}}
+  .hero-svg .bob{animation:bob 2.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .hero-svg .tw{animation:twinkle 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  .hero-svg .deco .tw:nth-child(2){animation-delay:.8s}.hero-svg .deco .tw:nth-child(3){animation-delay:1.5s}
+  @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.55) rotate(20deg);opacity:.6}}
+  .hero-svg .fx-glow .tw:nth-child(2){animation-delay:.6s}.hero-svg .fx-glow .tw:nth-child(3){animation-delay:1.2s}.hero-svg .fx-glow .tw:nth-child(4){animation-delay:1.8s}
+  .hero-svg .fl{animation:flick .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center bottom}
+  .hero-svg .fl1{animation-delay:.15s}.hero-svg .fl2{animation-delay:.3s}.hero-svg .fl3{animation-delay:.45s}
+  @keyframes flick{from{transform:scaleY(.8) skewX(-6deg)}to{transform:scaleY(1.15) skewX(6deg)}}
+  .hero-svg .flake{animation:flake 3s linear infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes flake{0%{transform:rotate(0) scale(.8);opacity:.4}50%{opacity:1}100%{transform:rotate(180deg) scale(.8);opacity:.4}}
+  .hero-svg .fx-bolt{animation:flash 2.4s steps(1) infinite}
+  @keyframes flash{0%,70%{opacity:0}72%,78%{opacity:1}80%,84%{opacity:0}86%,92%{opacity:1}94%,100%{opacity:0}}
+  .hero-svg .fx-holy{animation:spin 14s linear infinite}
+  .hero-svg .spin{animation:spin 10s linear infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-svg .fx-runes{animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  .hero-svg .fx-swoosh{animation:dash 1.6s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-26}}
+  .hero-svg .dr{animation:drip 1.8s ease-in infinite}
+  @keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(46px);opacity:0}}
+  .hero-svg .lf{animation:leaf 3s ease-in-out infinite}
+  @keyframes leaf{0%{transform:translate(0,0) rotate(0);opacity:0}20%{opacity:1}100%{transform:translate(-14px,40px) rotate(120deg);opacity:0}}
+  .hero-svg .fx-orb{animation:pulse 1.8s ease-in-out infinite}
+  .hero-svg .fx-speed{animation:speed .8s ease-in-out infinite}
+  @keyframes speed{0%,100%{transform:translateX(0);opacity:.4}50%{transform:translateX(5px);opacity:1}}
+  .hero-svg .ghost{animation:ghost 2s ease-in-out infinite}
+  @keyframes ghost{0%,100%{transform:translateX(-6px)}50%{transform:translateX(6px)}}
+  .hero-svg .wingL{animation:flapL 2.4s ease-in-out infinite}.hero-svg .wingR{animation:flapR 2.4s ease-in-out infinite}
+  @keyframes flapL{0%,100%{transform:rotate(0)}50%{transform:rotate(10deg)}}
+  @keyframes flapR{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
+  .hero-svg .wingR2{animation:flapR 1.6s ease-in-out infinite}
+  .hero-svg .ankle{animation:pulse 1.2s ease-in-out infinite}
+  .hero-svg .pet-bob{animation:bob 3.2s ease-in-out infinite}
+  .hero-svg .tail{animation:wag 1.8s ease-in-out infinite}
+  @keyframes wag{0%,100%{transform:rotate(0)}50%{transform:rotate(14deg)}}
+  .hero-svg .aura{animation:spin 40s linear infinite;transform-origin:120px 160px}
+  .hero-svg .trinket{transform-box:fill-box}
+  .hero-svg .equip{animation:equip .7s cubic-bezier(.34,1.4,.64,1) both}
+  @keyframes equip{0%{opacity:0;transform:translateY(-14px)}55%{opacity:1;transform:translateY(2px)}100%{opacity:1;transform:none}}
+  .hero-svg [data-slot]{transform-box:fill-box;transform-origin:center}
+}
+/* ---------- hero, gold & shop ---------- */
+.chip.gold{cursor:pointer;font-weight:700;gap:5px;padding:3px 12px 3px 9px;min-height:36px}
+.chip.gold span{display:flex}
+.top .tact{display:flex;align-items:center;gap:8px}
+.top .chips{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.hstage{display:flex;flex-direction:column;gap:12px;padding:10px 16px 18px}
+.hsvg{max-width:340px;width:100%;margin-inline:auto}
+.hname{text-align:center;display:flex;flex-direction:column;gap:2px}
+.hname b{font:900 1.7rem/1.1 var(--display)}
+.hname span{color:var(--muted);font-size:.92rem}
+.hxp .meter{height:14px;border:var(--bw) solid var(--bc);background:var(--surface)}
+.hxp .meter i{background:var(--fg)}
+.hxpl{display:flex;justify-content:space-between;gap:8px;font-size:.78rem;color:var(--muted);margin-top:4px}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hstats>div{border:2px solid var(--bc);border-radius:16px;padding:6px 8px;text-align:center}
+.hstats b{display:block;font-size:1.3rem}
+.hstats span{font-size:.76rem;color:var(--muted)}
+.hact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.blist{margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:4px}
+.earn{display:flex;flex-direction:column}
+.erow{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--bar);font-size:.92rem}
+.erow:last-child{border-bottom:0}
+.erow b{white-space:nowrap}
+.earn + .sub{margin-top:8px}
+.seg{display:flex;border:var(--bw) solid var(--bc);border-radius:99px;padding:3px;gap:3px;align-self:center}
+.seg button{border:0;background:transparent;border-radius:99px;min-height:42px;padding:0 22px;cursor:pointer;font-weight:500;transition:background-color .3s,color .3s}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.clist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cls{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:start;border:var(--bw) solid var(--bc);border-radius:20px;background:var(--surface);padding:12px;cursor:pointer;min-width:0;transition:background-color .25s}
+.cls b{font-size:1.05rem}
+.cls span{font-size:.85rem;color:var(--muted)}
+.cls small{font-size:.74rem;color:var(--muted);margin-top:4px}
+.cls[aria-pressed="true"]{background:var(--surface-2);box-shadow:inset 0 0 0 1.5px var(--fg)}
+.scats{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}
+.scats::-webkit-scrollbar{display:none}
+.scats .chip{cursor:pointer;min-height:38px;transition:background-color .2s,color .2s}
+.scats .chip[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px}
+.it{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:start;border:var(--bw) solid var(--bc);border-radius:18px;background:var(--surface);padding:10px;cursor:pointer;min-width:0;transition:transform .25s var(--soft)}
+.it:active{transform:scale(.98)}
+.it.locked{opacity:.55}
+.it .ic{width:44px;height:44px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center}
+.it .ic svg{width:30px;height:30px}
+.it .n{font-weight:700;font-size:.92rem;line-height:1.2}
+.it .m{display:flex;gap:6px;align-items:center;font-size:.74rem;color:var(--muted)}
+.rd{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.itag{position:absolute;top:8px;inset-inline-end:8px;font-size:.68rem;font-weight:700;border:1.5px solid var(--fg);border-radius:99px;padding:0 7px;background:var(--surface)}
+.itag.on{background:var(--fg);color:var(--bg)}
+.itag.lock{border-color:var(--muted);color:var(--muted)}
+.sheet-bg{position:fixed;inset:0;z-index:20;background:rgba(17,17,17,.35);display:flex;align-items:flex-end;justify-content:center}
+.sheet{width:100%;max-width:560px;max-height:88vh;overflow:auto;background:var(--bg);border:var(--bw) solid var(--bc);border-bottom:0;border-radius:28px 28px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
+.shead{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.shead b{font-size:1.15rem}
+.ic.big{width:60px;height:60px;border-radius:16px;background:var(--surface-2);display:flex;align-items:center;justify-content:center}
+.ic.big svg{width:40px;height:40px}
+.sprev{max-width:220px;width:60%;margin-inline:auto}
+.sdesc{margin:0}
+.srow{display:flex;gap:8px;flex-wrap:wrap}
+.sfx{font-weight:500;border:2px dashed var(--fg);border-radius:14px;padding:8px 12px;font-size:.9rem}
+.sheet .bk{display:flex;gap:10px;flex-wrap:wrap}
+.sheet .bk .btn{flex:1;min-width:140px}
+.sheet .btn span{display:inline-flex;vertical-align:middle;margin-inline-start:4px}
+.boosts{display:flex;gap:6px;flex-wrap:wrap}
+.bchip{font-size:.78rem;padding:2px 10px;background:var(--surface-2)}
+.hintbtn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:40px;border:2px dashed var(--fg);border-radius:99px;background:var(--surface);padding:0 14px;cursor:pointer;font-weight:500;font-size:.88rem}
+.opt.gone{opacity:.28;text-decoration:line-through}
+.rgold{display:flex;align-items:center;gap:10px;justify-content:center;font-weight:700;font-size:1.05rem}
+.rgold .num{font-size:1.4rem}
+.rgold span[aria-hidden]{display:flex}
+.gtoasts{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;width:max-content;max-width:calc(100vw - 32px)}
+.gtoast{position:relative;display:flex;align-items:center;gap:8px;background:var(--bg);border:var(--bw) solid var(--fg);border-radius:99px;padding:6px 16px 6px 12px;font-weight:700;box-shadow:0 4px 0 -1px var(--fg)}
+.gtoast .gt-ic{display:flex}
+.gtoast .gt-t{display:flex;flex-direction:column;line-height:1.15}
+.gtoast small{font-weight:500;font-size:.75rem;color:var(--muted)}
+.gtoast.lvl{background:var(--fg);color:var(--bg);padding:10px 20px 10px 14px;font-size:1.1rem}
+.gtoast.lvl small{color:var(--bg);opacity:.85}
+.gtoast .burst{color:var(--fg)}
+.gtoast.out{opacity:0;transform:translateY(-8px);transition:opacity .45s,transform .45s}
+@media (prefers-reduced-motion:no-preference){
+  .gtoast{animation:gtin .55s var(--soft,cubic-bezier(.16,1,.3,1)) both}
+  .gtoast.lvl{animation:gtin .7s cubic-bezier(.34,1.35,.64,1) both}
+  @keyframes gtin{from{opacity:0;transform:translateY(-14px) scale(.92)}to{opacity:1;transform:none}}
+  .sheet{animation:shup .5s var(--soft,cubic-bezier(.16,1,.3,1)) both}
+  .sheet-bg{animation:fadein .3s both}
+  @keyframes shup{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+  .items .it{animation:rise .5s var(--soft,cubic-bezier(.16,1,.3,1)) both;animation-delay:calc(var(--k,0) * 18ms)}
+}
+@media (max-width:380px){ .clist{grid-template-columns:1fr} .tab span{font-size:.7rem} }
+
 label.btn{cursor:pointer}
 </style>
 </head>
@@ -1482,7 +1630,7 @@ function logToday(){const k=dateKey();if(!S.log[k])S.log[k]=[0,0,0,0,0];return S
 function loadLocal(){
   try{
     const raw = localStorage.getItem(LS_KEY);
-    if(raw){const o = JSON.parse(raw); if(o && o.cards) S = {cards:o.cards||{}, q:o.q||{}, log:o.log||{}, updatedAt:o.updatedAt||0};}
+    if(raw){const o = JSON.parse(raw); if(o && o.cards) S = {cards:o.cards||{}, q:o.q||{}, log:o.log||{}, g:o.g||null, updatedAt:o.updatedAt||0};}
   }catch(e){}
 }
 function writeLocal(){try{localStorage.setItem(LS_KEY, JSON.stringify(S));}catch(e){}}
@@ -1509,7 +1657,7 @@ async function flush(){
   if(writing){dirty = true; return;}
   writing = true;
   try{
-    await dbRef.set({v:1, cards:S.cards, q:S.q, log:S.log, updatedAt:S.updatedAt});
+    await dbRef.set({v:1, cards:S.cards, q:S.q, log:S.log, g:S.g||null, updatedAt:S.updatedAt});
     syncState = 'cloud';
   }catch(e){
     syncState = 'local';
@@ -1532,7 +1680,7 @@ async function initRemote(){
       const d = snap.data() || {};
       if((d.updatedAt||0) > S.updatedAt){
         if(!session){
-          S = {cards:d.cards||{}, q:d.q||{}, log:d.log||{}, updatedAt:d.updatedAt};
+          S = {cards:d.cards||{}, q:d.q||{}, log:d.log||{}, g:d.g||null, updatedAt:d.updatedAt};
           writeLocal();
         }
       } else if((d.updatedAt||0) < S.updatedAt){
@@ -1648,9 +1796,9 @@ function accFor(bank){
 }
 
 /* ---------- navigation ---------- */
-function go(next){stopTimer(); session = next; ANIM = true; render(); window.scrollTo(0,0);}
+function go(next){stopTimer(); if(next && next.items && next.start) gStart(next); session = next; ANIM = true; render(); window.scrollTo(0,0);}
 function render(){
-  const PXV = {pxmenu:pxMenuView, pxrun:pxRunView, pxkey:pxKeyView, pxres:pxResView, cat:catView, progress:progressView, settings:settingsView};
+  const PXV = {pxmenu:pxMenuView, pxrun:pxRunView, pxkey:pxKeyView, pxres:pxResView, cat:catView, progress:progressView, settings:settingsView, hero:heroView, shop:shopView};
   root.replaceChildren(session ? (PXV[session.kind] ? PXV[session.kind]() : session.kind === 'words' ? wordView() : (session.done ? resultView() : quizView())) : homeView());
   motion();
 }
@@ -1783,7 +1931,8 @@ const ICO = {
   chev:'<path d="m19 24-8-8 8-8"/>',
   x:'<path d="M9 9l14 14M23 9 9 23"/>',
   check:'<path d="M7 16.5l6 6L25 10"/>',
-  back:'<path d="M7 16h18M18 9l7 7-7 7"/>'
+  back:'<path d="M7 16h18M18 9l7 7-7 7"/>',
+  hero:'<path d="M8 27V15a8 8 0 0 1 16 0v12z"/><path d="M8 18h16M16 8v10M12.5 22h7"/>'
 };
 function ico(k, size){ return h('span',{class:'ico','aria-hidden':'true',html:'<svg viewBox="0 0 32 32" width="' + (size||28) + '" height="' + (size||28) + '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ICO[k] + '</svg>'}); }
 const CATS = {
@@ -1797,7 +1946,7 @@ function meterEl(p){ return h('div',{class:'tmeter'},h('i',{style:'width:' + Mat
 function tabBar(cur){
   const it = (k, label, icon, fn) => h('button',{class:'tab' + (cur === k ? ' on' : ''),'aria-current': cur === k ? 'page' : null,onclick:fn}, ico(icon, 24), h('span',{text:label}));
   return h('nav',{class:'tabbar','aria-label':'ניווט ראשי'},
-    it('home','בית','home',()=>go(null)), it('progress','התקדמות','chart',()=>go({kind:'progress'})), it('settings','הגדרות','gear',()=>go({kind:'settings'})));
+    it('home','בית','home',()=>go(null)), it('hero','גיבור','hero',()=>go({kind:'hero'})), it('progress','התקדמות','chart',()=>go({kind:'progress'})), it('settings','הגדרות','gear',()=>go({kind:'settings'})));
 }
 function screenTop(title, sub, back){
   return h('header',{class:'top'},
@@ -1840,7 +1989,7 @@ function homeView(){
   return h('div',{class:'app-inner',style:'display:contents'},
     h('header',{class:'top'},
       h('div',{class:'ttl'}, h('h1',{text:'מאמן אמירנט'}), h('div',{class:'sub',text:'פסיכומטרי ואמירנט · תרגול יומי'})),
-      sk ? h('span',{class:'chip num',text:'רצף ' + sk + ' ימים'}) : null),
+      h('div',{class:'chips'}, sk ? h('span',{class:'chip num',text:'רצף ' + sk + ' ימים'}) : null, goldChip())),
     hero, h('h2',{text:'נושאים לתרגול'}), grid, tabBar('home'));
 }
 
@@ -1991,6 +2140,7 @@ function rate(g){
   const l = logToday();
   l[0]++; if(g >= 2) l[1]++; if(isNew) l[2]++;
   s.reviews++; if(g >= 2) s.good++;
+  gWord(g >= 2);
   if(g === 1) s.queue.splice(Math.min(3, s.queue.length), 0, w); else s.done++;
   s.revealed = false; ANIM = true;
   if(!s.queue.length) s.finished = true;
@@ -2143,7 +2293,7 @@ function quizView(){
     h('div',{class:'prog'},
       h('div',{class:'cnt num'},h('span',{text: s.cfg.label + ' · ' + (s.i+1) + ' מתוך ' + s.items.length}),
         h('span',{id:'timer',dir:'ltr',class:'timer' + (ms > s.cfg.target*1000 ? ' over' : ''),text: fmtTime(ms) + ' / ' + fmtTime(s.cfg.target*1000)})),
-      qMeter(s)));
+      qMeter(s)), s.i === 0 && s.picked == null ? boostChips(s) : null);
 
   let qBody;
   if(it.q.q.indexOf('_____') >= 0){
@@ -2167,8 +2317,10 @@ function quizView(){
     if(answered){
       if(o.ok) cls += ' ok'; else if(idx === s.picked) cls += ' no'; else cls += ' dim';
     }
+    const gone = !answered && it.elim && it.elim.indexOf(idx) >= 0;
+    if(gone) cls += ' gone';
     const mk = answered && o.ok ? ico('check', 16) : answered && idx === s.picked ? ico('x', 16) : String(idx+1);
-    return h('button',{class:cls, disabled: answered, onclick:()=>pick(idx)}, h('span',{class:'okey num'}, mk), h('span',{class:'otx'}, rich(o.t)));
+    return h('button',{class:cls, disabled: answered || gone, onclick:()=>pick(idx)}, h('span',{class:'okey num'}, mk), h('span',{class:'otx'}, rich(o.t)));
   }));
 
   const kids = [top];
@@ -2183,6 +2335,8 @@ function quizView(){
     qCard.insertBefore(h('div',{class:'tblwrap'}, tb), qBody);
   }
   kids.push(qCard, opts);
+  const hl = freeHintsLeft() + hintPotions();
+  if(!answered && !s.cfg.sim && hl && !(it.elim && it.elim.length >= 2)) kids.push(h('button',{class:'hintbtn',onclick:useHint}, ico('chev', 16), 'רמז: למחוק שתי תשובות שגויות', h('span',{class:'num',text:'(' + hl + ')'})));
   if(answered){
     const good = it.opts[s.picked].ok;
     const last = s.i === s.items.length - 1;
@@ -2197,6 +2351,10 @@ function pick(idx){
   const s = session; if(!s || s.picked != null) return;
   const it = s.items[s.i];
   const ok = it.opts[idx].ok;
+  if(!ok && s.retry && !s.retryUsed && !s.cfg.sim){
+    s.retryUsed = true; it.elim = (it.elim || []).concat(idx); buzz([18, 50, 18]);
+    gToast('עוד ניסיון', 'buy', 'שיקוי העמידות הציל אותך'); render(); return;
+  }
   s.picked = idx;
   buzz(ok ? 12 : [18, 50, 18]);
   s.answers.push({it, ok});
@@ -2204,6 +2362,8 @@ function pick(idx){
   st[0]++; if(ok) st[1]++; st[2] = ok ? 1 : 0; st[3] = Date.now();
   S.q[it.q.id] = st;
   const l = logToday(); l[3]++; if(ok) l[4]++;
+  const P = it.passage || s.passage;
+  gAnswer(s, ok, it.q.lvl === 3 || !!(P && P.lvl === 3));
   save();
   if(s.cfg.sim){
     if(s.i < s.items.length - 1){ s.i++; s.picked = null; ANIM = true; render(); window.scrollTo(0,0); }
@@ -2213,7 +2373,7 @@ function pick(idx){
   render();
 }
 function nextQ(){session.i++; session.picked = null; ANIM = true; render(); window.scrollTo(0,0);}
-function finishQuiz(){stopTimer(); session.done = true; session.end = Date.now(); ANIM = true; render(); window.scrollTo(0,0);}
+function finishQuiz(){stopTimer(); session.done = true; session.end = Date.now(); gFinish(session); ANIM = true; render(); window.scrollTo(0,0);}
 function rich(s){
   const parts = String(s).split('`'); const out = [];
   parts.forEach((p, i) => { if(!p) return; out.push(i % 2 ? h('bdi',{class:'m',dir:'ltr'},p) : p); });
@@ -2237,7 +2397,8 @@ function resultView(){
       h('div',{class:'rstats'},
         h('div',{}, h('b',{class:'num',text: ok + '/' + s.items.length}), h('span',{text:'נכונות'})),
         h('div',{}, h('b',{class:'num',text: fmtTime(ms)}), h('span',{text:'זמן'})),
-        h('div',{}, h('b',{class:'num',text: fmtTime(s.cfg.target*1000)}), h('span',{text:'יעד'}))))
+        h('div',{}, h('b',{class:'num',text: fmtTime(s.cfg.target*1000)}), h('span',{text:'יעד'})))),
+    h('section',{class:'card rgold'}, h('span',{'aria-hidden':'true',html:COIN}), h('span',{}, 'הרווחת '), h('b',{class:'num','data-count':String(s.gold || 0),text:String(s.gold || 0)}), h('span',{text:' זהב' + (s.gx === 2 ? ' · כפול' : s.gx > 1 ? ' · +50%' : '')}), h('button',{class:'chip gold',onclick:()=>go({kind:'hero'})}, 'לגיבור'))
   ];
   if(s.cfg.sim){
     const secs = []; s.items.forEach(x => { if(secs.indexOf(x.sec) < 0) secs.push(x.sec); });
@@ -2344,7 +2505,8 @@ function pxFinish(s){
 function pxScore(run, key){
   run.key = key; run.score = 0;
   for(let i = 0; i < run.n; i++) if(run.ans[i] && run.ans[i] === +key[i]) run.score++;
-  const l = logToday(); l[3] += run.n; l[4] += run.score; save();
+  const l = logToday(); l[3] += run.n; l[4] += run.score;
+  gPast(run); save();
 }
 function pxKeyView(){
   const run = session.run, c = pxCh(run.ch);
@@ -2388,6 +2550,986 @@ function pxResView(){
       h('button',{class:'btn btn-ghost',onclick:()=>{ run.score = null; go({kind:'pxkey', run}); }},'תיקון המפתח')));
 }
 
+/* ---------- game data (catalog, icons, hero renderer) in its own scope ---------- */
+const G = (function(){
+/* Hero shop catalog. Item names and rarities from the D&D SRD 5.1 (CC-BY-4.0); Hebrew text written for this app. */
+const RARITY = {
+  mundane:  {he:'רגיל',        lvl:1,  color:'#4A443C'},
+  uncommon: {he:'לא נפוץ',     lvl:3,  color:'#1F6B3A'},
+  rare:     {he:'נדיר',        lvl:6,  color:'#1E4F8A'},
+  vrare:    {he:'נדיר מאוד',   lvl:10, color:'#6B2E8A'},
+  legend:   {he:'אגדי',        lvl:15, color:'#9A5B00'}
+};
+const SLOTS = {
+  weapon:{he:'נשק'}, armor:{he:'שריון'}, shield:{he:'מגן'}, cloak:{he:'גלימה'}, head:{he:'ראש'},
+  hands:{he:'ידיים'}, ring:{he:'טבעת'}, neck:{he:'צוואר'}, feet:{he:'רגליים'}, trinket:{he:'חפץ'},
+  tome:{he:'ספר שדרוג'}, potion:{he:'שיקוי'}
+};
+const CATS = [
+  {k:'weapons', he:'נשקים',            slots:['weapon']},
+  {k:'armor',   he:'שריונות ומגנים',   slots:['armor','shield']},
+  {k:'wear',    he:'גלימות וקסדות',    slots:['cloak','head','hands','feet']},
+  {k:'jewels',  he:'תכשיטים',          slots:['ring','neck']},
+  {k:'wonder',  he:'חפצים קסומים',     slots:['trinket','tome']},
+  {k:'potions', he:'שיקויים',          slots:['potion']}
+];
+/* s = stats: a = כוח התקפה, d = הגנה, m = קסם. fx = effect inside the app. look = drawing key. */
+const ITEMS = [
+  // ---- weapons: mundane ----
+  {id:'dagger',      he:'פגיון',             en:'Dagger',              slot:'weapon', r:'mundane', p:30,   s:{a:1},       look:'dagger',  d:'להב קצר וזריז. הנשק הראשון של כל הרפתקן.'},
+  {id:'quarterstaff',he:'מטה עץ',            en:'Quarterstaff',        slot:'weapon', r:'mundane', p:30,   s:{a:1,m:1},   look:'staff',   d:'מקל הליכה ארוך שמשמש גם לקרב וגם לכישוף.'},
+  {id:'spear',       he:'רומח',              en:'Spear',               slot:'weapon', r:'mundane', p:60,   s:{a:2},       look:'spear',   d:'מוט עם חוד ברזל. פשוט ויעיל.'},
+  {id:'shortsword',  he:'חרב קצרה',          en:'Shortsword',          slot:'weapon', r:'mundane', p:80,   s:{a:2},       look:'sword',   d:'חרב קלה ומהירה ליד אחת.'},
+  {id:'shortbow',    he:'קשת קצרה',          en:'Shortbow',            slot:'weapon', r:'mundane', p:120,  s:{a:2},       look:'bow',     d:'קשת קלה לציד ולקרב מרחוק.'},
+  {id:'longsword',   he:'חרב ארוכה',         en:'Longsword',           slot:'weapon', r:'mundane', p:150,  s:{a:3},       look:'sword',   d:'החרב הקלאסית של אבירים ולוחמים.'},
+  {id:'battleaxe',   he:'גרזן קרב',          en:'Battleaxe',           slot:'weapon', r:'mundane', p:150,  s:{a:3},       look:'axe',     d:'להב רחב ומכה כבדה.'},
+  {id:'warhammer',   he:'פטיש מלחמה',        en:'Warhammer',           slot:'weapon', r:'mundane', p:170,  s:{a:3,d:1},   look:'hammer',  d:'ראש ברזל כבד ששובר מגנים.'},
+  {id:'longbow',     he:'קשת ארוכה',         en:'Longbow',             slot:'weapon', r:'mundane', p:200,  s:{a:4},       look:'bow',     d:'קשת גבוהה שיורה רחוק ובעוצמה.'},
+  {id:'greatsword',  he:'חרב דו־ידנית',      en:'Greatsword',          slot:'weapon', r:'mundane', p:250,  s:{a:5},       look:'bigsword',d:'חרב ענקית לשתי ידיים.'},
+  // ---- weapons: magic ----
+  {id:'weapon1',     he:'חרב +1',            en:'Weapon +1',           slot:'weapon', r:'uncommon',p:400,  s:{a:6},       look:'sword', fxv:'glow',  d:'חרב מכושפת שפוגעת מדויק וחזק יותר.'},
+  {id:'javelin',     he:'כידון הברק',        en:'Javelin of Lightning',slot:'weapon', r:'uncommon',p:450,  s:{a:6,m:1},   look:'spear', fxv:'bolt',  d:'כשזורקים אותו הוא הופך לברק.'},
+  {id:'wand_mm',     he:'שרביט הקליעים הקסומים', en:'Wand of Magic Missiles', slot:'weapon', r:'uncommon', p:420, s:{a:2,m:5}, look:'wand', fxv:'glow', d:'יורה חיצי אור שאף פעם לא מחטיאים.'},
+  {id:'venom',       he:'פגיון הארס',        en:'Dagger of Venom',     slot:'weapon', r:'rare',    p:950,  s:{a:7,m:2},   look:'dagger',fxv:'drip',  d:'הלהב מצפה את עצמו ברעל לפי פקודה.'},
+  {id:'mace_dis',    he:'אלת השיבוש',        en:'Mace of Disruption',  slot:'weapon', r:'rare',    p:1100, s:{a:7,d:2},   look:'mace',  fxv:'rays',  d:'זוהרת באור ומבריחה יצורי אופל.'},
+  {id:'flame',       he:'לשון להבה',         en:'Flame Tongue',        slot:'weapon', r:'rare',    p:1200, s:{a:9,m:2},   look:'sword', fxv:'flame', d:'במילת פקודה הלהב עולה באש.'},
+  {id:'berserker',   he:'גרזן הזעם',         en:'Berserker Axe',       slot:'weapon', r:'rare',    p:1300, s:{a:10},      look:'axe',   fxv:'cracks',d:'גרזן כבד שממלא את מחזיקו בזעם קרב.'},
+  {id:'dragonslayer',he:'קוטלת הדרקונים',    en:'Dragon Slayer',       slot:'weapon', r:'rare',    p:1400, s:{a:10,d:1},  look:'sword', fxv:'runes', d:'חרב שנוצרה במיוחד נגד דרקונים.'},
+  {id:'wand_fire',   he:'שרביט כדורי האש',   en:'Wand of Fireballs',   slot:'weapon', r:'rare',    p:1500, s:{a:4,m:9},   look:'wand',  fxv:'flame', d:'משחרר כדור אש שמתפוצץ בלהבות.'},
+  {id:'sunblade',    he:'להב השמש',          en:'Sun Blade',           slot:'weapon', r:'rare',    p:1600, s:{a:10,m:2},  look:'sword', fxv:'rays',  d:'ניצב בלי להב, שממנו בוקע להב של אור שמש.'},
+  {id:'staff_fire',  he:'מטה האש',           en:'Staff of Fire',       slot:'weapon', r:'vrare',   p:2600, s:{a:5,m:13},  look:'staff', fxv:'flame', d:'מטה חרוך שמזמן קירות וכדורי אש.'},
+  {id:'oathbow',     he:'קשת השבועה',        en:'Oathbow',             slot:'weapon', r:'vrare',   p:2800, s:{a:13},      look:'bow',   fxv:'runes', d:'קשת שנשבעת לפגוע באויב שבחרת.'},
+  {id:'frost',       he:'להב הכפור',         en:'Frost Brand',         slot:'weapon', r:'vrare',   p:3000, s:{a:13,d:2},  look:'sword', fxv:'frost', d:'להב קפוא שמגן מאש ומכבה להבות.'},
+  {id:'weapon3',     he:'חרב +3',            en:'Weapon +3',           slot:'weapon', r:'vrare',   p:3500, s:{a:15},      look:'sword', fxv:'glow',  d:'אחת החרבות המכושפות החזקות שיש.'},
+  {id:'staff_power', he:'מטה העוצמה',        en:'Staff of Power',      slot:'weapon', r:'vrare',   p:3800, s:{a:7,m:16},  look:'staff', fxv:'orb',   d:'מטה של קוסמים גדולים, מלא אנרגיה טהורה.'},
+  {id:'thunder',     he:'פטיש הרעמים',       en:'Hammer of Thunderbolts', slot:'weapon', r:'legend', p:7500, s:{a:18,d:3}, look:'hammer',fxv:'bolt',  d:'פטיש של ענקים שמכה ברעם.'},
+  {id:'holy',        he:'הנוקם הקדוש',       en:'Holy Avenger',        slot:'weapon', r:'legend',  p:8000, s:{a:18,d:4,m:4}, look:'sword', fxv:'holy', d:'החרב האגדית של הפלדינים.'},
+  {id:'staff_magi',  he:'מטה הקוסם העליון',  en:'Staff of the Magi',   slot:'weapon', r:'legend',  p:9000, s:{a:8,m:22},  look:'staff', fxv:'orb',   d:'המטה החזק ביותר שקוסם יכול להחזיק.'},
+  {id:'vorpal',      he:'החרב הכורתת',       en:'Vorpal Sword',        slot:'weapon', r:'legend',  p:9500, s:{a:22},      look:'sword', fxv:'vorpal',d:'להב חד כל כך שהוא חותך כל דבר.'},
+  // ---- armor ----
+  {id:'leather',     he:'שריון עור',         en:'Leather Armor',       slot:'armor',  r:'mundane', p:40,   s:{d:1},       look:'leather', d:'שריון קל מעור מוקשה.'},
+  {id:'studded',     he:'שריון עור משובץ',   en:'Studded Leather',     slot:'armor',  r:'mundane', p:120,  s:{d:2},       look:'studded', d:'עור עם מסמרות ברזל לחיזוק.'},
+  {id:'scale',       he:'שריון קשקשים',      en:'Scale Mail',          slot:'armor',  r:'mundane', p:150,  s:{d:3},       look:'scale',   d:'קשקשי מתכת חופפים כמו עור של דג.'},
+  {id:'chain',       he:'שריון שרשראות',     en:'Chain Mail',          slot:'armor',  r:'mundane', p:200,  s:{d:4},       look:'chain',   d:'אלפי טבעות ברזל שזורות זו בזו.'},
+  {id:'plate',       he:'שריון לוחות',       en:'Plate Armor',         slot:'armor',  r:'mundane', p:450,  s:{d:6},       look:'plate',   d:'לוחות פלדה שמכסים את כל הגוף.'},
+  {id:'mithral',     he:'שריון מיתריל',      en:'Mithral Armor',       slot:'armor',  r:'uncommon',p:500,  s:{d:6,a:1},   look:'chain', fxv:'glow', d:'מתכת כסופה וקלה כנוצה.'},
+  {id:'armor1',      he:'שריון +1',          en:'Armor +1',            slot:'armor',  r:'rare',    p:1000, s:{d:8},       look:'plate', fxv:'glow', d:'שריון מכושף שמגן טוב יותר.'},
+  {id:'elven',       he:'שריון שרשראות אלפי', en:'Elven Chain',        slot:'armor',  r:'rare',    p:1300, s:{d:8,m:1},   look:'chain', fxv:'leaf', d:'מעשה ידי אלפים, דק ושקט.'},
+  {id:'robe_stars',  he:'גלימת הכוכבים',     en:'Robe of Stars',       slot:'armor',  r:'vrare',   p:3000, s:{d:5,m:10},  look:'robe',  fxv:'stars',d:'גלימה כהה עם כוכבים שאפשר לזרוק.'},
+  {id:'dragonscale', he:'שריון קשקשי דרקון', en:'Dragon Scale Mail',   slot:'armor',  r:'vrare',   p:3200, s:{d:12,m:2},  look:'scale', fxv:'dragon',d:'עשוי מקשקשים של דרקון אמיתי.'},
+  {id:'dwarven',     he:'שריון לוחות גמדי',  en:'Dwarven Plate',       slot:'armor',  r:'vrare',   p:3600, s:{d:14},      look:'plate', fxv:'runes',d:'נחשל במכרות הגמדים, כמעט בלתי חדיר.'},
+  {id:'archmagi',    he:'גלימת הארכי־מכשף',  en:'Robe of the Archmagi',slot:'armor',  r:'legend',  p:8000, s:{d:8,m:20},  look:'robe',  fxv:'runes',d:'הגלימה של גדולי הקוסמים.'},
+  {id:'invuln',      he:'שריון האלמוות',     en:'Armor of Invulnerability', slot:'armor', r:'legend', p:8500, s:{d:20}, look:'plate', fxv:'holy', d:'שריון שכמעט שום דבר לא חודר אותו.'},
+  // ---- shields ----
+  {id:'shield',      he:'מגן',               en:'Shield',              slot:'shield', r:'mundane', p:50,   s:{d:2},       look:'shield',  d:'מגן עץ מחוזק בברזל.'},
+  {id:'shield1',     he:'מגן +1',            en:'Shield +1',           slot:'shield', r:'uncommon',p:400,  s:{d:4},       look:'shield', fxv:'glow', d:'מגן מכושף שהודף מכות.'},
+  {id:'arrowcatch',  he:'מגן לוכד החצים',    en:'Arrow-Catching Shield', slot:'shield', r:'rare', p:1100, s:{d:6},      look:'shield', fxv:'arrows', d:'מושך אליו חצים כדי להגן עליך.'},
+  {id:'animated',    he:'המגן המרחף',        en:'Animated Shield',     slot:'shield', r:'vrare',   p:2800, s:{d:9},       look:'shield', fxv:'float',d:'מרחף לידך ומגן בלי שתחזיק אותו.'},
+  {id:'spellguard',  he:'מגן שומר הלחשים',   en:'Spellguard Shield',   slot:'shield', r:'vrare',   p:3000, s:{d:8,m:4},   look:'shield', fxv:'runes',d:'מגן מפני לחשים וכישופים.'},
+  // ---- cloaks / head / hands / feet ----
+  {id:'cloak_elf',   he:'גלימת בני האלפים',  en:'Cloak of Elvenkind',  slot:'cloak',  r:'uncommon',p:450,  s:{d:1,m:2},   look:'cloak', fxv:'leaf', d:'הברדס מסתיר אותך בצללים.'},
+  {id:'cloak_prot',  he:'גלימת ההגנה',       en:'Cloak of Protection', slot:'cloak',  r:'uncommon',p:500,  s:{d:3},       look:'cloak',              d:'בד פשוט שמגן כמו שריון.'},
+  {id:'cloak_bat',   he:'גלימת העטלף',       en:'Cloak of the Bat',    slot:'cloak',  r:'rare',    p:1200, s:{d:2,m:4},   look:'cloak', fxv:'bat',  d:'בחושך אפשר לעוף איתה כמו עטלף.'},
+  {id:'cloak_disp',  he:'גלימת ההעתקה',      en:'Cloak of Displacement',slot:'cloak', r:'rare',    p:1400, s:{d:6},       look:'cloak', fxv:'ghost',d:'יוצרת השתקפות שמבלבלת את האויב.'},
+  {id:'wings',       he:'כנפי התעופה',       en:'Wings of Flying',     slot:'cloak',  r:'rare',    p:1600, s:{d:3,a:2},   look:'wings',              d:'גלימה שהופכת לזוג כנפיים.'},
+  {id:'helm_lang',   he:'קסדת הבנת השפות',   en:'Helm of Comprehending Languages', slot:'head', r:'uncommon', p:350, s:{m:2}, look:'helm', fx:'goldEn', d:'מבינים כל שפה כתובה ומדוברת.'},
+  {id:'circlet',     he:'עטרת הפיצוץ',       en:'Circlet of Blasting', slot:'head',   r:'uncommon',p:400,  s:{a:2,m:2},   look:'circlet',            d:'יורה קרן אור לוהטת.'},
+  {id:'headband',    he:'אגד התבונה',        en:'Headband of Intellect', slot:'head', r:'uncommon',p:480,  s:{m:4},       look:'circlet', fx:'goldQn', d:'מחדד את המחשבה ומעלה את התבונה.'},
+  {id:'helm_tele',   he:'קסדת הטלפתיה',      en:'Helm of Telepathy',   slot:'head',   r:'uncommon',p:520,  s:{m:3,d:1},   look:'helm', fx:'goldHe',  d:'שומעים את המחשבות של אחרים.'},
+  {id:'helm_bril',   he:'קסדת הזוהר',        en:'Helm of Brilliance',  slot:'head',   r:'vrare',   p:3400, s:{d:4,m:9},   look:'helm', fxv:'gems',  d:'משובצת יהלומים, אבני אש ואבני חן.'},
+  {id:'ogre',        he:'כפפות כוח הענק',    en:'Gauntlets of Ogre Power', slot:'hands', r:'uncommon', p:480, s:{a:4},   look:'gloves',             d:'נותנות כוח של ענק.'},
+  {id:'bracers_arch',he:'צמידי הקשתות',      en:'Bracers of Archery',  slot:'hands',  r:'uncommon',p:450,  s:{a:3},       look:'bracers',            d:'מחזקים כל ירייה בקשת.'},
+  {id:'bracers_def', he:'צמידי ההגנה',       en:'Bracers of Defense',  slot:'hands',  r:'rare',    p:1200, s:{d:5},       look:'bracers', fxv:'glow',d:'מגינים גם בלי שריון.'},
+  {id:'boots_elf',   he:'מגפי בני האלפים',   en:'Boots of Elvenkind',  slot:'feet',   r:'uncommon',p:400,  s:{d:1,m:1},   look:'boots',              d:'צעדים שקטים לגמרי.'},
+  {id:'winged',      he:'מגפיים מכונפים',    en:'Winged Boots',        slot:'feet',   r:'uncommon',p:550,  s:{d:2},       look:'boots', fxv:'wings', d:'כנפיים קטנות שנפרשות לפי פקודה.'},
+  {id:'boots_speed', he:'מגפי המהירות',      en:'Boots of Speed',      slot:'feet',   r:'rare',    p:1400, s:{a:3,d:3},   look:'boots', fxv:'speed', d:'נקישת עקב, והמהירות מוכפלת.'},
+  // ---- jewels ----
+  {id:'medallion',   he:'מדליון המחשבות',    en:'Medallion of Thoughts', slot:'neck', r:'uncommon',p:450,  s:{m:3},       look:'amulet', d:'קורא מחשבות של מי שמולך.'},
+  {id:'periapt',     he:'קמע סגירת הפצעים',  en:'Periapt of Wound Closure', slot:'neck', r:'uncommon', p:400, s:{d:3},  look:'amulet', d:'פצעים נסגרים מהר יותר.'},
+  {id:'ring_prot',   he:'טבעת ההגנה',        en:'Ring of Protection',  slot:'ring',   r:'rare',    p:1000, s:{d:3,m:1},   look:'ring',   d:'מגינה על העונד מכל כיוון.'},
+  {id:'amulet_health',he:'קמע הבריאות',      en:'Amulet of Health',    slot:'neck',   r:'rare',    p:1100, s:{d:5},       look:'amulet', d:'גוף חזק ובריא במיוחד.'},
+  {id:'ring_evasion',he:'טבעת ההתחמקות',     en:'Ring of Evasion',     slot:'ring',   r:'rare',    p:1200, s:{d:4,a:1},   look:'ring',   d:'מתחמקים מפיצוצים ברגע האחרון.'},
+  {id:'necklace_fire',he:'שרשרת כדורי האש',  en:'Necklace of Fireballs', slot:'neck', r:'rare',    p:1300, s:{a:3,m:4},   look:'amulet', fxv:'flame', d:'כל חרוז הוא כדור אש שאפשר לזרוק.'},
+  {id:'ring_invis',  he:'טבעת ההיעלמות',     en:'Ring of Invisibility',slot:'ring',   r:'legend',  p:7000, s:{d:6,m:12},  look:'ring', fxv:'glow', d:'עונדים ונעלמים מהעין.'},
+  {id:'ring_wishes', he:'טבעת שלוש המשאלות', en:'Ring of Three Wishes',slot:'ring',   r:'legend',  p:9500, s:{a:5,d:5,m:15}, look:'ring', fxv:'stars', d:'שלוש משאלות. כל אחת משנה את המציאות.'},
+  // ---- wondrous / trinkets ----
+  {id:'rope',        he:'חבל הטיפוס',        en:'Rope of Climbing',    slot:'trinket',r:'uncommon',p:300,  s:{d:1},       look:'rope',   d:'חבל שמטפס וקושר את עצמו לפי פקודה.'},
+  {id:'bag_holding', he:'שק האחזקה',         en:'Bag of Holding',      slot:'trinket',r:'uncommon',p:350,  s:{m:1},       look:'bag',  fx:'potCap', d:'שק קטן שבפנים גדול כמו מחסן.'},
+  {id:'luckstone',   he:'אבן המזל',          en:'Stone of Good Luck',  slot:'trinket',r:'uncommon',p:500,  s:{m:2},       look:'stone',fx:'luck',   d:'אבן מלוטשת שמביאה מזל טוב.'},
+  {id:'crystal',     he:'כדור הבדולח',       en:'Crystal Ball',        slot:'trinket',r:'vrare',   p:3000, s:{m:8},       look:'orb',  fx:'freeHint', d:'מראה מקומות ואנשים רחוקים.'},
+  // ---- tomes (permanent, consumed) ----
+  {id:'tome_ex',     he:'ספר האימון הגופני', en:'Manual of Gainful Exercise', slot:'tome', r:'vrare', p:2500, s:{a:3}, look:'book', fx:'permA', d:'קוראים, מתאמנים, ומתחזקים לתמיד.'},
+  {id:'tome_health', he:'ספר בריאות הגוף',   en:'Manual of Bodily Health', slot:'tome', r:'vrare', p:2500, s:{d:3},     look:'book', fx:'permD', d:'סודות של גוף חסין ועמיד.'},
+  {id:'tome_clear',  he:'ספר המחשבה הצלולה', en:'Tome of Clear Thought', slot:'tome', r:'vrare',  p:2500, s:{m:3},       look:'book', fx:'permM', d:'מחדד את התבונה לצמיתות.'},
+  // ---- potions (consumables with real effects in the app) ----
+  {id:'p_heal',      he:'שיקוי ריפוי',       en:'Potion of Healing',   slot:'potion', r:'mundane', p:60,   look:'potion', fx:'streak',   d:'מחזיר רצף ימים שנשבר ביום אחד.'},
+  {id:'p_clair',     he:'שיקוי ראייה רחוקה', en:'Potion of Clairvoyance', slot:'potion', r:'mundane', p:80, look:'potion', fx:'hint',  d:'בשאלה אחת מוחק שתי תשובות שגויות.'},
+  {id:'p_resist',    he:'שיקוי עמידות',      en:'Potion of Resistance',slot:'potion', r:'uncommon',p:100,  look:'potion', fx:'retry',    d:'הטעות הראשונה בסט הבא לא נספרת, ומקבלים ניסיון נוסף.'},
+  {id:'p_hero',      he:'שיקוי גבורה',       en:'Potion of Heroism',   slot:'potion', r:'uncommon',p:120,  look:'potion', fx:'x2',       d:'זהב כפול בסט הבא.'},
+  {id:'p_giant',     he:'שיקוי כוח הענקים',  en:'Potion of Giant Strength', slot:'potion', r:'rare', p:300, look:'potion', fx:'permA1', d:'מוסיף נקודת כוח התקפה אחת לתמיד.'}
+];
+const FX = {
+  goldEn:  'כל עוד היא עליך: ‎+20% זהב בתרגולי אנגלית',
+  goldQn:  'כל עוד הוא עליך: ‎+20% זהב בחשיבה כמותית',
+  goldHe:  'כל עוד היא עליך: ‎+20% זהב בחשיבה מילולית',
+  luck:    'כל עוד היא אצלך: ‎+10% זהב על כל תשובה נכונה',
+  potCap:  'אפשר להחזיק 20 שיקויים מכל סוג במקום 5',
+  freeHint:'רמז אחד חינם בכל יום (כמו שיקוי ראייה רחוקה)',
+  permA:   'שדרוג קבוע: ‎+3 כוח התקפה',
+  permD:   'שדרוג קבוע: ‎+3 הגנה',
+  permM:   'שדרוג קבוע: ‎+3 קסם',
+  streak:  'שימוש: משחזר את הרצף אם פספסת יום אחד',
+  hint:    'שימוש: בתוך שאלה, מוחק שתי תשובות שגויות',
+  retry:   'שימוש: לפני סט, הטעות הראשונה מקבלת ניסיון נוסף',
+  x2:      'שימוש: לפני סט, כל הזהב בסט מוכפל',
+  permA1:  'שימוש: ‎+1 כוח התקפה לתמיד'
+};
+const EARN = [
+  ['תשובה נכונה', '4'], ['תשובה נכונה בשאלה ברמה גבוהה', '6'], ['תשובה שגויה (על המאמץ)', '1'],
+  ['סיום סט תרגול', '10'], ['סט בלי טעויות', '+15'], ['סימולציה של פרק מלא', '+30'],
+  ['כרטיס מילה', '1 · זכרת: 2'], ['סיום התרגול היומי', '+25'],
+  ['פרק ממבחן עבר', '25 + 2 לכל תשובה נכונה'], ['בונוס רצף, פעם ביום', '5 לכל יום ברצף, עד 50']
+];
+const CLASSES = [
+  {k:'fighter', he:'לוחם / לוחמת',  en:'Fighter', start:['longsword','chain'],      focus:'התקפה והגנה', titles:['טירון','שכיר חרב','לוחם','אביר','גיבור','אגדה']},
+  {k:'paladin', he:'פלדין / פלדינית', en:'Paladin', start:['warhammer','shield'],    focus:'הגנה ואור',   titles:['מועמד','נשבע','פלדין','אביר קדוש','מגן האור','אלוף האור']},
+  {k:'wizard',  he:'קוסם / קוסמת',  en:'Wizard',  start:['quarterstaff','leather'],  focus:'קסם',         titles:['שוליה','לחשן','מכשף','קוסם','ארכי־מכשף','קוסם עליון']},
+  {k:'ranger',  he:'סייר / סיירת',  en:'Ranger',  start:['shortbow','leather'],      focus:'התקפה וזריזות',titles:['גשש','צייד','סייר','שומר היער','צל היער','אגדת היער']}
+];
+const LEVEL_BANDS = [[1,2],[3,5],[6,9],[10,14],[15,19],[20,99]];
+function levelFor(xp){ return Math.floor(Math.sqrt(xp / 40)) + 1; }
+function xpFor(level){ return 40 * (level - 1) * (level - 1); }
+/* ---- expansion: more SRD 5.1 items + original items (src:'orig') ---- */
+SLOTS.waist = {he:'חגורה'}; SLOTS.pet = {he:'חיית לוויה'}; SLOTS.scene = {he:'רקע'};
+CATS.find(c => c.k === 'wear').slots.push('waist');
+CATS.splice(CATS.findIndex(c => c.k === 'potions'), 0, {k:'pets', he:'חיות לוויה', slots:['pet']});
+CATS.push({k:'scenes', he:'רקעים', slots:['scene']});
+Object.assign(FX, {
+  goldRead:  'כל עוד הוא אצלך: ‎+20% זהב בהבנת הנקרא',
+  goldGeo:   'כל עוד היא אצלך: ‎+20% זהב בגאומטריה',
+  goldWords: 'כל עוד הוא אצלך: זהב כפול על כרטיסי מילים',
+  goldSim:   'כל עוד הוא אצלך: ‎+20% זהב בסימולציות ובמבחני עבר',
+  goldAll5:  'כל עוד הוא איתך: ‎+5% זהב על הכול',
+  goldAll10: 'כל עוד הוא איתך: ‎+10% זהב על הכול',
+  streakX:   'כל עוד הוא איתך: בונוס הרצף היומי כפול',
+  hintDay2:  'שני רמזים חינם בכל יום',
+  x15:       'שימוש: ‎+50% זהב בסט הבא',
+  x3past:    'שימוש: זהב משולש על פרק אחד ממבחן עבר',
+  timer3:    'שימוש: ‎+3 דקות לזמן היעד בסימולציה הבאה',
+  permD1:    'שימוש: ‎+1 הגנה לתמיד',
+  permM1:    'שימוש: ‎+1 קסם לתמיד',
+  scene:     'רקע לעמוד הדמות',
+  luck5:     'כל עוד היא עליך: ‎+5% זהב על כל תשובה נכונה'
+});
+ITEMS.forEach(i => { i.src = i.src || 'srd'; });
+ITEMS.push(
+  // ---- more SRD weapons ----
+  {id:'trident',     he:'קלשון שליטת הדגים', en:'Trident of Fish Command', slot:'weapon', r:'uncommon', p:380, s:{a:5,m:1}, look:'trident', d:'קלשון שיצורי הים מצייתים לו.'},
+  {id:'wand_web',    he:'שרביט הקורים',      en:'Wand of Web',         slot:'weapon', r:'uncommon',p:400,  s:{a:1,m:4},   look:'wand',  d:'יורה רשת דביקה של קורי עכביש.'},
+  {id:'vicious',     he:'החרב האכזרית',      en:'Vicious Weapon',      slot:'weapon', r:'rare',    p:1000, s:{a:9},       look:'sword', fxv:'cracks', d:'פגיעה מדויקת שלה כואבת כפליים.'},
+  {id:'staff_heal',  he:'מטה הריפוי',        en:'Staff of Healing',    slot:'weapon', r:'rare',    p:1050, s:{a:2,d:3,m:6}, look:'staff', fxv:'rays', d:'מרפא פצעים במגע.'},
+  {id:'mace_smite',  he:'אלת ההכרעה',        en:'Mace of Smiting',     slot:'weapon', r:'rare',    p:1150, s:{a:9,d:1},   look:'mace',  d:'מכה שמנפצת שריונות ומבנים.'},
+  {id:'wounding',    he:'חרב הפציעה',        en:'Sword of Wounding',   slot:'weapon', r:'rare',    p:1200, s:{a:9},       look:'sword', fxv:'drip', d:'פצעים ממנה לא נסגרים בקלות.'},
+  {id:'giantslayer', he:'קוטל הענקים',       en:'Giant Slayer',        slot:'weapon', r:'rare',    p:1300, s:{a:10},      look:'axe',   fxv:'runes', d:'גרזן שענקים מפחדים ממנו.'},
+  {id:'wand_light',  he:'שרביט הברקים',      en:'Wand of Lightning Bolts', slot:'weapon', r:'rare', p:1450, s:{a:4,m:8}, look:'wand',  fxv:'bolt', d:'משחרר קו ישר של ברק מסנוור.'},
+  {id:'woodlands',   he:'מטה היערות',        en:'Staff of the Woodlands', slot:'weapon', r:'rare', p:1500, s:{a:3,m:8},   look:'staff', fxv:'leaf', d:'מדבר עם צמחים והופך לעץ ענק.'},
+  {id:'lifesteal',   he:'חרב גוזלת החיים',   en:'Sword of Life Stealing', slot:'weapon', r:'rare', p:1550, s:{a:10,d:1},  look:'sword', fxv:'drip', d:'שואבת כוח מכל אויב שהיא פוגעת בו.'},
+  {id:'scimitar',    he:'חרב המהירות',       en:'Scimitar of Speed',   slot:'weapon', r:'vrare',   p:2700, s:{a:12,d:1},  look:'scimitar', fxv:'speed', d:'להב מעוקל וקל, מהיר מכל אויב.'},
+  {id:'staff_frost', he:'מטה הכפור',         en:'Staff of Frost',      slot:'weapon', r:'vrare',   p:2900, s:{a:5,m:13},  look:'staff', fxv:'frost', d:'מטה קפוא שמזמן סופות שלג.'},
+  {id:'dancing',     he:'החרב המרחפת',       en:'Dancing Sword',       slot:'weapon', r:'vrare',   p:3100, s:{a:13},      look:'sword', fxv:'float', d:'נלחמת לבד באוויר לצידך.'},
+  {id:'thrower',     he:'פטיש הגמדים המעופף',en:'Dwarven Thrower',     slot:'weapon', r:'vrare',   p:3200, s:{a:13,d:1},  look:'hammer',fxv:'runes', d:'נזרק אל האויב וחוזר ליד.'},
+  {id:'staff_thunder',he:'מטה הרעם והברק',   en:'Staff of Thunder and Lightning', slot:'weapon', r:'vrare', p:3400, s:{a:8,m:12}, look:'staff', fxv:'bolt', d:'מוריד ברקים ורעמים לפי פקודה.'},
+  {id:'sharpness',   he:'חרב החדות',         en:'Sword of Sharpness',  slot:'weapon', r:'vrare',   p:3600, s:{a:15},      look:'sword', fxv:'glow', d:'חותכת כל דבר כמו דף נייר.'},
+  {id:'ninelives',   he:'גונבת תשעת החיים',  en:'Nine Lives Stealer',  slot:'weapon', r:'vrare',   p:3900, s:{a:16},      look:'sword', fxv:'runes', d:'להב אפל עם תשעה חריצים.'},
+  {id:'luckblade',   he:'להב המזל',          en:'Luck Blade',          slot:'weapon', r:'legend',  p:7200, s:{a:14,m:6},  look:'sword', fxv:'stars', fx:'luck5', d:'חרב שמביאה מזל לבעליה.'},
+  {id:'defender',    he:'המגינה',            en:'Defender',            slot:'weapon', r:'legend',  p:7800, s:{a:15,d:8},  look:'sword', fxv:'holy', d:'חרב שהופכת התקפה להגנה.'},
+  {id:'lordly',      he:'שבט האדנות',        en:'Rod of Lordly Might', slot:'weapon', r:'legend',  p:8800, s:{a:16,d:4,m:6}, look:'mace', fxv:'gems', d:'שרביט מלכותי שהופך לכל נשק.'},
+  // ---- more SRD armor ----
+  {id:'adamantine',  he:'שריון אדמנטין',     en:'Adamantine Armor',    slot:'armor',  r:'uncommon',p:550,  s:{d:7},       look:'plate', fxv:'cracks', d:'המתכת הקשה בעולם. שום מכה לא סודקת אותו.'},
+  {id:'glamoured',   he:'שריון העור המכושף', en:'Glamoured Studded Leather', slot:'armor', r:'rare', p:950, s:{d:5,m:3}, look:'studded', fxv:'glow', d:'נראה כמו כל בגד שתבחר.'},
+  {id:'resistance',  he:'שריון העמידות',     en:'Armor of Resistance', slot:'armor',  r:'rare',    p:1250, s:{d:9},       look:'chain', fxv:'runes', d:'מגן מסוג אחד של נזק, כמו אש או קור.'},
+  {id:'robe_eyes',   he:'גלימת העיניים',     en:'Robe of Eyes',        slot:'armor',  r:'rare',    p:1350, s:{d:4,m:7},   look:'robe',  fxv:'eyes', d:'עשרות עיניים רקומות שרואות לכל הכיוונים.'},
+  {id:'demon',       he:'שריון השד',         en:'Demon Armor',         slot:'armor',  r:'vrare',   p:3300, s:{d:12,a:3},  look:'plate', fxv:'cracks', d:'שריון אפל עם כפפות בצורת טפרים.'},
+  {id:'ethereal',    he:'שריון הלוחות הערפילי', en:'Plate Armor of Etherealness', slot:'armor', r:'legend', p:8200, s:{d:18,m:4}, look:'plate', fxv:'ghost', d:'מאפשר לעבור לעולם הערפל, דרך קירות.'},
+  {id:'shield2',     he:'מגן +2',            en:'Shield +2',           slot:'shield', r:'rare',    p:1100, s:{d:6},       look:'shield', fxv:'glow', d:'מגן מכושף חזק עוד יותר.'},
+  {id:'shield3',     he:'מגן +3',            en:'Shield +3',           slot:'shield', r:'vrare',   p:3000, s:{d:10},      look:'shield', fxv:'holy', d:'מהמגנים החזקים שנוצרו אי פעם.'},
+  // ---- more SRD wear ----
+  {id:'goggles',     he:'משקפי הלילה',       en:'Goggles of Night',    slot:'head',   r:'uncommon',p:320,  s:{m:2},       look:'goggles', d:'רואים בחושך כמו ביום.'},
+  {id:'hat_disg',    he:'כובע התחפושת',      en:'Hat of Disguise',     slot:'head',   r:'uncommon',p:350,  s:{m:3},       look:'hat',   d:'משנה את המראה שלך לכל דמות.'},
+  {id:'eagle',       he:'עיני הנשר',         en:'Eyes of the Eagle',   slot:'head',   r:'uncommon',p:380,  s:{a:1,m:2},   look:'goggles', d:'עדשות שרואות פרטים קטנים מרחוק.'},
+  {id:'helm_tele2',  he:'קסדת ההשתגרות',     en:'Helm of Teleportation', slot:'head', r:'rare',    p:1400, s:{d:2,m:6},   look:'helm',  fxv:'stars', d:'קופצים ממקום למקום בהרף עין.'},
+  {id:'manta',       he:'גלימת הטריגון',     en:'Cloak of the Manta Ray', slot:'cloak', r:'uncommon', p:420, s:{d:2,m:1}, look:'cloak', d:'נושמים מתחת למים ושוחים כמו דג.'},
+  {id:'mountebank',  he:'שכמיית הנוכל',      en:'Cape of the Mountebank', slot:'cloak', r:'rare',  p:1250, s:{d:3,m:4},   look:'cloak', fxv:'ghost', d:'נעלמים בענן עשן ומופיעים במקום אחר.'},
+  {id:'arachnida',   he:'גלימת העכביש',      en:'Cloak of Arachnida',  slot:'cloak',  r:'vrare',   p:3000, s:{d:6,m:5},   look:'cloak', fxv:'web',   d:'מטפסים על קירות ותקרות.'},
+  {id:'gloves_swim', he:'כפפות השחייה והטיפוס', en:'Gloves of Swimming and Climbing', slot:'hands', r:'uncommon', p:350, s:{a:1,d:1}, look:'gloves', d:'מטפסים ושוחים בקלות.'},
+  {id:'belt_dwarf',  he:'חגורת הגמדים',      en:'Belt of Dwarvenkind', slot:'waist',  r:'rare',    p:1150, s:{d:5},       look:'belt',  d:'עמידות של גמד וזקן מפואר.'},
+  {id:'belt_giant',  he:'חגורת כוח הענקים',  en:'Belt of Giant Strength', slot:'waist', r:'vrare', p:3500, s:{a:12},      look:'belt',  fxv:'runes', d:'כוח של ענק הררים.'},
+  {id:'boots_spring',he:'מגפי הצעד והקפיצה', en:'Boots of Striding and Springing', slot:'feet', r:'uncommon', p:420, s:{a:1,d:1}, look:'boots', d:'קופצים רחוק פי שלושה.'},
+  {id:'boots_winter',he:'מגפי ארצות החורף',  en:'Boots of the Winterlands', slot:'feet', r:'uncommon', p:400, s:{d:2}, look:'boots', fxv:'frost', d:'הולכים על שלג וקרח בלי להחליק.'},
+  {id:'spider',      he:'נעלי העכביש',       en:'Slippers of Spider Climbing', slot:'feet', r:'uncommon', p:450, s:{d:1,m:1}, look:'boots', fxv:'web', d:'הולכים על קירות.'},
+  {id:'levitation',  he:'מגפי הריחוף',       en:'Boots of Levitation', slot:'feet',   r:'rare',    p:1300, s:{d:3,m:2},   look:'boots', fxv:'float', d:'מרחפים באוויר לפי רצון.'},
+  // ---- more SRD jewels ----
+  {id:'ring_warmth', he:'טבעת החום',         en:'Ring of Warmth',      slot:'ring',   r:'uncommon',p:300,  s:{d:2},       look:'ring',  d:'לא קר אף פעם, גם בשלג.'},
+  {id:'ring_water',  he:'טבעת ההליכה על המים', en:'Ring of Water Walking', slot:'ring', r:'uncommon', p:350, s:{d:1,m:1}, look:'ring', d:'הולכים על מים כמו על אדמה.'},
+  {id:'ring_mind',   he:'טבעת מגן המחשבה',   en:'Ring of Mind Shielding', slot:'ring', r:'uncommon', p:420, s:{m:3},      look:'ring',  d:'אף אחד לא קורא את המחשבות שלך.'},
+  {id:'brooch',      he:'סיכת המגן',         en:'Brooch of Shielding', slot:'neck',   r:'uncommon',p:420,  s:{d:3},       look:'brooch',d:'בולעת קליעים קסומים.'},
+  {id:'periapt_h',   he:'קמע הבריאות הקטן',  en:'Periapt of Health',   slot:'neck',   r:'uncommon',p:380,  s:{d:2},       look:'amulet', d:'מגן מפני מחלות.'},
+  {id:'adaptation',  he:'שרשרת ההסתגלות',    en:'Necklace of Adaptation', slot:'neck', r:'uncommon', p:400, s:{d:2,m:1}, look:'amulet', d:'נושמים בכל מקום, גם בעשן.'},
+  {id:'ring_feather',he:'טבעת הנוצה',        en:'Ring of Feather Falling', slot:'ring', r:'rare',  p:950,  s:{d:3},       look:'ring',  d:'נופלים לאט כמו נוצה.'},
+  {id:'ring_free',   he:'טבעת התנועה החופשית', en:'Ring of Free Action', slot:'ring',  r:'rare',    p:1100, s:{a:2,d:2},   look:'ring',  d:'שום כישוף לא משתק אותך.'},
+  {id:'ring_store',  he:'טבעת אגירת הלחשים', en:'Ring of Spell Storing', slot:'ring', r:'rare',    p:1350, s:{m:6},       look:'ring',  fxv:'glow', d:'שומרת לחשים לשימוש מאוחר יותר.'},
+  {id:'ring_regen',  he:'טבעת ההתחדשות',     en:'Ring of Regeneration',slot:'ring',   r:'vrare',   p:3200, s:{d:8,m:2},   look:'ring',  fxv:'leaf', d:'פצעים נרפאים מעצמם.'},
+  {id:'ring_stars',  he:'טבעת הכוכבים הנופלים', en:'Ring of Shooting Stars', slot:'ring', r:'vrare', p:3400, s:{a:4,m:9}, look:'ring', fxv:'stars', d:'מזמנת כדורי אור וכוכבים נופלים.'},
+  {id:'planes',      he:'קמע המישורים',      en:'Amulet of the Planes',slot:'neck',   r:'vrare',   p:3300, s:{m:11},      look:'amulet', fxv:'stars', d:'פותח שער לעולמות אחרים.'},
+  {id:'scarab',      he:'חרפושית ההגנה',     en:'Scarab of Protection',slot:'neck',   r:'legend',  p:7600, s:{d:14,m:6},  look:'scarab', fxv:'holy', d:'מגינה מכישופים אפלים במיוחד.'},
+  {id:'talisman',    he:'קמע הטוב הטהור',    en:'Talisman of Pure Good', slot:'neck', r:'legend',  p:8400, s:{d:8,m:14},  look:'amulet', fxv:'holy', d:'סמל של אור שמבריח כל רוע.'},
+  // ---- more SRD wondrous ----
+  {id:'decanter',    he:'קנקן המים האינסופיים', en:'Decanter of Endless Water', slot:'trinket', r:'uncommon', p:300, s:{m:1}, look:'potion', d:'שופך מים בלי סוף.'},
+  {id:'bag_tricks',  he:'שק התעלולים',       en:'Bag of Tricks',       slot:'trinket',r:'uncommon',p:380,  s:{m:2},       look:'bag',   d:'שולפים ממנו חיה מפתיעה.'},
+  {id:'lantern',     he:'פנס הגילוי',        en:'Lantern of Revealing',slot:'trinket',r:'uncommon',p:400,  s:{m:3},       look:'lantern', d:'האור שלו חושף דברים בלתי נראים.'},
+  {id:'immovable',   he:'המוט הנייח',        en:'Immovable Rod',       slot:'trinket',r:'uncommon',p:420,  s:{d:2},       look:'rod',   d:'לוחצים על כפתור והוא נעצר באוויר.'},
+  {id:'pearl',       he:'פנינת העוצמה',      en:'Pearl of Power',      slot:'trinket',r:'uncommon',p:450,  s:{m:4},       look:'pearl', d:'מחזירה לקוסם לחש שנוצל.'},
+  {id:'broom',       he:'מטאטא התעופה',      en:'Broom of Flying',     slot:'trinket',r:'uncommon',p:520,  s:{d:1,m:3},   look:'broom', d:'עפים עליו לכל מקום.'},
+  {id:'ioun',        he:'אבן איון',          en:'Ioun Stone',          slot:'trinket',r:'rare',    p:1200, s:{m:6},       look:'stone', fxv:'float', d:'אבן קטנה שמרחפת סביב הראש.'},
+  {id:'chime',       he:'פעמון הפתיחה',      en:'Chime of Opening',    slot:'trinket',r:'rare',    p:1000, s:{m:4},       look:'bell',  d:'צלצול אחד פותח כל מנעול.'},
+  {id:'cube',        he:'קוביית הכוח',       en:'Cube of Force',       slot:'trinket',r:'rare',    p:1350, s:{d:6},       look:'cube',  d:'יוצרת קיר שקוף בלתי חדיר.'},
+  {id:'portable',    he:'החור הנייד',        en:'Portable Hole',       slot:'trinket',r:'rare',    p:1400, s:{m:5},       look:'hole',  fx:'potCap', d:'בד שחור שנפרש לבור עמוק.'},
+  {id:'horn',        he:'קרן ואלהאלה',       en:'Horn of Valhalla',    slot:'trinket',r:'rare',    p:1500, s:{a:6},       look:'horn',  d:'תוקעים, ולוחמי רוח באים לעזור.'},
+  {id:'fortress',    he:'המבצר המיידי',      en:'Instant Fortress',    slot:'trinket',r:'rare',    p:1600, s:{d:8},       look:'castle',d:'קוביה קטנה שגדלה למגדל אבן.'},
+  {id:'carpet',      he:'שטיח מעופף',        en:'Carpet of Flying',    slot:'trinket',r:'vrare',   p:3200, s:{d:3,m:8},   look:'carpet',d:'שטיח שטס מעל הרים וימים.'},
+  {id:'deck',        he:'חפיסת הדברים הרבים', en:'Deck of Many Things',slot:'trinket',r:'legend',  p:9000, s:{a:6,d:6,m:6}, look:'cards', fxv:'stars', d:'כל קלף משנה את הגורל, לטוב או לרע.'},
+  {id:'tome_lead',   he:'ספר המנהיגות',      en:'Tome of Leadership and Influence', slot:'tome', r:'vrare', p:2500, s:{d:2,m:1}, look:'book', fx:'permD', d:'סודות של מנהיגים גדולים.'},
+  {id:'tome_quick',  he:'ספר זריזות הפעולה', en:'Manual of Quickness of Action', slot:'tome', r:'vrare', p:2500, s:{a:3}, look:'book', fx:'permA', d:'תנועות מהירות כמו של חתול.'},
+  {id:'tome_under',  he:'ספר ההבנה',         en:'Tome of Understanding', slot:'tome', r:'vrare',   p:2500, s:{m:3},       look:'book', fx:'permM', d:'חוכמה עמוקה שנשארת לתמיד.'},
+  // ---- more SRD potions ----
+  {id:'p_climb',     he:'שיקוי טיפוס',       en:'Potion of Climbing',  slot:'potion', r:'mundane', p:70,   look:'potion', fx:'x15',    d:'מטפסים בקלות כמו עכביש.'},
+  {id:'p_growth',    he:'שיקוי צמיחה',       en:'Potion of Growth',    slot:'potion', r:'uncommon',p:180,  look:'potion', fx:'permD1', d:'גדלים לגובה של ענק לזמן מה.'},
+  {id:'p_speed',     he:'שיקוי מהירות',      en:'Potion of Speed',     slot:'potion', r:'rare',    p:220,  look:'potion', fx:'timer3', d:'הכול סביבך נראה איטי.'},
+  {id:'p_flying',    he:'שיקוי תעופה',       en:'Potion of Flying',    slot:'potion', r:'rare',    p:260,  look:'potion', fx:'x3past', d:'עפים באוויר לכמה דקות.'},
+  {id:'p_mind',      he:'שיקוי קריאת מחשבות', en:'Potion of Mind Reading', slot:'potion', r:'rare', p:300, look:'potion', fx:'permM1', d:'שומעים את המחשבות של אחרים.'},
+  // ---- original items, inspired by the genre (written for this app) ----
+  {id:'o_quill',     he:'נוצת הסופר הנודד',  en:'Wanderer\'s Quill',   slot:'trinket',r:'uncommon',p:480,  s:{m:3},       look:'quill', fx:'goldRead', src:'orig', d:'נוצה שכותבת לבד את מה שקראת.'},
+  {id:'o_compass',   he:'מחוגת המשרטט',      en:'Cartographer\'s Compass', slot:'trinket', r:'uncommon', p:480, s:{m:3},  look:'compass', fx:'goldGeo', src:'orig', d:'מחוגה מכסף שמודדת כל זווית ומרחק.'},
+  {id:'o_lexicon',   he:'מילון הלחשים',      en:'Lexicon of Whispers', slot:'trinket',r:'rare',    p:1100, s:{m:5},       look:'book',  fx:'goldWords', src:'orig', d:'ספר קטן שלוחש לך פירוש של כל מילה.'},
+  {id:'o_hourglass', he:'שעון החול של הבוחן',en:'Examiner\'s Hourglass', slot:'trinket', r:'rare', p:1300, s:{d:2,m:4}, look:'hourglass', fx:'goldSim', src:'orig', d:'החול בו זורם לאט יותר בזמן מבחן.'},
+  {id:'o_inkblade',  he:'להב הדיו',          en:'Inkblade',            slot:'weapon', r:'legend',  p:9200, s:{a:16,m:8},  look:'sword', fxv:'ink', src:'orig', d:'נחשל מדיו של אלף ספרים. כל מכה כותבת סיפור.'},
+  {id:'o_dawnbow',   he:'קשת השחר',          en:'Dawnbow',             slot:'weapon', r:'vrare',   p:3300, s:{a:12,m:3},  look:'bow',   fxv:'rays', src:'orig', d:'החצים שלה בוערים באור הבוקר הראשון.'},
+  {id:'o_owlstaff',  he:'מטה הינשוף',        en:'Owlstaff',            slot:'weapon', r:'rare',    p:1250, s:{a:3,m:9},   look:'staff', fxv:'owl', src:'orig', d:'מטה עם ראש ינשוף מגולף שפוקח עיניים בלילה.'},
+  {id:'o_northaxe',  he:'גרזן הצפון',        en:'Axe of the North',    slot:'weapon', r:'uncommon',p:520,  s:{a:7},       look:'axe',   fxv:'frost', src:'orig', d:'גרזן כפור מהרים שאין בהם קיץ.'},
+  {id:'o_inkscale',  he:'שריון קשקשי הדיו',  en:'Inkscale Mail',       slot:'armor',  r:'vrare',   p:3400, s:{d:12,m:3},  look:'scale', fxv:'ink', src:'orig', d:'כל קשקש בו הוא טיפת דיו שהתקשתה.'},
+  {id:'o_scholar',   he:'גלימת המלומד',      en:'Scholar\'s Robe',     slot:'armor',  r:'uncommon',p:450,  s:{d:2,m:4},   look:'robe',  src:'orig', d:'גלימה עם כיסים לעשרה ספרים.'},
+  {id:'o_bookshield',he:'מגן הספר',          en:'Tomeguard',           slot:'shield', r:'rare',    p:1200, s:{d:6,m:2},   look:'shield', fxv:'book', src:'orig', d:'מגן בצורת ספר סגור. אף לחש לא חודר אותו.'},
+  {id:'o_glasses',   he:'משקפי הלומד',       en:'Spectacles of Study', slot:'head',   r:'uncommon',p:420,  s:{m:4},       look:'glasses', src:'orig', d:'רואים כל אות קטנה, גם בחושך.'},
+  {id:'o_laurel',    he:'זר הדפנה של החכמים',en:'Sage\'s Laurel',      slot:'head',   r:'legend',  p:7400, s:{d:4,m:16},  look:'laurel', fx:'goldAll10', src:'orig', d:'ניתן רק למי שסיים את המסע הארוך.'},
+  {id:'o_streakband',he:'צמיד הרצף',         en:'Band of the Unbroken',slot:'hands',  r:'rare',    p:1300, s:{d:3,m:2},   look:'bracers', fx:'streakX', src:'orig', d:'כל יום ברצף מוסיף לו קו זהב.'},
+  {id:'o_seeingstone',he:'אבן הרואה',        en:'Seer\'s Stone',       slot:'trinket',r:'vrare',   p:3200, s:{m:9},       look:'orb',   fx:'hintDay2', src:'orig', d:'מראה את הדרך הנכונה, פעמיים ביום.'},
+  // ---- companions (original) ----
+  {id:'pet_owl',     he:'ינשוף חכם',         en:'Wise Owl',            slot:'pet',    r:'uncommon',p:500,  s:{m:2},       look:'owl',   fx:'goldAll5', src:'orig', d:'הינשוף של האפליקציה. יושב לך על הכתף ולומד איתך.'},
+  {id:'pet_cat',     he:'חתול שחור',         en:'Black Cat',           slot:'pet',    r:'mundane', p:200,  s:{d:1},       look:'cat',   src:'orig', d:'שקט, סקרן, ותמיד נוחת על הרגליים.'},
+  {id:'pet_raven',   he:'עורב שליח',         en:'Messenger Raven',     slot:'pet',    r:'uncommon',p:420,  s:{m:2},       look:'raven', src:'orig', d:'מביא הודעות מכל מקום בממלכה.'},
+  {id:'pet_fox',     he:'שועל ערמומי',       en:'Clever Fox',          slot:'pet',    r:'uncommon',p:450,  s:{a:1,m:1},   look:'fox',   src:'orig', d:'תמיד מוצא את הדרך הקצרה.'},
+  {id:'pet_wolf',    he:'זאב לבן',           en:'White Wolf',          slot:'pet',    r:'rare',    p:1200, s:{a:4,d:2},   look:'wolf',  src:'orig', d:'נאמן עד הסוף ושומר עליך בלילה.'},
+  {id:'pet_dragon',  he:'דרקון קטן',         en:'Dragon Whelp',        slot:'pet',    r:'vrare',   p:3500, s:{a:5,d:3,m:5}, look:'dragon', fx:'goldAll10', src:'orig', d:'עוד קטן, אבל כבר יורק ניצוצות.'},
+  {id:'pet_griffin', he:'גריפון',            en:'Griffin',             slot:'pet',    r:'legend',  p:8000, s:{a:10,d:6,m:4}, look:'griffin', fx:'streakX', src:'orig', d:'חצי נשר, חצי אריה. אפשר לרכוב עליו.'},
+  // ---- scenes (original, cosmetic) ----
+  {id:'sc_library',  he:'הספרייה העתיקה',    en:'Ancient Library',     slot:'scene',  r:'mundane', p:150,  look:'library', src:'orig', d:'מדפים עד התקרה ואור של נרות.'},
+  {id:'sc_forest',   he:'היער האפל',         en:'Dark Forest',         slot:'scene',  r:'mundane', p:150,  look:'forest',  src:'orig', d:'עצים גבוהים וערפל בין השורשים.'},
+  {id:'sc_castle',   he:'חומות הטירה',       en:'Castle Walls',        slot:'scene',  r:'uncommon',p:400,  look:'castle',  src:'orig', d:'מגדלים, דגלים וגשר שרשראות.'},
+  {id:'sc_mountain', he:'פסגת ההר',          en:'Mountain Peak',       slot:'scene',  r:'rare',    p:1000, look:'mountain',src:'orig', d:'מעל העננים, עם רוח קרה.'},
+  {id:'sc_lair',     he:'מאורת הדרקון',      en:'Dragon\'s Lair',      slot:'scene',  r:'legend',  p:6000, look:'lair',    src:'orig', d:'הרי זהב ועצמות, ועין אחת שנפתחת בחושך.'}
+);
+
+
+const ARMOR_BODY='<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z"/>';
+const ICONS = {
+  sword:'<path d="M26 4l2 2-14 14-2-2z"/><path d="M9 17l6 6M11.5 20.5L6 26"/><circle cx="5" cy="27" r="1.5"/>',
+  bigsword:'<path d="M25 3h4v4L14 22l-4-4z"/><path d="M8 16l8 8M11 21l-5 5"/><circle cx="5" cy="27" r="1.6"/>',
+  dagger:'<path d="M23 7l2 2-9 9-2-2z"/><path d="M11 15l6 6M13.5 18.5L9 23"/><circle cx="8" cy="24" r="1.4"/>',
+  axe:'<path d="M7 27L21 9"/><path d="M17 5c6 0 10 4 10 10-4 0-8-2-10-6z"/>',
+  hammer:'<path d="M7 27l12-14"/><path d="M15 6l9 9-4 4-9-9z"/>',
+  bow:'<path d="M11 4c14 8 14 16 0 24"/><path d="M11 4v24"/><path d="M5 16h19M21 13l3 3-3 3"/>',
+  spear:'<path d="M6 26L22 10"/><path d="M20 7l7-2-2 7z"/>',
+  staff:'<path d="M9 28L20 10"/><circle cx="22" cy="7" r="3.5"/><path d="M27 3l-1.5 1.5M28 8h-2"/>',
+  wand:'<path d="M7 26l12-12"/><path d="M23 4v8M19 8h8M20.5 5.5l5 5M25.5 5.5l-5 5"/>',
+  mace:'<path d="M7 26l10-10"/><circle cx="20" cy="12" r="5"/><path d="M20 4v3M28 12h-3M25.5 6.5l-2 2"/>',
+  leather:ARMOR_BODY+'<path d="M16 10v14" stroke-dasharray="2 2"/>',
+  studded:ARMOR_BODY+'<circle cx="13" cy="15" r=".9" fill="currentColor"/><circle cx="19" cy="15" r=".9" fill="currentColor"/><circle cx="13" cy="20" r=".9" fill="currentColor"/><circle cx="19" cy="20" r=".9" fill="currentColor"/>',
+  scale:ARMOR_BODY+'<path d="M11 14c1.5 2 3.5 2 5 0 1.5 2 3.5 2 5 0M11 19c1.5 2 3.5 2 5 0 1.5 2 3.5 2 5 0"/>',
+  chain:ARMOR_BODY+'<circle cx="13" cy="14" r="1.4"/><circle cx="19" cy="14" r="1.4"/><circle cx="16" cy="18" r="1.4"/><circle cx="13" cy="22" r="1.4"/><circle cx="19" cy="22" r="1.4"/>',
+  plate:ARMOR_BODY+'<path d="M10 15h12M10 19h12M10 23h12M16 8v7"/>',
+  robe:'<path d="M12 5h8l2 4-1 3 4 15H7l4-15-1-3z"/><path d="M16 15l1 2 2 .3-1.5 1.4.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.4 2-.3z"/>',
+  shield:'<path d="M16 4l10 4v7c0 7-4.5 11-10 13-5.5-2-10-6-10-13V8z"/><path d="M16 9v14M11 14h10"/>',
+  cloak:'<path d="M11 6h10l2 4 3 17H6l3-17z"/><path d="M12.5 6c.5 3 6.5 3 7 0M16 12v15"/>',
+  wings:'<path d="M16 11c-4-6-10-6-13-3 3 0 5 2 6 4-3 0-5 2-6 4 3-1 6 0 8 2z"/><path d="M16 11c4-6 10-6 13-3-3 0-5 2-6 4 3 0 5 2 6 4-3-1-6 0-8 2z"/><path d="M16 11v14"/>',
+  helm:'<path d="M7 19c0-7 4-13 9-13s9 6 9 13v6H7z"/><path d="M7 16h18M16 6v10M12 20h2M18 20h2"/>',
+  circlet:'<path d="M5 18c3-5 19-5 22 0"/><path d="M5 18c3 4 19 4 22 0"/><path d="M16 9l2.5 3.5L16 16l-2.5-3.5z"/>',
+  gloves:'<path d="M11 27v-9l-3-6a1.6 1.6 0 0 1 2.8-1.6L13 14V6.5a1.5 1.5 0 0 1 3 0V13V5a1.5 1.5 0 0 1 3 0v8V7a1.5 1.5 0 0 1 3 0v10c0 5-2 8-5 10z"/>',
+  bracers:'<rect x="8" y="7" width="16" height="7" rx="2"/><rect x="8" y="18" width="16" height="7" rx="2"/><path d="M12 7v7M20 7v7M12 18v7M20 18v7"/>',
+  boots:'<path d="M11 4h7v14l8 4v5H8v-5l3-3z"/><path d="M8 24h18M11 9h7"/>',
+  amulet:'<path d="M8 4c0 8 4 11 8 11s8-3 8-11"/><circle cx="16" cy="21" r="5.5"/><path d="M16 18l2 3-2 3-2-3z"/>',
+  ring:'<circle cx="16" cy="19" r="8"/><circle cx="16" cy="19" r="5"/><path d="M13 9l3-5 3 5-3 2z"/>',
+  rope:'<ellipse cx="14" cy="18" rx="9" ry="4"/><ellipse cx="14" cy="15" rx="9" ry="4"/><path d="M23 15c3 0 4 4 2 9"/>',
+  bag:'<path d="M10 12h12l3 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M12 12c0-3.5 1.6-6.5 4-6.5s4 3 4 6.5M10 16h12"/>',
+  stone:'<path d="M7 18c0-6 4-11 9-11s9 4 9 9-4 11-9 11-9-4-9-9z"/><path d="M13 13c1.5-1.5 3-2 5-2"/>',
+  orb:'<circle cx="16" cy="13" r="9"/><path d="M9 28h14l-2-5H11z"/><path d="M11 10c1-2 3-3.5 5-3.5"/>',
+  book:'<rect x="7" y="4" width="18" height="24" rx="2"/><path d="M11 4v24"/><path d="M18 11l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.3-2.4 1.3.5-2.6-1.9-1.8 2.6-.4z"/>',
+  potion:'<path d="M13 4h6M14 4v6l-6 10a6 6 0 0 0 5.2 9h5.6A6 6 0 0 0 24 20l-6-10V4"/><path d="M10 20h12"/>',
+  coin:'<circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="8"/><path d="M16 11.5l1.4 2.9 3.1.4-2.3 2.2.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.2 3.1-.4z"/>'
+};
+Object.assign(ICONS, {
+  trident:'<path d="M8 27L22 13"/><path d="M19 6v6h6M23 4l-1 7 7-1M17 10l5 5"/>',
+  scimitar:'<path d="M26 4c2 8-3 15-12 17l-2-2c8-3 12-8 14-15z"/><path d="M9 17l6 6M11.5 20.5L6 26"/>',
+  goggles:'<circle cx="10" cy="17" r="5"/><circle cx="22" cy="17" r="5"/><path d="M15 17h2M5 15l-2-1M27 15l2-1"/>',
+  hat:'<path d="M5 24c4-2 18-2 22 0"/><path d="M9 23l4-15c1-3 5-3 6 0l4 15"/><path d="M11 18h10"/>',
+  belt:'<path d="M3 13h26v7H3z"/><rect x="12" y="11" width="8" height="11" rx="1.5"/><path d="M16 14v5"/>',
+  brooch:'<circle cx="16" cy="16" r="9"/><path d="M16 9l2 5 5 .5-4 3.5 1.5 5-4.5-3-4.5 3 1.5-5-4-3.5 5-.5z"/>',
+  scarab:'<ellipse cx="16" cy="17" rx="7" ry="9"/><path d="M16 8v18M12 6l2 3M20 6l-2 3M9 13l-4-2M23 13l4-2M9 20l-4 2M23 20l4 2"/>',
+  lantern:'<path d="M12 9h8l1 15H11z"/><path d="M14 9V6h4v3M10 24h12M16 4V2"/><path d="M16 14v5"/>',
+  rod:'<path d="M7 25L25 7"/><circle cx="24" cy="8" r="2.5"/><path d="M14 18l3 3"/>',
+  pearl:'<circle cx="16" cy="17" r="8"/><path d="M12 14c1-2 3-3 5-3"/><path d="M16 4v3M9 7l2 2M23 7l-2 2"/>',
+  broom:'<path d="M24 4L13 17"/><path d="M13 17l-7 8 8-3 4-8z"/><path d="M8 22l3-1M10 19.5l3-1"/>',
+  bell:'<path d="M9 22c0-8 2-14 7-14s7 6 7 14z"/><path d="M6 22h20M16 8V5M14 26a2 2 0 0 0 4 0"/>',
+  cube:'<path d="M16 4l10 5v13l-10 5-10-5V9z"/><path d="M6 9l10 5 10-5M16 14v13"/>',
+  hole:'<ellipse cx="16" cy="18" rx="11" ry="6"/><ellipse cx="16" cy="18" rx="6" ry="3" fill="currentColor"/>',
+  horn:'<path d="M5 22c8 0 14-6 16-14l4 2c-1 9-8 16-20 16z"/><path d="M21 8l4 2"/>',
+  castle:'<path d="M5 27V12h4v3h3v-3h8v3h3v-3h4v15z"/><path d="M13 27v-6a3 3 0 0 1 6 0v6M5 12V9M27 12V9"/>',
+  carpet:'<path d="M4 12c4-2 8 2 12 0s8-2 12 0v8c-4-2-8 2-12 0s-8-2-12 0z"/><path d="M4 12l-1 2M4 20l-1 2M28 12l1 2M28 20l1 2M9 15h14M9 18h14" />',
+  cards:'<rect x="6" y="9" width="13" height="18" rx="2" transform="rotate(-10 12 18)"/><rect x="13" y="6" width="13" height="18" rx="2"/><path d="M19.5 12l1.5 3 3 .4-2.2 2 .5 3-2.8-1.4-2.8 1.4.5-3-2.2-2 3-.4z"/>',
+  quill:'<path d="M26 4C14 6 8 14 7 25"/><path d="M26 4c-1 9-7 15-16 16"/><path d="M5 28l2-3"/>',
+  compass:'<circle cx="16" cy="6" r="2.5"/><path d="M15 8L8 27M17 8l7 19M11 19h10"/>',
+  hourglass:'<path d="M8 4h16M8 28h16M10 4c0 7 12 9 12 12s-12 5-12 12M22 4c0 7-12 9-12 12s12 5 12 12"/><path d="M13 24h6"/>',
+  glasses:'<circle cx="9" cy="18" r="5"/><circle cx="23" cy="18" r="5"/><path d="M14 17c1-1 3-1 4 0M4 17l-1-4M28 17l1-4"/>',
+  laurel:'<path d="M16 26C8 24 5 17 6 9M16 26c8-2 11-9 10-17"/><path d="M7 12l-3-1M7 16l-3 0M9 20l-3 1M25 12l3-1M25 16l3 0M23 20l3 1"/>',
+  owl:'<path d="M8 10l3 3h10l3-3v12c0 4-4 6-8 6s-8-2-8-6z"/><circle cx="12.5" cy="16" r="2.5"/><circle cx="19.5" cy="16" r="2.5"/><path d="M15 20l1 1.5 1-1.5"/>',
+  cat:'<path d="M8 27c-1-6 0-10 3-12V7l3 4h4l3-4v8c3 2 4 6 3 12z"/><path d="M13 16h.01M19 16h.01M24 27c3 0 4-3 3-6"/>',
+  raven:'<path d="M5 18c4-6 10-8 16-6l6-2-3 4c1 6-4 12-12 12l-4 4 1-6c-2-1-3-3-4-6z"/><circle cx="20" cy="15" r=".8" fill="currentColor"/>',
+  fox:'<path d="M6 6l5 7h10l5-7-1 11c-1 5-5 9-9 9s-8-4-9-9z"/><path d="M12.5 17h.01M19.5 17h.01M14 22l2 2 2-2"/>',
+  wolf:'<path d="M7 5l4 8h10l4-8 1 12-5 6-5 4-5-4-5-6z"/><path d="M12.5 16h.01M19.5 16h.01M14 22h4"/>',
+  dragon:'<path d="M5 22c2-8 8-12 14-11l3-6 2 6c3 1 5 4 5 7l-4-1c0 5-5 9-11 9-4 0-7-1-9-4z"/><path d="M12 14l-6-5 2 7M19 17h.01"/>',
+  griffin:'<path d="M4 20c3-6 8-9 13-8l4-6 1 5 6 1-4 3c1 5-3 10-9 10-5 0-9-2-11-5z"/><path d="M9 17l-5-7 7 3M20 15h.01"/>',
+  library:'<path d="M4 27h24M6 27V6h20v21"/><path d="M6 13h20M6 20h20M9 6v7M12 8v5M15 6v7M20 13v7M23 15v5M10 20v7M17 22v5"/>',
+  forest:'<path d="M9 27V20M9 20l-5 0 5-8-3 0 3-7 3 7-3 0 5 8zM22 27v-6M22 21l-6 0 6-10-4 0 4-7 4 7-4 0 6 10z"/>',
+  mountain:'<path d="M3 26l9-15 5 8 4-5 8 12z"/><path d="M10 15l2-4 2 3M24 7a3 3 0 1 0 .01 0"/>',
+  lair:'<path d="M3 26c2-12 8-19 13-19s11 7 13 19z"/><path d="M10 26c1-3 3-5 6-5s5 2 6 5"/><path d="M14 15c1-1 3-1 4 0-1 1-3 1-4 0z"/>'
+});
+
+/* soft colour fills drawn under the ink icons (inspired by illustrated RPG item sheets) */
+const IC = {steel:'#D9D6CF', blade:'#ECE6DA', wood:'#B79A78', leather:'#C9A57A', gold:'#E3C276', gem:'#C8525C', teal:'#7DBDB4', purple:'#A28DBF', red:'#D9706D', paper:'#F1E6CF', dark:'#55505A', green:'#8DB08A'};
+const ICON_FILLS = {
+  sword:'<path d="M26 4l2 2-14 14-2-2z" fill="'+IC.blade+'"/>',
+  bigsword:'<path d="M25 3h4v4L14 22l-4-4z" fill="'+IC.blade+'"/>',
+  dagger:'<path d="M23 7l2 2-9 9-2-2z" fill="'+IC.blade+'"/>',
+  scimitar:'<path d="M26 4c2 8-3 15-12 17l-2-2c8-3 12-8 14-15z" fill="'+IC.blade+'"/>',
+  axe:'<path d="M17 5c6 0 10 4 10 10-4 0-8-2-10-6z" fill="'+IC.steel+'"/><path d="M7 27L21 9" stroke="'+IC.wood+'" stroke-width="4"/>',
+  hammer:'<path d="M15 6l9 9-4 4-9-9z" fill="'+IC.steel+'"/><path d="M7 27l12-14" stroke="'+IC.wood+'" stroke-width="4"/>',
+  mace:'<circle cx="20" cy="12" r="5" fill="'+IC.steel+'"/><path d="M7 26l10-10" stroke="'+IC.wood+'" stroke-width="4"/>',
+  spear:'<path d="M20 7l7-2-2 7z" fill="'+IC.steel+'"/><path d="M6 26L22 10" stroke="'+IC.wood+'" stroke-width="4"/>',
+  trident:'<path d="M8 27L22 13" stroke="'+IC.wood+'" stroke-width="4"/>',
+  staff:'<path d="M9 28L20 10" stroke="'+IC.wood+'" stroke-width="4"/><circle cx="22" cy="7" r="3.5" fill="'+IC.teal+'"/>',
+  wand:'<path d="M7 26l12-12" stroke="'+IC.wood+'" stroke-width="4"/>',
+  bow:'<path d="M11 4c14 8 14 16 0 24" stroke="'+IC.wood+'" stroke-width="4" fill="none"/>',
+  leather:'<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z" fill="'+IC.leather+'"/>',
+  studded:'<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z" fill="'+IC.leather+'"/>',
+  scale:'<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z" fill="'+IC.steel+'"/>',
+  chain:'<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z" fill="'+IC.steel+'"/>',
+  plate:'<path d="M10 6l3 2h6l3-2 5 4-3 5-2-1v12H10V14l-2 1-3-5z" fill="'+IC.steel+'"/>',
+  robe:'<path d="M12 5h8l2 4-1 3 4 15H7l4-15-1-3z" fill="'+IC.purple+'"/>',
+  shield:'<path d="M16 4l10 4v7c0 7-4.5 11-10 13-5.5-2-10-6-10-13V8z" fill="'+IC.wood+'"/>',
+  cloak:'<path d="M11 6h10l2 4 3 17H6l3-17z" fill="'+IC.green+'"/>',
+  wings:'<path d="M16 11c-4-6-10-6-13-3 3 0 5 2 6 4-3 0-5 2-6 4 3-1 6 0 8 2zM16 11c4-6 10-6 13-3-3 0-5 2-6 4 3 0 5 2 6 4-3-1-6 0-8 2z" fill="'+IC.paper+'"/>',
+  helm:'<path d="M7 19c0-7 4-13 9-13s9 6 9 13v6H7z" fill="'+IC.steel+'"/>',
+  hat:'<path d="M9 23l4-15c1-3 5-3 6 0l4 15z" fill="'+IC.purple+'"/>',
+  circlet:'<path d="M16 9l2.5 3.5L16 16l-2.5-3.5z" fill="'+IC.gem+'"/>',
+  goggles:'<circle cx="10" cy="17" r="5" fill="'+IC.teal+'"/><circle cx="22" cy="17" r="5" fill="'+IC.teal+'"/>',
+  glasses:'<circle cx="9" cy="18" r="5" fill="'+IC.paper+'"/><circle cx="23" cy="18" r="5" fill="'+IC.paper+'"/>',
+  laurel:'<path d="M16 26C8 24 5 17 6 9M16 26c8-2 11-9 10-17" stroke="'+IC.green+'" stroke-width="4" fill="none"/>',
+  gloves:'<path d="M11 27v-9l-3-6a1.6 1.6 0 0 1 2.8-1.6L13 14V6.5a1.5 1.5 0 0 1 3 0V13V5a1.5 1.5 0 0 1 3 0v8V7a1.5 1.5 0 0 1 3 0v10c0 5-2 8-5 10z" fill="'+IC.leather+'"/>',
+  bracers:'<rect x="8" y="7" width="16" height="7" rx="2" fill="'+IC.leather+'"/><rect x="8" y="18" width="16" height="7" rx="2" fill="'+IC.leather+'"/>',
+  boots:'<path d="M11 4h7v14l8 4v5H8v-5l3-3z" fill="'+IC.leather+'"/>',
+  belt:'<path d="M3 13h26v7H3z" fill="'+IC.leather+'"/><rect x="12" y="11" width="8" height="11" rx="1.5" fill="'+IC.gold+'"/>',
+  amulet:'<circle cx="16" cy="21" r="5.5" fill="'+IC.gold+'"/><path d="M16 18l2 3-2 3-2-3z" fill="'+IC.gem+'"/>',
+  ring:'<circle cx="16" cy="19" r="8" fill="'+IC.gold+'"/><circle cx="16" cy="19" r="5" fill="#FBF6EE"/><path d="M13 9l3-5 3 5-3 2z" fill="'+IC.gem+'"/>',
+  brooch:'<circle cx="16" cy="16" r="9" fill="'+IC.gold+'"/>',
+  scarab:'<ellipse cx="16" cy="17" rx="7" ry="9" fill="'+IC.teal+'"/>',
+  rope:'<ellipse cx="14" cy="16.5" rx="9" ry="5" fill="'+IC.wood+'"/>',
+  bag:'<path d="M10 12h12l3 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z" fill="'+IC.leather+'"/>',
+  stone:'<path d="M7 18c0-6 4-11 9-11s9 4 9 9-4 11-9 11-9-4-9-9z" fill="'+IC.teal+'"/>',
+  orb:'<circle cx="16" cy="13" r="9" fill="'+IC.teal+'"/><path d="M9 28h14l-2-5H11z" fill="'+IC.wood+'"/>',
+  book:'<rect x="7" y="4" width="18" height="24" rx="2" fill="'+IC.dark+'"/>',
+  potion:'<path d="M10 20h12l2 1a6 6 0 0 1-5.2 8h-5.6A6 6 0 0 1 8 21z" fill="'+IC.red+'"/>',
+  lantern:'<path d="M12 9h8l1 15H11z" fill="'+IC.gold+'"/>',
+  rod:'<path d="M7 25L25 7" stroke="'+IC.steel+'" stroke-width="4"/>',
+  pearl:'<circle cx="16" cy="17" r="8" fill="'+IC.paper+'"/>',
+  broom:'<path d="M13 17l-7 8 8-3 4-8z" fill="'+IC.gold+'"/>',
+  bell:'<path d="M9 22c0-8 2-14 7-14s7 6 7 14z" fill="'+IC.gold+'"/>',
+  cube:'<path d="M16 4l10 5v13l-10 5-10-5V9z" fill="'+IC.teal+'"/>',
+  horn:'<path d="M5 22c8 0 14-6 16-14l4 2c-1 9-8 16-20 16z" fill="'+IC.paper+'"/>',
+  castle:'<path d="M5 27V12h4v3h3v-3h8v3h3v-3h4v15z" fill="'+IC.steel+'"/>',
+  carpet:'<path d="M4 12c4-2 8 2 12 0s8-2 12 0v8c-4-2-8 2-12 0s-8-2-12 0z" fill="'+IC.gem+'"/>',
+  cards:'<rect x="13" y="6" width="13" height="18" rx="2" fill="'+IC.paper+'"/>',
+  quill:'<path d="M26 4C14 6 8 14 7 25c9-1 15-7 19-21z" fill="'+IC.paper+'"/>',
+  hourglass:'<path d="M10 4c0 7 12 9 12 12s-12 5-12 12h12c0-7-12-9-12-12s12-5 12-12z" fill="'+IC.gold+'"/>',
+  coin:'<circle cx="16" cy="16" r="12" fill="'+IC.gold+'"/>',
+  owl:'<path d="M8 10l3 3h10l3-3v12c0 4-4 6-8 6s-8-2-8-6z" fill="'+IC.leather+'"/>',
+  fox:'<path d="M6 6l5 7h10l5-7-1 11c-1 5-5 9-9 9s-8-4-9-9z" fill="'+IC.red+'"/>',
+  wolf:'<path d="M7 5l4 8h10l4-8 1 12-5 6-5 4-5-4-5-6z" fill="'+IC.steel+'"/>',
+  dragon:'<path d="M5 22c2-8 8-12 14-11l3-6 2 6c3 1 5 4 5 7l-4-1c0 5-5 9-11 9-4 0-7-1-9-4z" fill="'+IC.green+'"/>',
+  griffin:'<path d="M4 20c3-6 8-9 13-8l4-6 1 5 6 1-4 3c1 5-3 10-9 10-5 0-9-2-11-5z" fill="'+IC.gold+'"/>',
+  library:'<path d="M6 6h20v21H6z" fill="'+IC.wood+'"/>',
+  forest:'<path d="M9 20l-5 0 5-8-3 0 3-7 3 7-3 0 5 8zM22 21l-6 0 6-10-4 0 4-7 4 7-4 0 6 10z" fill="'+IC.green+'"/>',
+  mountain:'<path d="M3 26l9-15 5 8 4-5 8 12z" fill="'+IC.steel+'"/>',
+  lair:'<path d="M3 26c2-12 8-19 13-19s11 7 13 19z" fill="'+IC.dark+'"/>'
+};
+const POTION_COLORS = {p_heal:IC.red, p_clair:IC.teal, p_resist:IC.purple, p_hero:IC.gold, p_giant:IC.wood, p_climb:IC.green, p_growth:IC.green, p_speed:IC.gold, p_flying:IC.teal, p_mind:IC.purple, decanter:IC.teal};
+function iconSVG(look, id, sw){
+  let fill = ICON_FILLS[look] || '';
+  if(look === 'potion' && POTION_COLORS[id]) fill = fill.replace(IC.red, POTION_COLORS[id]);
+  return '<svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="none">' + fill + '</g><g fill="none" stroke="#111" stroke-width="' + (sw || 2) + '" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[look] || '') + '</g></svg>';
+}
+
+/* Ink hero renderer: returns an SVG string for a hero with equipped items. viewBox 0 0 260 300. */
+const HK = '#111111', HP = '#FBF6EE', HP2 = '#EFE6D6', HG = '#CFC5B3';
+function star4(x, y, r, cls){ return '<path class="' + (cls || 'tw') + '" d="M' + x + ' ' + (y - r) + 'C' + (x + r * .18) + ' ' + (y - r * .18) + ' ' + (x + r * .18) + ' ' + (y - r * .18) + ' ' + (x + r) + ' ' + y + 'C' + (x + r * .18) + ' ' + (y + r * .18) + ' ' + (x + r * .18) + ' ' + (y + r * .18) + ' ' + x + ' ' + (y + r) + 'C' + (x - r * .18) + ' ' + (y + r * .18) + ' ' + (x - r * .18) + ' ' + (y + r * .18) + ' ' + (x - r) + ' ' + y + 'C' + (x - r * .18) + ' ' + (y - r * .18) + ' ' + (x - r * .18) + ' ' + (y - r * .18) + ' ' + x + ' ' + (y - r) + 'Z" fill="' + HK + '" style="transform-origin:' + x + 'px ' + y + 'px"/>'; }
+function g(cls, inner, extra){ return '<g class="' + cls + '"' + (extra || '') + '>' + inner + '</g>'; }
+const S = 'stroke="' + HK + '" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+const S2 = 'stroke="' + HK + '" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"';
+
+/* ---------- effects (fxv) drawn around a local origin ---------- */
+const FXV = {
+  glow: (h) => '<g class="fx-glow">' + star4(-14, -h * .7, 6) + star4(15, -h * .45, 4.5) + star4(-10, -h * .2, 3.5) + '</g>',
+  stars: (h) => '<g class="fx-glow">' + star4(-16, -h * .8, 6) + star4(16, -h * .55, 5) + star4(-14, -h * .3, 4) + star4(14, -h * .1, 3.5) + '</g>',
+  flame: (h) => '<g class="fx-flame">' + [0, 1, 2, 3].map(i => '<path class="fl fl' + i + '" d="M' + (i % 2 ? 5 : -5) + ' ' + (-h * (.25 + i * .18)) + 'c' + (i % 2 ? 10 : -10) + ' -6 ' + (i % 2 ? 6 : -6) + ' -18 ' + (i % 2 ? 2 : -2) + ' -24c' + (i % 2 ? 8 : -8) + ' 4 ' + (i % 2 ? 10 : -10) + ' 14 ' + (i % 2 ? -2 : 2) + ' 24z" fill="' + HP + '" ' + S2 + ' style="transform-origin:0px ' + (-h * (.25 + i * .18)) + 'px"/>').join('') + '</g>',
+  frost: (h) => '<g class="fx-frost">' + [[-15, .75], [14, .5], [-12, .25]].map(([x, f], i) => '<g class="flake" style="animation-delay:' + i * .5 + 's;transform-origin:' + x + 'px ' + (-h * f) + 'px"><path d="M' + (x - 6) + ' ' + (-h * f) + 'h12M' + x + ' ' + (-h * f - 6) + 'v12M' + (x - 4.2) + ' ' + (-h * f - 4.2) + 'l8.4 8.4M' + (x + 4.2) + ' ' + (-h * f - 4.2) + 'l-8.4 8.4" ' + S2 + '/></g>').join('') + '</g>',
+  bolt: (h) => '<g class="fx-bolt"><path d="M-14 ' + (-h * .9) + 'l8 12-7 4 10 16-6 3 9 14" fill="none" ' + S2 + '/><path d="M15 ' + (-h * .6) + 'l-7 10 6 3-8 13" fill="none" ' + S2 + '/></g>',
+  holy: (h) => '<g class="fx-holy" style="transform-origin:0px ' + (-h * .6) + 'px">' + Array.from({length: 12}, (_, i) => { const a = i * Math.PI / 6, r1 = 20, r2 = 30, cy = -h * .6; return '<path d="M' + (Math.cos(a) * r1).toFixed(1) + ' ' + (cy + Math.sin(a) * r1).toFixed(1) + 'L' + (Math.cos(a) * r2).toFixed(1) + ' ' + (cy + Math.sin(a) * r2).toFixed(1) + '" ' + S2 + '/>'; }).join('') + '</g>',
+  rays: (h) => FXV.holy(h),
+  runes: (h) => '<g class="fx-runes">' + [.25, .45, .65].map(f => '<path d="M-2 ' + (-h * f) + 'l4 -4m-4 0l4 4" stroke="' + HP + '" stroke-width="1.6" stroke-linecap="round"/>').join('') + '</g>',
+  vorpal: (h) => '<path class="fx-swoosh" d="M-30 ' + (-h * .2) + 'Q-38 ' + (-h * 1.05) + ' 22 ' + (-h * .95) + '" fill="none" stroke="' + HK + '" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 7"/>',
+  drip: (h) => '<g class="fx-drip">' + [0, 1].map(i => '<path class="dr" style="animation-delay:' + i * .9 + 's" d="M' + (i ? 3 : -3) + ' ' + (-h * .5) + 'q-3 5 0 7q3 -2 0 -7z" fill="' + HK + '"/>').join('') + '</g>',
+  cracks: (h) => '<path d="M-2 ' + (-h * .3) + 'l3 -6 -2 -5 3 -6M-1 ' + (-h * .6) + 'l2 -5 -2 -4" fill="none" stroke="' + HP + '" stroke-width="1.6"/>' + '<g class="fx-glow">' + star4(14, -h * .5, 4) + '</g>',
+  ink: (h) => '<g class="fx-ink">' + [0, 1, 2].map(i => '<circle class="dr" style="animation-delay:' + i * .6 + 's" cx="' + (i - 1) * 7 + '" cy="' + (-h * (.3 + i * .2)) + '" r="' + (3 - i * .5) + '" fill="' + HK + '"/>').join('') + '<path class="fx-swoosh" d="M-22 ' + (-h * .9) + 'q-10 30 4 52" fill="none" stroke="' + HK + '" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 9"/></g>',
+  ghost: () => '',
+  float: () => '',
+  speed: (h) => '<g class="fx-speed"><path d="M18 ' + (-h * .7) + 'h16M22 ' + (-h * .5) + 'h14M18 ' + (-h * .3) + 'h12" ' + S2 + '/></g>',
+  leaf: (h) => '<g class="fx-leaf">' + [0, 1].map(i => '<path class="lf" style="animation-delay:' + i * 1.4 + 's" d="M' + (i ? 12 : -14) + ' ' + (-h * (.6 - i * .2)) + 'q6 -6 10 0q-6 6 -10 0z" fill="' + HP2 + '" ' + S2 + '/>').join('') + '</g>',
+  orb: (h) => '<g class="fx-orb"><circle cx="0" cy="' + (-h - 8) + '" r="13" fill="none" ' + S2 + ' stroke-dasharray="3 5"/><circle cx="0" cy="' + (-h - 8) + '" r="19" fill="none" ' + S2 + ' stroke-dasharray="2 8"/></g>',
+  gems: (h) => '<g class="fx-glow">' + star4(-12, -h * .7, 5) + star4(13, -h * .4, 4) + '</g>',
+  dragon: (h) => FXV.cracks(h), eyes: () => '', web: () => '', arrows: () => '', bat: () => '', book: () => '', owl: () => '', wings: () => ''
+};
+
+/* ===== v2 geometry: adult proportions, bold ink fills, sword across the body ===== */
+const HAND_R = [164, 150], HAND_L = [82, 150];
+
+/* weapons: local grip at 0,0, pointing up (-y). Placement per type. */
+function weaponSVG(it){
+  const L = it.look, fx = it.fxv;
+  let body = '', h = 100, rot = 225;
+  const bladeFill = fx === 'ink' ? HK : HP;
+  const blade = (w, len, tip) => '<path d="M' + (-w) + ' -9L' + (-w + .5) + ' ' + (-len) + 'L0 ' + (-len - tip) + 'L' + (w - .5) + ' ' + (-len) + 'L' + w + ' -9Z" fill="' + bladeFill + '" ' + S + '/><path d="M' + (w * .35) + ' -14L' + (w * .3) + ' ' + (-len + 4) + '" stroke="' + (fx === 'ink' ? HP : HK) + '" stroke-width="1.6"/>';
+  const hilt = (gw) => '<path d="M' + (-gw) + ' -13L' + gw + ' -13L' + (gw - 2) + ' -6L' + (-gw + 2) + ' -6Z" fill="' + HK + '"/><rect x="-3.5" y="-6" width="7" height="22" fill="' + HK + '"/><circle cx="0" cy="20" r="5.5" fill="' + HP + '" ' + S + '/>';
+  const haft = (top, bot) => '<path d="M-3.5 ' + top + 'L3.5 ' + top + 'L3.5 ' + bot + 'L-3.5 ' + bot + 'Z" fill="' + HK + '"/>';
+  switch(L){
+    case 'sword': h = 120; body = blade(5, 108, 14) + hilt(17) + (fx === 'holy' ? '<path d="M-17 -10q-12 -8 -10 -22M17 -10q12 -8 10 -22" fill="none" ' + S + '/>' : ''); break;
+    case 'bigsword': h = 140; body = blade(7, 128, 16) + hilt(21); break;
+    case 'scimitar': h = 116; body = '<path d="M-5 -9C-10 -44 -4 -88 20 -118C12 -88 8 -48 6 -9Z" fill="' + bladeFill + '" ' + S + '/>' + hilt(15); break;
+    case 'dagger': h = 60; body = blade(4, 50, 10) + hilt(12); rot = 200; break;
+    case 'axe': h = 110; body = haft(-104, 26) + '<path d="M3 -100L34 -112L42 -70L3 -76Z" fill="' + HP + '" ' + S + '/><path d="M3 -98L-16 -92L-18 -80L3 -82Z" fill="' + HK + '"/>'; rot = 22; break;
+    case 'hammer': h = 110; body = haft(-92, 26) + '<path d="M-24 -112H24V-88H-24Z" fill="' + HP + '" ' + S + '/><path d="M-24 -100H24" ' + S2 + '/><path d="M8 -112V-88M14 -112V-88" ' + S2 + '/>'; rot = 22; break;
+    case 'mace': h = 104; body = haft(-82, 26) + '<path d="M0 -112L12 -102L12 -84L0 -74L-12 -84L-12 -102Z" fill="' + HP + '" ' + S + '/><path d="M0 -112V-74M-12 -93H12" ' + S2 + '/>'; rot = 22; break;
+    case 'spear': h = 160; body = haft(-130, 110) + '<path d="M-8 -128L0 -160L8 -128Z" fill="' + HP + '" ' + S + '/>'; rot = -6; break;
+    case 'trident': h = 150; body = haft(-122, 110) + '<path d="M-15 -122H15M-15 -122V-142M15 -122V-142M0 -122V-150" fill="none" ' + S + '/>'; rot = -6; break;
+    case 'staff': h = 150; body = haft(-136, 116) + (fx === 'owl'
+      ? '<path d="M-14 -138l4 -9 4 5h12l4 -5 4 9v10c0 8 -6 12 -14 12s-14 -4 -14 -12z" fill="' + HP + '" ' + S + '/><circle cx="-5" cy="-130" r="3.5" fill="' + HK + '" class="blink"/><circle cx="5" cy="-130" r="3.5" fill="' + HK + '" class="blink"/>'
+      : '<path d="M0 -156L11 -144L0 -132L-11 -144Z" fill="' + (fx === 'orb' ? HP : HK) + '" ' + S + '/><path d="M-6 -134L-3 -124M6 -134L3 -124" ' + S + '/>'); rot = 0; break;
+    case 'wand': h = 64; body = '<path d="M-3 -52L3 -52L4 12L-4 12Z" fill="' + HK + '"/>' + star4(0, -62, 10); rot = -30; break;
+    case 'bow': h = 160; body = '<path d="M2 -88Q-50 0 2 88" fill="none" stroke="' + HK + '" stroke-width="7" stroke-linecap="round"/><path d="M2 -88Q-50 0 2 88" fill="none" stroke="' + HP + '" stroke-width="2.4" stroke-linecap="round"/><path d="M2 -88L2 88" stroke="' + HK + '" stroke-width="1.6"/>'; rot = 0; break;
+  }
+  const place = 'translate(' + HAND_R[0] + ' ' + HAND_R[1] + ') rotate(' + rot + ')';
+  const bob = (fx === 'float' || fx === 'ghost') ? ' bob' : '';
+  const eff = fx && FXV[fx] ? FXV[fx](h) : '';
+  return '<g transform="' + place + '"><g class="eq w-sway' + bob + '">' + (fx === 'holy' || fx === 'rays' ? eff + body : body + eff) + '</g></g>';
+}
+
+/* shield: big heater on the viewer-left forearm, hatched shadow on one side */
+function shieldSVG(it){
+  const fx = it.fxv;
+  let s;
+  if(fx === 'book') s = '<path d="M-30 -48H30V48H-30Z" fill="' + HP + '" ' + S + '/><path d="M-20 -48V48" ' + S + '/><path d="M6 -10l4 8 9 1-6 6 2 9-9 -4-9 4 2 -9-6 -6 9 -1z" fill="' + HK + '"/>';
+  else {
+    s = '<path d="M-34 -50L34 -50L34 6Q30 40 0 58Q-30 40 -34 6Z" fill="' + HP + '" ' + S + '/>';
+    s += '<path d="M0 -50V58" ' + S2 + '/><path d="M6 -44V48M12 -44V40M18 -44V32M24 -44V22M30 -44V8" stroke="' + HK + '" stroke-width="1.4"/>';
+    if(fx === 'runes') s += '<circle cx="-14" cy="-6" r="10" fill="none" ' + S2 + ' stroke-dasharray="3 4" class="spin"/>';
+    else if(fx === 'holy') s += '<path d="M-14 -30V20M-26 -10H-2" stroke="' + HK + '" stroke-width="5"/>';
+    else if(fx === 'arrows') s += '<path d="M-12 -18l-24 -14M-18 14l-20 4" ' + S2 + '/><path d="M-36 -32l-1 5M-36 -32l5 0M-38 18l3 -4M-38 18l4 3" ' + S2 + '/>';
+    else if(fx === 'glow') s += star4(-30, -50, 7);
+  }
+  return '<g transform="translate(' + (HAND_L[0] - 6) + ' ' + (HAND_L[1] + 4) + ') rotate(-6)"><g class="eq' + (fx === 'float' ? ' bob' : '') + '">' + s + '</g></g>';
+}
+
+function torsoPath(f){ return f ? 'M98 100L146 100L142 138L152 174L92 174L102 138Z' : 'M92 100L152 100L158 174L86 174Z'; }
+function armorSVG(it, f){
+  const L = it.look, fx = it.fxv, tp = torsoPath(f);
+  if(L === 'robe'){
+    const dark = it.id === 'archmagi' || it.id === 'robe_stars';
+    let r = '<path d="M92 98L152 98L172 262L72 262Z" fill="' + (dark ? HK : HP) + '" ' + S + '/><path d="M122 104V262" stroke="' + (dark ? HP : HK) + '" stroke-width="2"/><path d="M104 98L122 120L140 98" fill="none" stroke="' + (dark ? HP : HK) + '" stroke-width="2.6"/>';
+    if(!dark) r += '<path d="M134 140V250M140 150V252M146 166V254" stroke="' + HK + '" stroke-width="1.3"/>';
+    if(dark || fx === 'stars') r += '<g class="fx-glow">' + [[100, 190], [146, 206], [110, 238], [142, 160]].map(([x, y]) => star4(x, y, 5).replace('fill="' + HK + '"', 'fill="' + HP + '"')).join('') + '</g>';
+    if(fx === 'eyes') r += [[104, 180], [140, 180], [98, 220], [146, 222], [122, 200]].map(([x, y]) => '<path d="M' + (x - 6) + ' ' + y + 'q6 -6 12 0q-6 6 -12 0z" fill="' + HP + '" ' + S2 + '/><circle cx="' + x + '" cy="' + y + '" r="1.8" fill="' + HK + '" class="blink"/>').join('');
+    if(fx === 'runes') r += '<g class="fx-runes">' + [[102, 230], [142, 230], [122, 252]].map(([x, y]) => '<path d="M' + (x - 4) + ' ' + (y - 4) + 'l8 8m-8 0l8 -8M' + x + ' ' + (y - 6) + 'v12" stroke="' + (dark ? HP : HK) + '" stroke-width="1.6"/>').join('') + '</g>';
+    return g('eq', r);
+  }
+  const fills = {leather: HP, studded: HP, scale: 'url(#pScale)', chain: 'url(#pChain)', plate: HP};
+  let a = '<path d="' + tp + '" fill="' + (fx === 'ink' ? 'url(#pScaleInk)' : fills[L] || HP) + '" ' + S + '/>';
+  if(L === 'leather' || L === 'studded') a += '<path d="M122 104V172" ' + S2 + '/><path d="M138 108V170M144 112V170M150 120V170" stroke="' + HK + '" stroke-width="1.3"/>';
+  if(L === 'studded') a += [[104, 126], [104, 146], [130, 126], [130, 146], [104, 164], [130, 164]].map(([x, y]) => '<circle cx="' + x + '" cy="' + y + '" r="2.4" fill="' + HK + '"/>').join('');
+  if(L === 'plate') a += '<path d="M' + (f ? 102 : 90) + ' 136H' + (f ? 142 : 155) + 'M' + (f ? 98 : 88) + ' 154H' + (f ? 148 : 157) + 'M122 100V136" ' + S2 + '/><path d="M140 104V134M146 106V134M146 140V152M152 142V152" stroke="' + HK + '" stroke-width="1.3"/>';
+  if(L === 'plate' || L === 'scale' || fx === 'dragon') a += '<path d="M78 112L84 96L104 98L102 116Z" fill="' + HP + '" ' + S + '/><path d="M166 112L160 96L140 98L142 116Z" fill="' + HP + '" ' + S + '/><path d="M150 100L148 112M156 100L154 112" stroke="' + HK + '" stroke-width="1.3"/>';
+  if(fx === 'leaf') a += '<g class="fx-leaf"><path d="M106 128q8 -8 14 0q-8 8 -14 0z" fill="' + HP + '" ' + S2 + '/><path d="M126 150q8 -8 14 0q-8 8 -14 0z" fill="' + HP + '" ' + S2 + '/></g>';
+  if(fx === 'runes') a += '<g class="fx-runes">' + [[108, 128], [138, 128], [122, 156]].map(([x, y]) => '<path d="M' + (x - 4) + ' ' + (y - 4) + 'l8 8m-8 0l8 -8" stroke="' + HK + '" stroke-width="2"/>').join('') + '</g>';
+  if(fx === 'cracks') a += '<path d="M110 116l6 8-4 8 6 8M138 130l-5 7 4 7" fill="none" ' + S2 + '/>';
+  if(fx === 'glow' || fx === 'holy') a += '<g class="fx-glow">' + star4(152, 112, 6) + star4(92, 156, 4) + '</g>';
+  if(fx === 'holy') a += '<path d="M122 110V146M110 124H134" stroke="' + HK + '" stroke-width="5"/>';
+  const ghost = fx === 'ghost' ? '<g class="ghost" opacity=".25"><path d="' + tp + '" fill="' + HP + '" ' + S + '/></g>' : '';
+  return g('eq', ghost + a);
+}
+
+function cloakBack(it){
+  const fx = it.fxv, L = it.look;
+  if(L === 'wings') return g('eq wings', '<g class="wingL" style="transform-origin:100px 108px"><path d="M100 108C62 70 18 74 6 98C28 96 38 106 42 116C20 118 12 132 12 146C34 136 50 140 60 152C56 138 76 120 100 124Z" fill="' + HP + '" ' + S + '/><path d="M42 116c14 0 26 2 38 6M60 152c6 -10 16 -18 30 -22" fill="none" ' + S2 + '/></g><g class="wingR" style="transform-origin:144px 108px"><path d="M144 108C182 70 226 74 238 98C216 96 206 106 202 116C224 118 232 132 232 146C210 136 194 140 184 152C188 138 168 120 144 124Z" fill="' + HP + '" ' + S + '/><path d="M202 116c-14 0 -26 2 -38 6M184 152c-6 -10 -16 -18 -30 -22" fill="none" ' + S2 + '/></g>');
+  const bottom = fx === 'bat' ? 'Q62 254 74 266Q86 254 98 266Q110 254 122 266Q134 254 146 266Q158 254 170 266Q182 254 194 266' : 'L194 266';
+  let c = '<path d="M94 96Q52 170 50 266' + bottom + 'Q192 170 150 96Z" fill="' + HK + '" ' + S + '/><path d="M62 180q-6 40 -8 82M182 180q6 40 8 82" stroke="' + HP + '" stroke-width="1.4" opacity=".55" fill="none"/>';
+  if(fx === 'web') c += '<path d="M122 110L74 260M122 110L122 264M122 110L170 260M86 180q36 -10 72 0M76 222q46 -12 92 0" fill="none" stroke="' + HP + '" stroke-width="1.3" opacity=".8"/>';
+  if(fx === 'leaf') c += '<path d="M62 240q10 -10 18 0q-10 10 -18 0zM162 230q10 -10 18 0q-10 10 -18 0z" fill="' + HP + '"/>';
+  if(fx === 'ghost') c = '<g class="ghost" opacity=".3">' + c + '</g>' + c;
+  return g('eq cloak', c);
+}
+function cloakFront(it){ return it.look === 'wings' ? '' : g('eq', '<path d="M98 100L106 108M146 100L138 108" ' + S + '/><circle cx="122" cy="102" r="5" fill="' + HP + '" ' + S2 + '/>'); }
+
+/* head gear: head box x 100..144, y 34..96, eyes at y 64 */
+function headSVG(it){
+  const L = it.look, fx = it.fxv;
+  let s = '';
+  if(L === 'helm'){
+    s = '<path d="M98 40Q122 28 146 40L148 90Q122 98 96 90Z" fill="' + HP + '" ' + S + '/><path d="M98 60H146V68H98Z" fill="' + HK + '"/><path d="M122 68V92" ' + S2 + '/><path d="M132 74h3M132 80h3M132 86h3M110 74h3M110 80h3M110 86h3" stroke="' + HK + '" stroke-width="2.2"/><path d="M136 42V58M141 44V58" stroke="' + HK + '" stroke-width="1.3"/>';
+    if(it.id === 'helm_lang') s += '<path d="M98 54q-16 -6 -22 -22q12 2 18 10q-2 -12 4 -20q6 14 4 28z" fill="' + HP + '" ' + S2 + '/><path d="M146 54q16 -6 22 -22q-12 2 -18 10q2 -12 -4 -20q-6 14 -4 28z" fill="' + HP + '" ' + S2 + '/>';
+    else if(fx === 'gems') s += '<path d="M122 34l6 7-6 7-6 -7z" fill="' + HK + '"/><g class="fx-glow">' + star4(152, 34, 6) + star4(92, 40, 4) + '</g>';
+    else if(fx === 'stars') s += '<g class="fx-glow">' + star4(152, 32, 6) + star4(94, 36, 4) + '</g>';
+    else s += '<path d="M122 32Q124 14 142 10Q132 22 130 34Z" fill="' + HK + '"/>';
+  } else if(L === 'circlet'){
+    s = '<path d="M100 52Q122 42 144 52" fill="none" stroke="' + HK + '" stroke-width="5"/><path d="M122 40l6 7-6 7-6 -7z" fill="' + HP + '" ' + S2 + '/><g class="fx-glow">' + star4(136, 40, 4) + '</g>';
+  } else if(L === 'hat'){
+    s = '<path d="M74 46Q122 30 170 46Q122 56 74 46Z" fill="' + HK + '"/><path d="M98 44Q114 24 126 -6Q134 22 148 44Z" fill="' + HK + '"/><path d="M126 -6q10 -2 14 8" fill="none" ' + S2 + '/>' + star4(116, 28, 5).replace('fill="' + HK + '"', 'fill="' + HP + '"');
+  } else if(L === 'goggles'){
+    s = '<path d="M98 64H146" stroke="' + HK + '" stroke-width="5"/><rect x="104" y="57" width="15" height="13" rx="3" fill="' + HP + '" ' + S + '/><rect x="125" y="57" width="15" height="13" rx="3" fill="' + HP + '" ' + S + '/>';
+  } else if(L === 'glasses'){
+    s = '<circle cx="111" cy="64" r="7.5" fill="none" ' + S2 + '/><circle cx="133" cy="64" r="7.5" fill="none" ' + S2 + '/><path d="M118 63q4 -2 8 0M103 62l-6 -2M141 62l6 -2" fill="none" ' + S2 + '/>';
+  } else if(L === 'laurel'){
+    s = [-1, 1].map(side => [0, 1, 2, 3].map(i => { const x = 122 + side * (22 - i * 2), y = 66 - i * 9; return '<path d="M' + x + ' ' + y + 'q' + (side * 7) + ' -6 ' + (side * 12) + ' 2q' + (side * -7) + ' 6 ' + (side * -12) + ' -2z" fill="' + HP + '" ' + S2 + '/>'; }).join('')).join('') + '<g class="fx-glow">' + star4(122, 22, 6) + '</g>';
+  }
+  return g('eq', s);
+}
+function neckSVG(it){
+  const L = it.look;
+  let s = '<path d="M108 100Q122 122 136 100" fill="none" stroke="' + HP + '" stroke-width="2"/>';
+  if(L === 'brooch') s = star4(108, 112, 7).replace('fill="' + HK + '"', 'fill="' + HP + '" ' + S2);
+  else if(L === 'scarab') s += '<ellipse cx="122" cy="122" rx="7" ry="9" fill="' + HP + '" ' + S2 + '/><path d="M122 114V130" ' + S2 + '/>';
+  else s += '<path d="M122 112L130 121L122 130L114 121Z" fill="' + HP + '" ' + S2 + '/>';
+  if(it.fxv === 'holy' || it.fxv === 'stars' || it.fxv === 'flame') s += '<g class="fx-glow">' + star4(138, 124, 4.5).replace('fill="' + HK + '"', 'fill="' + HP + '"') + '</g>';
+  return g('eq', s);
+}
+function waistSVG(it){ return g('eq', '<path d="M86 164H158V174H86Z" fill="' + HP + '" ' + S2 + '/><path d="M114 160H130V178H114Z" fill="' + HK + '"/><path d="M118 164H126V174H118Z" fill="' + HP + '"/>' + (it.fxv === 'runes' ? '<g class="fx-runes"><path d="M94 169h12M138 169h12" stroke="' + HK + '" stroke-width="2"/></g>' : '')); }
+function handsSVG(it){
+  if(it.look === 'gloves') return g('eq', '<circle cx="' + HAND_L[0] + '" cy="' + HAND_L[1] + '" r="9.5" fill="' + HK + '"/><circle cx="' + HAND_R[0] + '" cy="' + HAND_R[1] + '" r="9.5" fill="' + HK + '"/><path d="M75 138L89 136M158 136L171 140" stroke="' + HK + '" stroke-width="7" stroke-linecap="round"/>');
+  return g('eq', '<path d="M74 136L88 140" stroke="' + HK + '" stroke-width="13" stroke-linecap="round"/><path d="M74 136L88 140" stroke="' + HP + '" stroke-width="7" stroke-linecap="round"/><path d="M160 138L172 136" stroke="' + HK + '" stroke-width="13" stroke-linecap="round"/><path d="M160 138L172 136" stroke="' + HP + '" stroke-width="7" stroke-linecap="round"/>' + (it.id === 'o_streakband' ? '<path d="M' + (HAND_R[0] - 6) + ' ' + (HAND_R[1] - 20) + 'h12" stroke="' + HK + '" stroke-width="2"/>' : '') + (it.fxv === 'glow' ? '<g class="fx-glow">' + star4(HAND_R[0] + 16, HAND_R[1] - 26, 4.5) + '</g>' : ''));
+}
+function ringSVG(it){ return g('eq', '<circle cx="' + (HAND_L[0] + 7) + '" cy="' + (HAND_L[1] + 2) + '" r="3.4" fill="' + HP + '" ' + S2 + '/><g class="fx-glow">' + star4(HAND_L[0] - 16, HAND_L[1] + 22, 5) + '</g>'); }
+function feetSVG(it){
+  const fx = it.fxv;
+  let s = '<path d="M90 226L114 226L114 252Q124 252 126 266L86 266Z" fill="' + HK + '"/><path d="M136 226L160 226L162 252Q172 254 172 266L134 266Z" fill="' + HK + '"/><path d="M90 232H114M136 232H160" stroke="' + HP + '" stroke-width="3"/>';
+  if(fx === 'wings') s += '<g class="ankle"><path d="M90 238q-14 -8 -18 -20q10 4 14 10q0 -8 4 -12z" fill="' + HP + '" ' + S2 + '/><path d="M162 238q14 -8 18 -20q-10 4 -14 10q0 -8 -4 -12z" fill="' + HP + '" ' + S2 + '/></g>';
+  if(fx === 'speed') s += '<g class="fx-speed"><path d="M62 244h14M58 254h16M62 264h12" ' + S2 + '/></g>';
+  if(fx === 'frost') s += '<g class="fx-frost"><g class="flake" style="transform-origin:182px 256px"><path d="M176 256h12M182 250v12" ' + S2 + '/></g></g>';
+  if(fx === 'web') s += '<path d="M86 266q-8 -8 -4 -18M172 266q8 -8 4 -18" fill="none" ' + S2 + '/>';
+  return g('eq', s);
+}
+
+/* base figure */
+function baseBack(f){
+  return f ? '<path class="hair" d="M140 52Q152 70 150 96Q158 130 150 160Q146 170 140 164Q146 132 140 104Q136 84 140 52Z" fill="' + HK + '" style="transform-origin:140px 60px"/>' : '';
+}
+function baseBody(f, eqArmor, eqFeet){
+  let s = '';
+  s += '<path d="M96 172L92 252L114 252L120 172Z" fill="' + HP + '" ' + S + '/><path d="M106 186V246" stroke="' + HK + '" stroke-width="1.4"/>';
+  s += '<path d="M124 172L136 210L138 252L160 252L156 206L148 172Z" fill="' + HP + '" ' + S + '/><path d="M150 214L152 246M144 192L148 206" stroke="' + HK + '" stroke-width="1.4"/>';
+  if(!eqFeet) s += '<path d="M88 250L116 250L118 266L84 266Z" fill="' + HK + '"/><path d="M136 250L162 250Q172 254 172 266L134 266Z" fill="' + HK + '"/>';
+  const arm = (d1, d2) => '<path d="' + d2 + '" fill="none" stroke="' + HK + '" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/><path d="' + d2 + '" fill="none" stroke="' + HP + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="' + d1 + '" fill="none" stroke="' + HK + '" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>';
+  s += arm('M96 106L80 132', 'M80 132L' + HAND_L[0] + ' ' + HAND_L[1]);
+  s += arm('M148 106L172 128', 'M172 128L' + HAND_R[0] + ' ' + HAND_R[1]);
+  s += '<path d="' + torsoPath(f) + '" fill="' + HK + '" ' + S + '/><path d="M110 100L122 112L134 100" fill="none" stroke="' + HP + '" stroke-width="2"/><path d="M96 168H150" stroke="' + HP + '" stroke-width="1.4" opacity=".7"/>';
+  return s;
+}
+function baseHands(){ return '<circle cx="' + HAND_L[0] + '" cy="' + HAND_L[1] + '" r="7.5" fill="' + HP + '" ' + S + '/><circle cx="' + HAND_R[0] + '" cy="' + HAND_R[1] + '" r="7.5" fill="' + HP + '" ' + S + '/>'; }
+function baseHead(f, hideHair){
+  let s = '<path d="M114 88L114 102L130 102L130 88Z" fill="' + HP + '" ' + S + '/>';
+  s += '<path d="M101 58L100 72Q102 88 112 94L122 98L132 94Q142 88 144 72L143 58Q142 40 122 38Q102 40 101 58Z" fill="' + HP + '" ' + S + '/>';
+  s += '<path d="M99 64q-6 0 -5 8t6 6M145 64q6 0 5 8t-6 6" fill="' + HP + '" ' + S2 + '/>';
+  s += '<g class="eyes"><path class="blink" d="M107 64L116 64" stroke="' + HK + '" stroke-width="3.2" stroke-linecap="round" style="transform-origin:111px 64px"/><path class="blink" d="M128 64L137 64" stroke="' + HK + '" stroke-width="3.2" stroke-linecap="round" style="transform-origin:133px 64px"/></g>';
+  s += '<path d="M105 57L117 59M127 59L139 57" stroke="' + HK + '" stroke-width="' + (f ? 2.2 : 3.4) + '" stroke-linecap="round"/>';
+  s += '<path d="M122 64L119 75L124 76" fill="none" ' + S2 + '/>';
+  if(f) s += '<path d="M115 83Q122 86 129 83" fill="none" ' + S2 + '/><path d="M104 74l3 2M140 74l-3 2" stroke="' + HG + '" stroke-width="2"/>';
+  else s += '<path d="M101 70Q103 90 112 98L122 106L132 98Q141 90 143 70Q138 80 132 80L128 78L116 78L112 80Q106 80 101 70Z" fill="' + HK + '"/><path d="M116 84Q122 86 128 84" fill="none" stroke="' + HP + '" stroke-width="2"/>';
+  if(!hideHair){
+    s += f ? '<path d="M99 62Q96 36 122 34Q148 36 145 62L140 52Q130 44 120 46Q108 48 104 52Z" fill="' + HK + '"/><path d="M122 36Q126 44 140 50" fill="none" stroke="' + HP + '" stroke-width="1.4"/>'
+           : '<path d="M100 60Q96 34 122 32Q148 34 144 60L140 50L134 52L130 44L120 48L112 44L106 52Z" fill="' + HK + '"/>';
+  }
+  return s;
+}
+
+function trinketSVG(it){
+  if(typeof ICONS === 'undefined' || !ICONS[it.look]) return '';
+  return '<g class="eq"><g class="trinket bob"><circle cx="222" cy="72" r="22" fill="' + HP + '" ' + S + '/><g transform="translate(206 56)" fill="none" stroke="' + HK + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[it.look] + '</g></g></g>';
+}
+
+/* ---------- pets ---------- */
+function petSVG(it){
+  const L = it.look;
+  const eye = (x, y) => '<circle class="blink" cx="' + x + '" cy="' + y + '" r="2.4" fill="' + HK + '" style="transform-origin:' + x + 'px ' + y + 'px"/>';
+  let s = '';
+  if(L === 'owl') return g('eq', '<g transform="translate(150 118)"><g class="pet-bob"><path d="M-12 2l4 -8 4 5h8l4 -5 4 8v14c0 9 -6 14 -12 14s-12 -5 -12 -14z" fill="' + HP + '" ' + S + '/><circle cx="-5" cy="8" r="4.5" fill="' + HP + '" ' + S2 + '/><circle cx="5" cy="8" r="4.5" fill="' + HP + '" ' + S2 + '/>' + eye(-5, 8) + eye(5, 8) + '<path d="M-2 13l2 3 2 -3z" fill="' + HK + '"/></g></g>');
+  if(L === 'raven') s = '<path d="M-6 0v-6M4 0v-6" ' + S2 + '/><path d="M-22 -14c4 -14 16 -20 28 -16l10 -6-4 9c2 12 -6 20 -20 20l-10 6 2 -9c-4 -1 -6 -2 -6 -4z" fill="' + HK + '" stroke="' + HP + '" stroke-width="1.5"/><circle cx="8" cy="-26" r="2" fill="' + HP + '" class="blink"/><path d="M14 -28l8 3-8 2z" fill="' + HK + '"/>';
+  if(L === 'cat') s = '<path d="M-20 0c-2 -16 2 -26 10 -30v-14l8 9h10l8 -9v14c8 4 12 14 10 30z" fill="' + HK + '"/><circle cx="-4" cy="-30" r="2" fill="' + HP + '" class="blink"/><circle cx="8" cy="-30" r="2" fill="' + HP + '" class="blink"/><path class="tail" d="M16 -4c14 2 18 -14 12 -24" fill="none" stroke="' + HK + '" stroke-width="5" stroke-linecap="round" style="transform-origin:16px -4px"/>';
+  if(L === 'fox') s = '<path d="M-18 0l-2 -24 6 -18 8 12h12l8 -12 6 18 -2 24z" fill="' + HP + '" ' + S + '/><path d="M-8 -14l8 10 8 -10" fill="none" ' + S2 + '/>' + eye(-7, -24) + eye(7, -24) + '<path class="tail" d="M18 -6c18 0 22 -16 14 -28c-2 12 -8 16 -16 16" fill="' + HP2 + '" ' + S + ' style="transform-origin:18px -6px"/>';
+  if(L === 'wolf') s = '<path class="tail" d="M-26 -10c-16 -2 -22 -14 -18 -26" fill="none" stroke="' + HK + '" stroke-width="8" stroke-linecap="round" style="transform-origin:-26px -10px"/><path class="tail" d="M-26 -10c-16 -2 -22 -14 -18 -26" fill="none" stroke="' + HP + '" stroke-width="3.5" stroke-linecap="round" style="transform-origin:-26px -10px"/><path d="M-28 0c-2 -16 2 -28 10 -36l2 -22 8 12 6 -10 4 16c8 4 14 8 22 10c-2 6 -10 8 -18 7c-2 8 -4 16 -2 23z" fill="' + HP + '" ' + S + '/><path d="M24 -21l4 1" ' + S + '/><path d="M-4 -12v12M6 -12v12" ' + S2 + '/>' + eye(4, -42);
+  if(L === 'dragon') s = '<g class="wingR2" style="transform-origin:0px -26px"><path d="M0 -26c8 -20 26 -26 34 -20c-8 2 -10 8 -10 12c6 -2 12 2 12 8c-12 -4 -24 2 -36 0z" fill="' + HP2 + '" ' + S2 + '/></g><path d="M-26 0c0 -18 8 -30 22 -30l4 -14 6 12c10 2 16 12 16 24z" fill="' + HP + '" ' + S + '/><path d="M-26 0c-8 -2 -14 -8 -12 -16" fill="none" ' + S + '/>' + eye(10, -32) + '<g class="fx-flame" transform="translate(30 -26) rotate(-60)"><path class="fl fl0" d="M0 0c6 -4 4 -12 0 -16c6 2 8 10 0 16z" fill="' + HP + '" ' + S2 + ' style="transform-origin:0 0"/></g>';
+  if(L === 'griffin') s = '<g class="wingR2" style="transform-origin:-4px -34px"><path d="M-4 -34c4 -26 30 -38 44 -30c-10 2 -14 8 -14 14c8 -2 16 2 16 10c-14 -4 -30 4 -46 6z" fill="' + HP + '" ' + S + '/></g><path d="M-30 0c0 -20 8 -34 24 -36l6 -14 10 6 8 -2 -6 12c8 6 10 18 8 34z" fill="' + HP2 + '" ' + S + '/><path d="M14 -46l10 2-8 4" fill="' + HK + '"/>' + eye(8, -40) + '<path class="tail" d="M-30 -8c-12 0 -18 -10 -14 -20" fill="none" ' + S + ' style="transform-origin:-30px -8px"/>';
+  return g('eq', '<g transform="translate(204 266) scale(.85)"><g class="pet-bob">' + s + '</g></g>');
+}
+
+/* ---------- scenes ---------- */
+function sceneSVG(it){
+  const st = 'stroke="' + HK + '" stroke-width="2" fill="none" opacity=".22" stroke-linecap="round" stroke-linejoin="round"';
+  const L = it.look;
+  if(L === 'library') return '<g ' + st + '><path d="M10 40H250M10 110H250M10 180H250"/>' + Array.from({length: 24}, (_, i) => { const x = 16 + i * 10, row = i % 3, y = [40, 110, 180][row]; return '<path d="M' + x + ' ' + y + 'v-' + (24 + (i * 7) % 16) + '"/>'; }).join('') + '<path d="M28 230v40M232 230v40M24 230h8M228 230h8"/></g>';
+  if(L === 'forest') return '<g ' + st + '>' + [[24, 260, 1], [62, 250, .8], [200, 258, 1.1], [238, 248, .8]].map(([x, y, k]) => '<path d="M' + x + ' ' + y + 'V' + (y - 30 * k) + 'M' + (x - 22 * k) + ' ' + (y - 30 * k) + 'L' + x + ' ' + (y - 110 * k) + 'L' + (x + 22 * k) + ' ' + (y - 30 * k) + 'Z"/>').join('') + '<path d="M0 270q60 -10 130 0t130 0"/></g>';
+  if(L === 'castle') return '<g ' + st + '><path d="M10 270V120h20v14h16v-14h20v150M194 270V120h20v14h16v-14h20v150M66 200h128M66 200v70M194 200v70M110 270v-36a20 20 0 0 1 40 0v36"/><path d="M20 120V86M20 86l14 6-14 6"/></g>';
+  if(L === 'mountain') return '<g ' + st + '><path d="M0 250L70 120L110 180L160 90L260 250"/><path d="M146 116l14 -26 14 24-8 -4-6 6z"/><path d="M196 52a12 12 0 1 0 .01 0M30 80q20 -8 40 0M150 50q16 -6 30 0"/></g>';
+  if(L === 'lair') return '<g ' + st + '><path d="M0 270C10 120 70 40 130 40S250 120 260 270"/><path d="M60 270q20 -20 40 -6q14 -14 30 -4q18 -16 40 2q20 -12 30 8" /><path d="M110 120q20 -14 40 0q-20 14 -40 0z"/><circle cx="130" cy="120" r="5"/></g>';
+  return '';
+}
+
+
+/* ---------- compose ---------- */
+function renderHero(state, itemById){
+  const eq = state.eq || {}, f = state.gender === 'f';
+  const it = k => eq[k] ? itemById[eq[k]] : null;
+  const W = it('weapon'), A = it('armor'), Sh = it('shield'), C = it('cloak'), H = it('head'), Ha = it('hands'), R = it('ring'), N = it('neck'), Fe = it('feet'), Wa = it('waist'), T = it('trinket'), Pe = it('pet'), Sc = it('scene');
+  const legend = Object.keys(eq).some(k => eq[k] && itemById[eq[k]] && itemById[eq[k]].r === 'legend' && k !== 'scene');
+  const hover = (Fe && Fe.fxv === 'float') || (C && C.look === 'wings') ? ' hover' : '';
+  const L = (slot, svg) => svg ? '<g data-slot="' + slot + '">' + svg + '</g>' : '';
+  let s = '<svg class="hero-svg" viewBox="14 14 232 266" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="הדמות שלך">';
+  s += '<defs><pattern id="pChain" width="7" height="7" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="' + HP2 + '"/><circle cx="3.5" cy="3.5" r="2.2" fill="none" stroke="' + HK + '" stroke-width="1.1"/></pattern>' +
+       '<pattern id="pScale" width="10" height="8" patternUnits="userSpaceOnUse"><rect width="10" height="8" fill="' + HP2 + '"/><path d="M0 0q5 8 10 0" fill="none" stroke="' + HK + '" stroke-width="1.2"/></pattern>' +
+       '<filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter><pattern id="pScaleInk" width="10" height="8" patternUnits="userSpaceOnUse"><rect width="10" height="8" fill="' + HK + '"/><path d="M0 0q5 8 10 0" fill="none" stroke="' + HP + '" stroke-width="1.2"/></pattern></defs>';
+  if(Sc) s += L('scene', g('eq scene', sceneSVG(Sc)));
+  s += '<ellipse cx="124" cy="268" rx="74" ry="6" fill="' + HG + '" opacity=".55" class="shadow' + hover + '"/>';
+  if(legend) s += '<g class="aura"><circle cx="120" cy="160" r="112" fill="none" stroke="' + HK + '" stroke-width="1.6" stroke-dasharray="2 10"/><circle cx="120" cy="160" r="100" fill="none" stroke="' + HK + '" stroke-width="1" stroke-dasharray="1 14"/></g>';
+  s += '<g class="deco">' + star4(40, 54, 14) + star4(62, 82, 7) + star4(216, 196, 13) + star4(236, 176, 6) + '</g>';
+  s += '<g class="body' + hover + '" filter="url(#rough)">';
+  if(C) s += L('cloak', cloakBack(C));
+  s += baseBack(f && !(H && (H.look === 'helm'))) ;
+  s += baseBody(f, A, Fe);
+  if(Fe) s += L('feet', feetSVG(Fe));
+  if(A) s += L('armor', armorSVG(A, f));
+  if(Wa) s += L('waist', waistSVG(Wa));
+  if(N) s += L('neck', neckSVG(N));
+  if(C) s += L('cloak2', cloakFront(C));
+  s += baseHead(f, H && H.look === 'helm');
+  if(H) s += L('head', headSVG(H));
+  s += baseHands();
+  if(Ha) s += L('hands', handsSVG(Ha));
+  if(R) s += L('ring', ringSVG(R));
+  if(Sh) s += L('shield', shieldSVG(Sh));
+  if(W) s += L('weapon', weaponSVG(W)) + (W.look === 'bow' || W.look === 'staff' || W.look === 'spear' || W.look === 'trident' ? '' : '<circle cx="' + HAND_R[0] + '" cy="' + HAND_R[1] + '" r="7.5" fill="' + (Ha && Ha.look === 'gloves' ? HK : HP) + '" ' + S + '/>');
+  s += '</g>';
+  if(T) s += L('trinket', trinketSVG(T));
+  if(Pe) s += L('pet', petSVG(Pe));
+  s += '</svg>';
+  return s;
+}
+
+return {RARITY, SLOTS, CATS, ITEMS, FX, EARN, CLASSES, LEVEL_BANDS, levelFor, xpFor, ICONS, iconSVG, renderHero};
+})();
+/* ---------- hero, gold & shop ---------- */
+const GI = Object.fromEntries(G.ITEMS.map(i => [i.id, i]));
+const EQ_SLOTS = ['weapon','armor','shield','cloak','head','hands','ring','neck','feet','waist','trinket','pet','scene'];
+const COIN = '<svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="#E3C276"/><g fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + (G.ICONS.coin || '<circle cx="16" cy="16" r="11"/>') + '</g></svg>';
+function gdef(){ return {gold:0, xp:0, gender:null, cls:null, owned:{}, eq:{}, pots:{}, perm:{a:0,d:0,m:0}, boost:{}, days:{}}; }
+function GS(){ if(!S.g || typeof S.g !== 'object') S.g = gdef(); const g = S.g, d = gdef(); for(const k in d) if(g[k] == null) g[k] = d[k]; return g; }
+function gLevel(){ return Math.max(1, Math.min(30, G.levelFor(GS().xp))); }
+function gClass(){ return G.CLASSES.find(c => c.k === GS().cls) || G.CLASSES[0]; }
+function gClassName(){ const p = gClass().he.split(' / '); return GS().gender === 'f' ? (p[1] || p[0]) : p[0]; }
+function gTitle(){ const L = gLevel(); const b = G.LEVEL_BANDS.findIndex(x => L >= x[0] && L <= x[1]); return gClass().titles[Math.max(0, b)]; }
+function gEquipped(){ const g = GS(); return Object.values(g.eq).map(id => GI[id]).filter(Boolean); }
+function fxCount(name){ return gEquipped().filter(it => it.fx === name).length; }
+function gStats(){ const g = GS(), t = {a:g.perm.a||0, d:g.perm.d||0, m:g.perm.m||0}; gEquipped().forEach(it => { const s = it.s || {}; for(const k in s) t[k] += s[k]; }); return t; }
+function potCap(){ const g = GS(); return Object.keys(g.owned).some(id => GI[id] && GI[id].fx === 'potCap') ? 20 : 5; }
+function freeHintsLeft(){ const g = GS(), per = fxCount('hintDay2') ? 2 : fxCount('freeHint') ? 1 : 0; const d = g.days.hint; const used = d && d[0] === dateKey() ? d[1] : 0; return Math.max(0, per - used); }
+function hintPotions(){ return GS().pots.p_clair || 0; }
+function areaOf(kind){ for(const k in CATS) if(CATS[k].keys.indexOf(kind) >= 0) return k; return null; }
+function gMult(kind, ok){
+  const cfg = QUIZ[kind] || {}, area = kind === 'words' ? 'words' : kind === 'past' ? 'past' : areaOf(kind);
+  let m = 1;
+  if(area === 'en') m += .2 * fxCount('goldEn');
+  if(area === 'qn') m += .2 * fxCount('goldQn');
+  if(area === 'he') m += .2 * fxCount('goldHe');
+  if(cfg.reading) m += .2 * fxCount('goldRead');
+  if(kind === 'qg') m += .2 * fxCount('goldGeo');
+  if(cfg.sim || area === 'past') m += .2 * fxCount('goldSim');
+  m += .05 * fxCount('goldAll5') + .1 * fxCount('goldAll10');
+  if(ok) m += .1 * fxCount('luck') + .05 * fxCount('luck5');
+  return m;
+}
+/* adds gold + xp; returns the amount. Caller saves. */
+function earn(n, quiet){
+  n = Math.max(0, Math.round(n));
+  if(!n) return 0;
+  const g = GS(), before = gLevel();
+  g.gold += n; g.xp += n;
+  const after = gLevel();
+  if(!quiet) gToast('+' + n);
+  if(after > before) setTimeout(() => gToast('עלית לרמה ' + after + '!', 'lvl', gTitle()), quiet ? 200 : 650);
+  streakBonus();
+  return n;
+}
+function streakBonus(){
+  const g = GS(), today = dateKey();
+  if(g.days.sb === today) return;
+  const sk = streak(); if(!sk) return;
+  g.days.sb = today;
+  const n = Math.min(50, 5 * sk) * (fxCount('streakX') ? 2 : 1);
+  g.gold += n; g.xp += n;
+  setTimeout(() => gToast('+' + n, 'streak', 'בונוס רצף · ' + sk + ' ימים'), 900);
+}
+let TOASTS = 0;
+function gToast(txt, kind, sub){
+  let host = document.getElementById('gtoasts');
+  if(!host){ host = h('div',{id:'gtoasts',class:'gtoasts','aria-live':'polite'}); document.body.append(host); }
+  const t = h('div',{class:'gtoast' + (kind ? ' ' + kind : '')},
+    kind === 'lvl' ? h('span',{class:'gt-ic',html:'<svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 1c.6 5 2 6.4 11 11-9 4.6-10.4 6-11 11-.6-5-2-6.4-11-11 9-4.6 10.4-6 11-11z" fill="currentColor"/></svg>'}) : h('span',{class:'gt-ic',html:COIN}),
+    h('span',{class:'gt-t'}, h('b',{class:'num',dir: /^[+\-]/.test(txt) ? 'ltr' : null,text:txt}), sub ? h('small',{text:sub}) : null),
+    kind === 'lvl' ? burst() : null);
+  while(host.children.length >= 2) host.firstChild.remove();
+  host.append(t); TOASTS++;
+  if(kind === 'lvl') buzz([20, 60, 30]);
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => { t.remove(); TOASTS--; }, 500); }, kind === 'lvl' ? 2600 : 1500);
+}
+function goldChip(){
+  return h('button',{class:'chip gold num','aria-label':'זהב: ' + GS().gold + '. לעמוד הגיבור',onclick:()=>go({kind:'hero'})}, h('span',{html:COIN}), GS().gold.toLocaleString('he-IL'));
+}
+
+/* hooks into the quiz flow */
+function gStart(s){
+  if(s._g) return; s._g = true; s.gold = 0; s.gx = 1;
+  const b = GS().boost;
+  if(b.x2){ s.gx = 2; delete b.x2; } else if(b.x15){ s.gx = 1.5; delete b.x15; }
+  if(b.retry){ s.retry = true; delete b.retry; }
+  if(b.timer3 && s.cfg && s.cfg.sim){ s.cfg = Object.assign({}, s.cfg, {target: s.cfg.target + 180}); s.timerBoost = true; delete b.timer3; }
+  if(s.gx > 1 || s.retry || s.timerBoost) save();
+}
+function gAnswer(s, ok, lv3){
+  const base = ok ? (lv3 ? 6 : 4) : 1;
+  const n = Math.round(base * gMult(s.kind, ok) * (s.gx || 1));
+  s.gold = (s.gold || 0) + n;
+  earn(n, !!(s.cfg && s.cfg.sim));
+}
+function gFinish(s){
+  if(s.paid) return; s.paid = true;
+  const all = s.answers.length === s.items.length && s.answers.every(a => a.ok);
+  let base = 10 + (all ? 15 : 0) + (s.cfg.sim ? 30 : 0) + (s.cfg.daily ? 25 : 0);
+  const n = Math.round(base * gMult(s.kind, false) * (s.gx || 1));
+  s.bonus = n; s.gold = (s.gold || 0) + n;
+  earn(n, true);
+  save();
+}
+function gWord(good){
+  const n = (good ? 2 : 1) * (fxCount('goldWords') ? 2 : 1);
+  return earn(Math.round(n * gMult('words', false)), false);
+}
+function gPast(run){
+  if(run.paid) return; run.paid = true;
+  const b = GS().boost; let x = 1;
+  if(b.x3past){ x = 3; delete b.x3past; }
+  run.gold = earn(Math.round((25 + 2 * run.score) * gMult('past', false) * x), false);
+  run.goldX = x;
+}
+function useHint(){
+  const s = session; if(!s || s.picked != null) return;
+  const it = s.items[s.i]; it.elim = it.elim || [];
+  if(it.elim.length >= 2) return;
+  const g = GS();
+  if(freeHintsLeft() > 0){ const d = g.days.hint; g.days.hint = [dateKey(), (d && d[0] === dateKey() ? d[1] : 0) + 1]; }
+  else if(hintPotions() > 0){ g.pots.p_clair--; if(!g.pots.p_clair) delete g.pots.p_clair; }
+  else return;
+  const wrong = it.opts.map((o, i) => i).filter(i => !it.opts[i].ok && it.elim.indexOf(i) < 0);
+  shuffle(wrong).slice(0, 2 - it.elim.length).forEach(i => it.elim.push(i));
+  buzz(10); save(); render();
+}
+function boostChips(s){
+  const c = [];
+  if(s.gx > 1) c.push(s.gx === 2 ? 'זהב כפול' : 'זהב +50%');
+  if(s.retry && !s.retryUsed) c.push('ניסיון נוסף לטעות הראשונה');
+  if(s.timerBoost) c.push('+3 דקות');
+  return c.length ? h('div',{class:'boosts'}, c.map(t => h('span',{class:'chip bchip',text:t}))) : null;
+}
+
+/* ---------- hero page ---------- */
+function heroSVG(eq, gender){ return G.renderHero({gender: gender || GS().gender || 'm', eq: eq || GS().eq}, GI); }
+function heroView(){
+  const g = GS();
+  if(!g.cls) return setupView();
+  const L = gLevel(), a = G.xpFor(L), b = G.xpFor(L + 1), st = gStats();
+  const pct = Math.max(3, Math.min(100, (g.xp - a) / Math.max(1, b - a) * 100));
+  const stage = h('section',{class:'card hstage'},
+    h('div',{class:'hsvg',html: heroSVG()}),
+    h('div',{class:'hname'}, h('b',{text: gTitle()}), h('span',{class:'num',text: gClassName() + ' · רמה ' + L})),
+    h('div',{class:'hxp'}, h('div',{class:'meter'}, h('i',{style:'width:' + pct + '%'})),
+      h('div',{class:'hxpl num'}, h('span',{text: g.xp.toLocaleString('he-IL') + ' ניסיון'}), h('span',{text: L >= 30 ? 'רמה מקסימלית' : 'לרמה ' + (L + 1) + ': ' + b.toLocaleString('he-IL')}))),
+    h('div',{class:'hstats'}, [['a','התקפה'],['d','הגנה'],['m','קסם']].map(([k, t]) => h('div',{}, h('b',{class:'num','data-count':String(st[k]),text:String(st[k])}), h('span',{text:t})))));
+  const actions = h('div',{class:'hact'},
+    h('button',{class:'btn btn-primary',onclick:()=>go({kind:'shop', cat:'weapons'})}, 'לחנות'),
+    h('button',{class:'btn btn-ghost',onclick:()=>go({kind:'shop', cat:'mine'})}, 'הציוד שלי'));
+  const bl = [];
+  if(g.boost.x2) bl.push('זהב כפול בסט הבא'); if(g.boost.x15) bl.push('+50% זהב בסט הבא');
+  if(g.boost.retry) bl.push('ניסיון נוסף לטעות הראשונה בסט הבא'); if(g.boost.timer3) bl.push('+3 דקות בסימולציה הבאה');
+  if(g.boost.x3past) bl.push('זהב משולש בפרק הבא ממבחן עבר');
+  const fh = freeHintsLeft(), hp = hintPotions();
+  if(fh) bl.push(fh + ' רמזים חינם היום'); if(hp) bl.push(hp + ' שיקויי ראייה רחוקה לרמזים');
+  const boosts = bl.length ? h('section',{class:'card'}, h('h2',{text:'פעיל עכשיו'}), h('ul',{class:'blist'}, bl.map(t => h('li',{text:t})))) : null;
+  const earnCard = h('section',{class:'card'}, h('h2',{text:'איך מרוויחים זהב'}),
+    h('div',{class:'earn'}, G.EARN.map(([t, v]) => h('div',{class:'erow'}, h('span',{text:t}), h('b',{class:'num',text:v})))),
+    h('div',{class:'sub',text:'כל זהב שמרוויחים נספר גם כניסיון, וניסיון מעלה רמה. ברמות גבוהות נפתחים פריטים נדירים יותר.'}));
+  return h('div',{class:'app-inner',style:'display:contents'},
+    h('header',{class:'top'}, h('div',{class:'ttl'}, h('h1',{text:'הגיבור שלך'}), h('div',{class:'sub',text:'מרוויחים זהב בתרגול וקונים ציוד'})), goldChip()),
+    stage, actions, boosts, earnCard, srdNote(), tabBar('hero'));
+}
+function srdNote(){ return h('p',{class:'foot',text:'שמות רבים מהפריטים מבוססים על System Reference Document 5.1 של Wizards of the Coast LLC, ברישיון CC-BY-4.0. הציורים, התיאורים, חיות הלוויה, הרקעים והפריטים המקוריים נוצרו במיוחד למאמן אמירנט.'}); }
+function setupView(){
+  const s = session; s.gender = s.gender || 'm'; s.cls = s.cls || 'fighter';
+  const kit = c => c.start.map(id => GI[id]).filter(Boolean);
+  const eq = {}; kit(G.CLASSES.find(c => c.k === s.cls)).forEach(it => { eq[it.slot] = it.id; });
+  const seg = h('div',{class:'seg',role:'group','aria-label':'הדמות'},
+    [['m','גבר'],['f','אישה']].map(([k, t]) => h('button',{type:'button','aria-pressed':String(s.gender === k),onclick:()=>{ s.gender = k; render(); }}, t)));
+  const cards = h('div',{class:'clist'}, G.CLASSES.map(c => { const p = c.he.split(' / '); return h('button',{type:'button',class:'cls','aria-pressed':String(s.cls === c.k),onclick:()=>{ s.cls = c.k; render(); }},
+    h('b',{text: s.gender === 'f' ? (p[1] || p[0]) : p[0]}), h('span',{text:c.focus}), h('small',{text:'מתחילים עם: ' + kit(c).map(it => it.he).join(', ')})); }));
+  const start = () => { const g = GS(); g.gender = s.gender; g.cls = s.cls; kit(G.CLASSES.find(c => c.k === s.cls)).forEach(it => { g.owned[it.id] = 1; g.eq[it.slot] = it.id; }); g.gold += 100; save(); ANIM = true; render(); setTimeout(() => gToast('+100', null, 'מענק פתיחה'), 500); };
+  return h('div',{class:'app-inner',style:'display:contents'},
+    screenTop('בוחרים גיבור', 'פעם אחת, ואחר כך מתקדמים מתרגול'),
+    h('section',{class:'card hstage'}, h('div',{class:'hsvg',html: heroSVG(eq, s.gender)})),
+    seg, h('h2',{text:'מקצוע'}), cards,
+    h('button',{class:'btn btn-primary',onclick:start}, 'יוצאים לדרך · 100 זהב מתנה'),
+    tabBar('hero'));
+}
+
+/* ---------- shop ---------- */
+const SHOP_CATS = () => [{k:'mine', he:'שלי'}].concat(G.CATS);
+function shopList(cat){
+  const g = GS();
+  if(cat === 'mine') return G.ITEMS.filter(it => g.owned[it.id] || g.pots[it.id]);
+  const c = G.CATS.find(x => x.k === cat);
+  return G.ITEMS.filter(it => c && c.slots.indexOf(it.slot) >= 0).slice().sort((a, b) => a.p - b.p);
+}
+function itemState(it){
+  const g = GS();
+  if(it.slot === 'potion') return g.pots[it.id] ? 'pot' : 'buy';
+  if(it.slot === 'tome') return g.owned[it.id] ? 'read' : 'buy';
+  if(g.eq[it.slot] === it.id) return 'on';
+  if(g.owned[it.id]) return 'own';
+  return 'buy';
+}
+function shopView(){
+  const s = session, g = GS(), L = gLevel();
+  const chips = h('div',{class:'scats',role:'toolbar','aria-label':'קטגוריות'}, SHOP_CATS().map(c => h('button',{type:'button',class:'chip','aria-pressed':String(s.cat === c.k),onclick:()=>{ s.cat = c.k; s.sel = null; ANIM = true; render(); }}, c.he)));
+  const list = shopList(s.cat);
+  const tag = it => { const st = itemState(it), lock = G.RARITY[it.r].lvl > L;
+    if(st === 'on') return h('span',{class:'itag on',text:'מצויד'});
+    if(st === 'own') return h('span',{class:'itag',text:'שלך'});
+    if(st === 'read') return h('span',{class:'itag',text:'נקרא'});
+    if(st === 'pot') return h('span',{class:'itag',text:'×' + g.pots[it.id]});
+    if(lock) return h('span',{class:'itag lock',text:'רמה ' + G.RARITY[it.r].lvl});
+    return null; };
+  const grid = list.length ? h('div',{class:'items'}, list.map(it => h('button',{type:'button',class:'it' + (G.RARITY[it.r].lvl > L && itemState(it) === 'buy' ? ' locked' : ''),onclick:()=>{ s.sel = it.id; render(); }},
+    tag(it), h('span',{class:'ic',html: G.iconSVG(it.look, it.id)}), h('span',{class:'n',text:it.he}),
+    h('span',{class:'m num'}, h('i',{class:'rd',style:'background:' + G.RARITY[it.r].color}), G.RARITY[it.r].he + ' · ' + it.p.toLocaleString('he-IL'))))) :
+    h('section',{class:'card'}, h('div',{class:'sub',text:'עוד אין לך פריטים. הזהב מגיע מתרגול, ואחר כך קונים כאן.'}));
+  return h('div',{class:'app-inner',style:'display:contents'},
+    h('header',{class:'top'}, h('div',{class:'ttl'}, h('h1',{text:'חנות'}), h('div',{class:'sub num',text:'רמה ' + L + ' · ' + G.ITEMS.length + ' פריטים'})),
+      h('div',{class:'tact'}, goldChip(), h('button',{class:'icon-btn back','aria-label':'חזרה',onclick:()=>go({kind:'hero'})}, ico('back', 22)))),
+    chips, grid, s.sel ? itemSheet(GI[s.sel]) : null, tabBar('hero'));
+}
+function itemSheet(it){
+  const s = session, g = GS(), L = gLevel(), R = G.RARITY[it.r], st = itemState(it);
+  const close = () => { s.sel = null; render(); };
+  const sv = it.s || {};
+  const stats = [['a','התקפה'],['d','הגנה'],['m','קסם']].filter(x => sv[x[0]]).map(x => h('span',{class:'chip num',text:x[1] + ' +' + sv[x[0]]}));
+  const eqSlot = EQ_SLOTS.indexOf(it.slot) >= 0;
+  const prev = eqSlot ? h('div',{class:'sprev',html: heroSVG(Object.assign({}, g.eq, {[it.slot]: it.id}))}) : null;
+  const msg = h('div',{class:'sub',id:'smsg'});
+  let btn;
+  const lock = R.lvl > L;
+  if(st === 'buy'){
+    if(lock) btn = h('button',{class:'btn btn-ghost',disabled:true}, 'נפתח ברמה ' + R.lvl);
+    else if(it.slot === 'potion' && (g.pots[it.id] || 0) >= potCap()) btn = h('button',{class:'btn btn-ghost',disabled:true}, 'התיק מלא');
+    else btn = h('button',{class:'btn btn-primary',disabled: g.gold < it.p || null,onclick:()=>buy(it)}, g.gold < it.p ? 'חסרים ' + (it.p - g.gold).toLocaleString('he-IL') + ' זהב' : ['קנייה · ', h('span',{class:'num',text:it.p.toLocaleString('he-IL')}), h('span',{html:COIN})]);
+  } else if(st === 'own') btn = h('button',{class:'btn btn-primary',onclick:()=>{ g.eq[it.slot] = it.id; save(); s.sel = null; s.flash = it.slot; render(); }}, 'ללבוש');
+  else if(st === 'on') btn = h('button',{class:'btn btn-ghost',onclick:()=>{ delete g.eq[it.slot]; save(); render(); }}, 'להוריד');
+  else if(st === 'read') btn = h('button',{class:'btn btn-ghost',disabled:true}, 'כבר נקרא · השדרוג פעיל');
+  else if(st === 'pot'){
+    const more = (g.pots[it.id] || 0) < potCap() && g.gold >= it.p && !lock;
+    btn = h('div',{class:'bk'},
+      it.fx === 'hint' ? h('button',{class:'btn btn-ghost',disabled:true}, 'משתמשים בו מתוך שאלה') : h('button',{class:'btn btn-primary',onclick:()=>usePotion(it)}, 'שימוש'),
+      h('button',{class:'btn btn-ghost',disabled: !more || null,onclick:()=>buy(it)}, 'עוד אחד · ' + it.p.toLocaleString('he-IL')));
+  }
+  return h('div',{class:'sheet-bg',onclick:e => { if(e.target === e.currentTarget) close(); }},
+    h('section',{class:'sheet',role:'dialog','aria-modal':'true','aria-label':it.he},
+      h('div',{class:'shead'}, h('span',{class:'ic big',html: G.iconSVG(it.look, it.id)}),
+        h('div',{}, h('b',{text:it.he}), h('div',{class:'sub'}, h('span',{style:'color:' + R.color + ';font-weight:700',text:R.he}), ' · ' + G.SLOTS[it.slot].he + (it.slot === 'potion' && g.pots[it.id] ? ' · יש לך ' + g.pots[it.id] : ''))),
+        h('button',{class:'icon-btn','aria-label':'סגירה',onclick:close}, ico('x', 20))),
+      prev,
+      h('p',{class:'sdesc',text:it.d}),
+      stats.length ? h('div',{class:'srow'}, stats) : null,
+      it.fx && G.FX[it.fx] ? h('div',{class:'sfx',text:'✦ ' + G.FX[it.fx].replace(/‎/g, '')}) : null,
+      btn, msg));
+}
+function buy(it){
+  const g = GS(), s = session;
+  if(g.gold < it.p || G.RARITY[it.r].lvl > gLevel()) return;
+  g.gold -= it.p;
+  if(it.slot === 'potion') g.pots[it.id] = (g.pots[it.id] || 0) + 1;
+  else if(it.slot === 'tome'){ g.owned[it.id] = 1; const k = it.fx === 'permA' ? 'a' : it.fx === 'permD' ? 'd' : 'm'; g.perm[k] = (g.perm[k] || 0) + 3; }
+  else { g.owned[it.id] = 1; g.eq[it.slot] = it.id; s.flash = it.slot; s.sel = null; }
+  buzz(14); save(); render();
+  gToast('-' + it.p.toLocaleString('he-IL'), 'buy', it.slot === 'tome' ? 'נקרא · השדרוג נוסף לתמיד' : it.slot === 'potion' ? 'נשמר בתיק' : 'נקנה ונלבש');
+}
+function usePotion(it){
+  const g = GS(), b = g.boost, m = document.getElementById('smsg');
+  const say = t => { if(m) m.textContent = t; };
+  const map = {x2:'x2', x15:'x15', retry:'retry', timer3:'timer3', x3past:'x3past'};
+  if(map[it.fx]){
+    if(b[map[it.fx]] || ((it.fx === 'x2' || it.fx === 'x15') && (b.x2 || b.x15))) return say('יש כבר שיקוי כזה פעיל. הוא ייגמר בסט הבא.');
+    b[map[it.fx]] = true;
+  } else if(it.fx === 'permA1' || it.fx === 'permD1' || it.fx === 'permM1'){
+    const k = it.fx[4].toLowerCase(); g.perm[k] = (g.perm[k] || 0) + 1;
+  } else if(it.fx === 'streak'){
+    const y = new Date(); y.setDate(y.getDate() - 1); const y2 = new Date(); y2.setDate(y2.getDate() - 2);
+    const act = k => { const l = S.log[k]; return l && (l[0] + l[3]) > 0; };
+    if(act(dateKey(y)) || !act(dateKey(y2))) return say('אין כרגע רצף שבור של יום אחד לשחזר.');
+    S.log[dateKey(y)] = [1, 1, 0, 0, 0];
+  } else return;
+  g.pots[it.id]--; if(!g.pots[it.id]) delete g.pots[it.id];
+  session.sel = null; buzz(14); save(); render();
+  gToast('השיקוי פעיל', 'buy', G.FX[it.fx].replace(/‎/g, '').replace(/^שימוש: /, ''));
+}
+
 /* ---------- backup ---------- */
 function bkMsg(s){const el=document.getElementById('bkmsg'); if(el) el.textContent=s;}
 async function exportData(){
@@ -2404,7 +3546,7 @@ function importData(file){
   file.text().then(tx => {
     const o=JSON.parse(tx);
     if(!o || typeof o.cards!=='object') throw new Error('bad');
-    S={cards:o.cards||{}, q:o.q||{}, log:o.log||{}, updatedAt:Date.now()};
+    S={cards:o.cards||{}, q:o.q||{}, log:o.log||{}, g:o.g||null, updatedAt:Date.now()};
     if(o.px && typeof o.px==='object'){ PX={keys:o.px.keys||{}, runs:o.px.runs||[], draft:null}; pxSave(); }
     writeLocal(); render(); bkMsg('ההתקדמות שוחזרה מהגיבוי.');
   }).catch(() => bkMsg('הקובץ אינו גיבוי תקין של האפליקציה.'));
