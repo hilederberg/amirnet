@@ -197,6 +197,166 @@ h2{font-size:.8rem;margin:0 0 10px;font-weight:700;letter-spacing:.06em;color:va
 .bk .btn{flex:1;min-width:140px;display:inline-flex;align-items:center;justify-content:center}
 .pxtag{margin-inline-start:auto;font-weight:700}
 
+/* hub navigation */
+.ttl{min-width:0}
+.top .back{flex:none;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.ico{display:inline-flex;flex:none}
+.hero .hrow{display:flex;align-items:baseline;gap:10px}
+.hero .hrow .big{font-size:3.4rem}
+.hero>.deco svg{width:84px;height:auto}
+.hero .hrow .meta{font-weight:500}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{display:flex;flex-direction:column;align-items:stretch;gap:4px;text-align:start;min-height:138px;padding:14px;border-radius:22px;border:var(--bw) solid var(--bc);background:var(--surface);color:var(--fg);cursor:pointer;font:inherit;min-width:0}
+.tile:active{transform:translateY(1px)}
+.tile[disabled]{opacity:.5;cursor:default}
+.tile .trow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto;padding-bottom:10px}
+.tile .tpct{font-size:.85rem;font-weight:700}
+.tile .tt{font-weight:700;font-size:1.05rem;line-height:1.25}
+.tile .td{font-size:.78rem;color:var(--muted);line-height:1.35}
+.tmeter{height:6px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin-top:8px}
+.tmeter i{display:block;height:100%;background:var(--fg);border-radius:99px}
+.tile:focus-visible,.prow:focus-visible,.feat:focus-visible,.tab:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+.feat{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:start;padding:18px;border-radius:var(--radius);border:var(--bw) solid var(--bc);background:var(--fg);color:var(--bg);cursor:pointer;font:inherit;width:100%}
+.feat .lbl{font-size:.8rem;font-weight:500;opacity:.8}
+.feat .ft{font-size:1.25rem;font-weight:700}
+.feat .meta{font-size:.85rem;opacity:.85}
+.feat .fbtn{margin-top:10px;background:var(--bg);color:var(--fg);border-radius:999px;padding:8px 18px;font-weight:700}
+.plist2{display:flex;flex-direction:column;gap:10px}
+.prow{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 14px 12px 12px;border-radius:18px;border:var(--bw) solid var(--bc);background:var(--surface);color:var(--fg);cursor:pointer;font:inherit;text-align:start;width:100%}
+.prow .pt{flex:1;min-width:0}
+.prow .pl{font-weight:500;font-size:1rem}
+.prow .pm{font-size:.78rem;color:var(--muted)}
+.prow .pa{font-size:.85rem;font-weight:700}
+.app:has(.tabbar){padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+.tabbar{position:fixed;inset-inline:0;bottom:0;z-index:5;display:flex;justify-content:center;gap:6px;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:var(--bw) solid var(--bc)}
+.tab{flex:1;max-width:150px;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:52px;padding:6px 4px;border:0;border-radius:16px;background:transparent;color:var(--muted);cursor:pointer;font:inherit;font-size:.75rem}
+.tab.on{background:var(--surface-2);color:var(--fg);font-weight:700}
+
+/* ---- v12 professional polish ---- */
+:root{--bw:2px;--radius:22px;--opt-r:16px}
+.app{gap:16px}
+h1{font-size:1.5rem;letter-spacing:-.01em}
+h2{font-size:.78rem;letter-spacing:.04em;margin:4px 2px 0}
+.card h2{margin:0 0 12px}
+.card{padding:18px}
+.top{padding-top:4px}
+.icon-btn{border-width:var(--bw);border-radius:14px;color:var(--fg)}
+.icon-btn.close{padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px}
+.sess-top{gap:14px}
+.prog .cnt{font-size:.82rem;font-weight:500;color:var(--fg);margin-bottom:6px}
+.prog .cnt .timer{color:var(--muted)}
+.prog .meter{border:0;height:6px;background:var(--surface-2)}
+.prog .meter i{background:var(--fg)}
+.meter{border:var(--bw) solid var(--fg)}
+.q{padding:20px 18px}
+.q .inst{font-size:.82rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.opts{gap:10px}
+.opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 14px;border-width:var(--bw);transition:background .15s,border-color .15s}
+.opt:not([disabled]):hover{background:var(--surface-2)}
+.opt .okey{flex:none;width:28px;height:28px;border-radius:50%;border:var(--bw) solid var(--fg);display:inline-flex;align-items:center;justify-content:center;font:600 .85rem var(--ui);direction:ltr}
+.opt .otx{flex:1;min-width:0}
+.opt.ok .okey{background:var(--good);border-color:var(--good);color:#fff}
+.opt.no .okey{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt.ok{border-color:var(--good)}
+.opt.no{border-color:var(--bad)}
+.opt.dim{opacity:.5}
+.fb{border:var(--bw) solid;padding:14px 16px;line-height:1.6}
+.fb.ok{border-color:var(--good)}.fb.no{border-color:var(--bad)}
+.fb .h{display:flex;align-items:center;gap:8px}
+.btn{border-radius:999px;min-height:52px;font-size:1.02rem}
+.rsum{display:flex;flex-direction:column;gap:14px}
+.rsum .rl{font-size:.82rem;font-weight:500;color:var(--muted)}
+.rsum .rmain{display:flex;align-items:center;gap:16px}
+.rsum .score{font-size:3.4rem}
+.rsum .rmsg{font-weight:500;line-height:1.45}
+.rstats{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--bw) solid var(--fg);padding-top:12px}
+.rstats div{display:flex;flex-direction:column;align-items:center;gap:2px}
+.rstats div+div{border-inline-start:1px solid var(--bar)}
+.rstats b{font-size:1.15rem}
+.rstats span{font-size:.75rem;color:var(--muted)}
+.miss{border-top:1px solid var(--bar)}
+.flash{gap:12px;padding:26px 20px}
+.flash .word{font-size:2.5rem}
+.rates{gap:8px}
+.rate{min-height:66px;border-width:var(--bw);border-bottom-width:5px;border-radius:16px}
+.rate b{font-size:1rem}
+.tile{border-width:var(--bw)}
+.tile .ico{width:44px;height:44px;border-radius:14px;background:var(--surface-2);align-items:center;justify-content:center}
+.tile .ico svg{width:26px;height:26px}
+.prow{border-width:var(--bw)}
+.hero{border-width:var(--bw);padding:20px}
+.hero .lbl{font-size:.9rem}
+.hero .btn{min-height:52px}
+.feat{border-width:var(--bw)}
+.pch,.pxb,.pxf,.pxr,.pxkey,.vsel{border-width:var(--bw)}
+.pxsheet{gap:4px}
+.pxrow{padding:2px 0}
+.pxrow:has(.pxb.on) .pxn{color:var(--fg)}
+.pxn{color:var(--muted)}
+.pxb{min-height:40px;min-width:40px}
+.pxf{flex:0 0 40px;min-width:40px;min-height:40px}
+.pxres{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+.pxr{justify-content:space-between;padding:8px 10px}
+.pxr.ok{border-color:var(--bar)}
+.pxv{display:inline-flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap}
+.pxv s{opacity:.6}
+.rstats b.over{color:var(--bad)}
+.btn.wide{width:100%;margin-top:6px}
+.pxkey{text-align:left}
+.rsum .rmsg{font-size:.92rem}
+.pxr.ok .pxv{color:var(--good)}
+.pxsum{display:flex;flex-direction:column;gap:6px}
+.tabbar{border-top-width:var(--bw)}
+.sw-box{border-width:var(--bw)}
+
+.sw-box i{background:var(--bar)}
+.sw-box{transition:background-color .2s}
+.sw-box i{transition:inset-inline-start .25s var(--spring,ease),background-color .2s}
+/* ---- motion ---- */
+:root{--ease:cubic-bezier(.22,.61,.36,1);--soft:cubic-bezier(.16,1,.3,1);--spring:cubic-bezier(.34,1.25,.64,1)}
+.tile,.prow,.btn,.opt,.rate,.pch,.pxb,.pxf,.tab,.feat,.icon-btn,.mini,.hard-toggle,.course{transition:transform .25s var(--ease),background-color .2s,border-color .2s,color .2s,opacity .25s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.scw{position:relative;flex:none}
+.burst{position:absolute;inset:0;pointer-events:none;color:var(--fg)}
+.burst .sp{position:absolute;left:50%;top:50%;opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .in{animation:rise .75s var(--soft) both;animation-delay:calc(var(--i,0) * 70ms)}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+  @media (hover:hover){
+    .tile:hover,.prow:hover,.feat:hover,.pch:hover{transform:translateY(-1px)}
+    .tile:hover,.prow:hover,.pch:hover{box-shadow:0 4px 0 -2px var(--fg)}
+  }
+  .tile:active,.prow:active,.feat:active,.pch:active,.rate:active,.mini:active,.course:active,.hard-toggle:active{transform:scale(.985);box-shadow:none}
+  .btn:active,.icon-btn:active,.tab:active,.pxb:active,.pxf:active{transform:scale(.97)}
+  .opt:not([disabled]):active{transform:scale(.985)}
+  .meter i,.tmeter i{animation:grow 1.3s var(--soft) .3s both}
+  @keyframes grow{from{width:0}}
+  .prog .meter i{animation:none;transition:width .8s var(--soft)}
+  .bar{animation:barup 1s var(--soft) both;animation-delay:calc(var(--b,0) * 40ms + .3s);transform-origin:bottom}
+  @keyframes barup{from{transform:scaleY(0)}}
+  .opt.ok{animation:pop .7s var(--soft)}
+  .opt.no{animation:shake .6s var(--ease)}
+  .opt .okey .ico{animation:popin .5s var(--spring) .1s both}
+  @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.015)}100%{transform:scale(1)}}
+  @keyframes shake{0%,100%{transform:none}25%{transform:translateX(-4px)}50%{transform:translateX(3px)}75%{transform:translateX(-1.5px)}}
+  @keyframes popin{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+  .fb{animation:rise .7s var(--soft) .15s both}
+  .fb + .btn{animation:rise .7s var(--soft) .28s both}
+  .flash .he,.flash .ex,.flash .ex + *{animation:rise .7s var(--soft) both}
+  .flash .ex{animation-delay:.1s}
+  .rates{animation:rise .7s var(--soft) .2s both}
+  .pxb.on{animation:popin .35s var(--spring)}
+  .pxf.on{animation:popin .35s var(--spring)}
+  .tab.on{animation:fadein .5s var(--ease)}
+  .hero>.deco{animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(-2deg)}}
+  .burst .sp{animation:spark 1.3s var(--soft) .5s both}
+  .burst .sp0{--x:-70px;--y:-34px}.burst .sp1{--x:64px;--y:-40px;animation-delay:.42s}.burst .sp2{--x:-84px;--y:18px;animation-delay:.48s}
+  .burst .sp3{--x:80px;--y:22px;animation-delay:.4s}.burst .sp4{--x:-20px;--y:-58px;animation-delay:.52s}.burst .sp5{--x:24px;--y:52px;animation-delay:.46s}
+  @keyframes spark{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}35%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1) rotate(45deg)}}
+  .pxwarn:not([hidden]){animation:rise .7s var(--soft) both}
+}
+
 label.btn{cursor:pointer}
 </style>
 </head>
@@ -1383,7 +1543,7 @@ async function initRemote(){
       syncState = 'cloud';
       if(S.updatedAt > 0) queueRemote();
     }
-    if(!session) render();
+    if(!session) softRender();
   }catch(e){}
 }
 
@@ -1446,7 +1606,7 @@ function bestVoice(){
   if(VOICE_PREF){ const p = vs.find(v => v.name === VOICE_PREF); if(p) return p; }
   return vs.slice().sort((a,b) => voiceScore(b) - voiceScore(a))[0];
 }
-try{ if(window.speechSynthesis) speechSynthesis.addEventListener('voiceschanged', () => { if(!session) render(); }); }catch(e){}
+try{ if(window.speechSynthesis) speechSynthesis.addEventListener('voiceschanged', () => { if(session && session.kind === 'settings') softRender(); }); }catch(e){}
 function speak(text){
   try{
     if(!window.speechSynthesis) return;
@@ -1488,11 +1648,59 @@ function accFor(bank){
 }
 
 /* ---------- navigation ---------- */
-function go(next){stopTimer(); session = next; render(); window.scrollTo(0,0);}
+function go(next){stopTimer(); session = next; ANIM = true; render(); window.scrollTo(0,0);}
 function render(){
-  const PXV = {pxmenu:pxMenuView, pxrun:pxRunView, pxkey:pxKeyView, pxres:pxResView};
+  const PXV = {pxmenu:pxMenuView, pxrun:pxRunView, pxkey:pxKeyView, pxres:pxResView, cat:catView, progress:progressView, settings:settingsView};
   root.replaceChildren(session ? (PXV[session.kind] ? PXV[session.kind]() : session.kind === 'words' ? wordView() : (session.done ? resultView() : quizView())) : homeView());
+  motion();
 }
+/* ---------- motion ---------- */
+let ANIM = false, LAST_VIEW = '', LAST_ENTER = 0, SOFT_T = 0;
+function softRender(){ clearTimeout(SOFT_T); const wait = LAST_ENTER + 1300 - Date.now(); if(wait > 0) SOFT_T = setTimeout(() => { if(!session || session.kind === 'settings') render(); }, wait); else render(); }
+const RM = (() => { try{ return window.matchMedia('(prefers-reduced-motion: reduce)'); }catch(e){ return {matches:false}; } })();
+function motion(){
+  const enter = ANIM; ANIM = false;
+  const view = session ? session.kind + (session.done ? ':done' : '') : 'home';
+  const sameView = view === LAST_VIEW; LAST_VIEW = view;
+  // progress bars that should glide from their previous value
+  root.querySelectorAll('[data-w]').forEach(el => { const w = el.getAttribute('data-w'); requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = w; })); });
+  if(!enter) return;
+  LAST_ENTER = Date.now();
+  if(!RM.matches){
+    const items = [];
+    for(const c of root.children){
+      const skip = el => el.classList.contains('tabbar') || (sameView && (el.classList.contains('sess-top') || el.classList.contains('top')));
+      if(skip(c)) continue;
+      if(getComputedStyle(c).display === 'contents'){ for(const g of c.children) if(!skip(g)) items.push(g); }
+      else items.push(c);
+    }
+    const live = items.filter(el => !el.hidden);
+    const clear = el => { el.classList.remove('in'); el.style.removeProperty('--i'); };
+    live.forEach((el, i) => {
+      el.style.setProperty('--i', Math.min(i, 9));
+      el.classList.add('in');
+      el.addEventListener('animationend', function done(e){ if(e.target !== el) return; clear(el); el.removeEventListener('animationend', done); });
+    });
+    setTimeout(() => live.forEach(clear), 2000);
+  }
+  root.querySelectorAll('[data-count]').forEach(countUp);
+}
+function countUp(el){
+  const to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suf') || '';
+  if(RM.matches || !(to > 0)){ el.textContent = to + suf; return; }
+  const t0 = performance.now(), dur = Math.min(1400, 700 + to * 12);
+  const step = now => { const k = Math.min(1, (now - t0) / dur); const e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e) + suf; if(k < 1) requestAnimationFrame(step); };
+  el.textContent = '0' + suf; requestAnimationFrame(step);
+}
+function burst(){ return h('span',{class:'burst','aria-hidden':'true',html: [0,1,2,3,4,5].map(k => '<svg class="sp sp' + k + '" viewBox="0 0 24 24" width="18" height="18"><path d="M12 1c.8 5.5 2.2 7.6 11 11-8.8 3.4-10.2 5.5-11 11-.8-5.5-2.2-7.6-11-11 8.8-3.4 10.2-5.5 11-11z" fill="currentColor"/></svg>').join('')}); }
+function qMeter(s){
+  const cur = Math.round(s.i/s.items.length*100) + '%';
+  if(s._mw === s.i) return h('div',{class:'meter'},h('i',{style:'width:' + cur}));
+  const prev = s._mw == null ? '0%' : Math.round(s._mw/s.items.length*100) + '%';
+  s._mw = s.i;
+  return h('div',{class:'meter'},h('i',{style:'width:' + prev,'data-w':cur}));
+}
+function buzz(p){ try{ if(navigator.vibrate) navigator.vibrate(p); }catch(e){} }
 
 /* ---------- decoration: ink line art ---------- */
 function spark(x, y, s){
@@ -1562,68 +1770,134 @@ function cardDeco(){return '<svg viewBox="0 0 40 40" width="26" height="26" aria
 function flashDeco(){return sparks(96);}
 
 /* ---------- home ---------- */
+const ICO = {
+  en:'<path d="M5 25 11 7l6 18M7.5 19h7"/><circle cx="23" cy="20.5" r="4"/><path d="M27 16v9"/>',
+  he:'<path d="M6 7h20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><path d="M10 13h12M10 17h8"/>',
+  qn:'<rect x="4" y="4" width="24" height="24" rx="5"/><path d="M8.5 11h6M11.5 8v6M18 11h6M9 18.5l5 5M14 18.5l-5 5M18 19.5h6M18 23h6"/>',
+  past:'<path d="M8 4h12l6 6v18H8z"/><path d="M20 4v6h6"/><circle cx="13" cy="16" r="1.6"/><circle cx="13" cy="22" r="1.6"/><path d="M17 16h5M17 22h5"/>',
+  words:'<rect x="5" y="9" width="18" height="19" rx="3"/><path d="M9 5h15a3 3 0 0 1 3 3v15"/><path d="M10 16h8M10 20h5"/>',
+  err:'<path d="M7 4h17a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H7z"/><path d="M11 4v24"/><path d="M15.5 12.5l5 5M20.5 12.5l-5 5"/>',
+  home:'<path d="M5 15 16 6l11 9v11a1.5 1.5 0 0 1-1.5 1.5H20v-8h-8v8H6.5A1.5 1.5 0 0 1 5 26z"/>',
+  chart:'<path d="M7 27V17M16 27V6M25 27V14"/>',
+  gear:'<circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="9"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>',
+  chev:'<path d="m19 24-8-8 8-8"/>',
+  x:'<path d="M9 9l14 14M23 9 9 23"/>',
+  check:'<path d="M7 16.5l6 6L25 10"/>',
+  back:'<path d="M7 16h18M18 9l7 7-7 7"/>'
+};
+function ico(k, size){ return h('span',{class:'ico','aria-hidden':'true',html:'<svg viewBox="0 0 32 32" width="' + (size||28) + '" height="' + (size||28) + '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ICO[k] + '</svg>'}); }
+const CATS = {
+  en:{t:'אנגלית', d:'השלמת משפטים · ניסוח מחדש · הבנת הנקרא', keys:['sc','rs','re']},
+  he:{t:'חשיבה מילולית', d:'אנלוגיות · מילים וביטויים · הבנה והסקה', keys:['sim','hv','an','hs','hi','lg','rh'], feat:'sim'},
+  qn:{t:'חשיבה כמותית', d:'אלגברה · גאומטריה · בעיות מילוליות', keys:['qsim','qw','qa','qn','qg','qd'], feat:'qsim'}
+};
+function catAcc(k){ let seen = 0, ok = 0; for(const q of CATS[k].keys){ const a = accFor(bankQs(QUIZ[q])); seen += a.seen; ok += a.ok; } return {seen, ok}; }
+function pctTxt(a){ return a.seen ? Math.round(a.ok/a.seen*100) + '%' : ''; }
+function meterEl(p){ return h('div',{class:'tmeter'},h('i',{style:'width:' + Math.max(0, Math.min(100, p)) + '%'})); }
+function tabBar(cur){
+  const it = (k, label, icon, fn) => h('button',{class:'tab' + (cur === k ? ' on' : ''),'aria-current': cur === k ? 'page' : null,onclick:fn}, ico(icon, 24), h('span',{text:label}));
+  return h('nav',{class:'tabbar','aria-label':'ניווט ראשי'},
+    it('home','בית','home',()=>go(null)), it('progress','התקדמות','chart',()=>go({kind:'progress'})), it('settings','הגדרות','gear',()=>go({kind:'settings'})));
+}
+function screenTop(title, sub, back){
+  return h('header',{class:'top'},
+    h('div',{class:'ttl'}, h('h1',{text:title}), sub ? h('div',{class:'sub',text:sub}) : null),
+    back ? h('button',{class:'icon-btn back','aria-label':'חזרה',onclick:back}, ico('back', 22)) : null);
+}
+
+let RET_CAT = null;
+function goBack(){ go(RET_CAT ? {kind:'cat', cat:RET_CAT} : null); }
 function homeView(){
+  RET_CAT = null;
   const st = wordStats();
   const l = logToday();
   const unseen = WORDS.length - st.learned;
   const newAvail = Math.min(Math.max(0, NEW_PER_DAY - l[2]), unseen);
   const total = st.due + newAvail;
+  const sk = streak();
+  const lvl = Math.floor(st.learned/10) + 1;
+  const nWrong = wrongList().length;
+  const doneToday = l[0] + l[3];
+  const hero = h('section',{class:'hero'},
+    h('div',{class:'deco',html: heroDeco()}),
+    h('div',{class:'lbl',text: doneToday ? 'המשך התרגול היומי' : 'התרגול היומי שלך'}),
+    h('div',{class:'hrow'}, h('div',{class:'big num','data-count':String(total + 8),text: String(total + 8)}), h('div',{class:'meta num',text:'משימות להיום'})),
+    h('div',{class:'meta num',text: (total ? total + ' כרטיסי מילים · ' : '') + '8 שאלות, עם דגש על הנושאים החלשים שלך'}),
+    h('button',{class:'btn',onclick:startDaily},'התחל תרגול יומי'),
+    h('div',{class:'lvl'},h('span',{class:'num',text:'רמה ' + lvl}),h('div',{class:'meter'},h('i',{style:'width:' + (st.learned % 10)*10 + '%'})),h('span',{class:'num',text:'היום ' + doneToday})));
+
+  const tile = (k, title, sub, pct, p, fn, dis) => h('button',{class:'tile', onclick:fn, disabled: dis || null},
+    h('div',{class:'trow'}, ico(k, 30), h('span',{class:'tpct num',text:pct})),
+    h('div',{class:'tt',text:title}), h('div',{class:'td',text:sub}), p != null ? meterEl(p) : null);
+  const ca = k => catAcc(k);
+  const cat = k => { const a = ca(k); return tile(k, CATS[k].t, CATS[k].d, pctTxt(a), a.seen ? a.ok/a.seen*100 : 0, () => go({kind:'cat', cat:k})); };
+  const pxDone = PX.runs.filter(r => r.score != null).length;
+  const grid = h('div',{class:'tiles'},
+    cat('en'), cat('he'), cat('qn'),
+    tile('past','מבחני עבר', PX_EXAMS.length + ' מועדים מה־PDF שלך · טיימר וציון', pxDone ? pxDone + ' פרקים' : '', null, openPx),
+    tile('words','אוצר מילים', st.due ? st.due + ' מילים לחזרה עכשיו' : (unseen ? 'עוד ' + Math.min(10, unseen) + ' מילים חדשות' : 'כל המילים נלמדו'), st.learned + '/' + WORDS.length, st.learned/WORDS.length*100, () => startWords(!st.due && !!unseen), !st.due && !unseen),
+    tile('err','מחברת טעויות', nWrong ? 'שאלות שטעית בהן, עד שתצליח' : 'אין כרגע טעויות לתרגול', nWrong ? String(nWrong) : '', null, () => startQuiz('err'), !nWrong));
+  return h('div',{class:'app-inner',style:'display:contents'},
+    h('header',{class:'top'},
+      h('div',{class:'ttl'}, h('h1',{text:'מאמן אמירנט'}), h('div',{class:'sub',text:'פסיכומטרי ואמירנט · תרגול יומי'})),
+      sk ? h('span',{class:'chip num',text:'רצף ' + sk + ' ימים'}) : null),
+    hero, h('h2',{text:'נושאים לתרגול'}), grid, tabBar('home'));
+}
+
+function catView(){
+  const k = session.cat, c = CATS[k];
+  const a = catAcc(k);
+  const mkRow = q => { const cfg = QUIZ[q]; const aa = accFor(bankQs(cfg));
+    const d = cfg.qsim ? '20 שאלות · 20 דק׳ · כמו במבחן' : cfg.sim ? '23 שאלות · 20 דק׳ · כמו במבחן' : (cfg.reading ? 'קטע ושאלות' : cfg.n + ' שאלות') + ' · ' + Math.round(cfg.target/60) + ' דק׳';
+    return h('button',{class:'prow',onclick:()=>{ RET_CAT = k; startQuiz(q); }},
+      h('div',{class:'pt'}, h('div',{class:'pl',text:cfg.label}), h('div',{class:'pm num',text:d})),
+      h('span',{class:'pa num',text: (cfg.sim || cfg.qsim) ? '' : pctTxt(aa)}), ico('chev', 20)); };
+  const feat = c.feat ? h('button',{class:'feat',onclick:()=>{ RET_CAT = k; startQuiz(c.feat); }},
+    h('div',{class:'lbl',text:'מומלץ פעם בשבוע'}), h('div',{class:'ft',text: QUIZ[c.feat].label}),
+    h('div',{class:'meta num',text: c.feat === 'qsim' ? '20 שאלות · 20 דקות · כמו במבחן' : '23 שאלות · 20 דקות · כמו במבחן'}),
+    h('span',{class:'fbtn'},'להתחלה')) : null;
+  const rest = c.keys.filter(q => q !== c.feat);
+  return h('div',{class:'app-inner',style:'display:contents'},
+    screenTop(c.t, a.seen ? 'דיוק כולל ' + Math.round(a.ok/a.seen*100) + '% · ' + a.seen + ' תשובות' : 'עוד לא התחלת את הנושא הזה', () => go(null)),
+    a.seen ? meterEl(a.ok/a.seen*100) : null,
+    feat, h('h2',{text: c.feat ? 'תרגול לפי סוג שאלה' : 'בחרו סוג תרגול'}),
+    h('div',{class:'plist2'}, rest.map(mkRow)));
+}
+
+function progressView(){
+  const st = wordStats();
   const days = [];
   for(let i = 13; i >= 0; i--){const d = new Date(); d.setDate(d.getDate()-i); const k = dateKey(d); const x = S.log[k]; days.push({k, n: x ? x[0]+x[3] : 0, wd: ['א','ב','ג','ד','ה','ו','ש'][d.getDay()]});}
   const maxN = Math.max(1, ...days.map(d => d.n));
   const sk = streak();
-
-  const lvl = Math.floor(st.learned/10) + 1;
-  const nWrong = wrongList().length;
-  const hero = h('section',{class:'hero'},
-    h('div',{class:'deco',html: heroDeco()}),
-    h('div',{class:'lbl',text:'התרגול היומי שלך'}),
-    h('div',{class:'big',text: String(total + 8)}),
-    h('div',{class:'meta num',text: (total ? total + ' כרטיסי מילים · ' : '') + '8 שאלות מכל הנושאים, עם דגש על החלשים שלך'}),
-    h('div',{class:'meta num',text:'היום: ' + l[0] + ' כרטיסים · ' + l[3] + ' שאלות'}),
-    h('div',{class:'lvl'},h('span',{class:'num',text:'רמה ' + lvl}),h('div',{class:'meter'},h('i',{style:'width:' + (st.learned % 10)*10 + '%'})),h('span',{class:'num',text:(st.learned % 10) + '/10'})),
-    h('button',{class:'btn',onclick:startDaily},'התחל תרגול יומי'),
-    h('div',{class:'hero-sub'},
-      total ? h('button',{class:'mini',onclick:()=>startWords(false)},'רק מילים') : (unseen ? h('button',{class:'mini',onclick:()=>startWords(true)},'עוד ' + Math.min(10,unseen) + ' מילים') : null),
-      h('button',{class:'mini',disabled: !nWrong,onclick:()=>startQuiz('err')},'מחברת טעויות' + (nWrong ? ' (' + nWrong + ')' : '')))
-  );
-
-  const mkBtn = (k,i) => {
-    const c = QUIZ[k];
-    const d = c.qsim ? '20 שאלות · 20 דק׳ · כמו במבחן' : c.sim ? '23 שאלות · 20 דק׳ · כמו במבחן' : (c.reading ? 'קטע ושאלות' : c.n + ' שאלות') + ' · ' + Math.round(c.target/60) + ' דק׳';
-    return h('button',{class:'btn',onclick:()=>startQuiz(k)}, h('span',{class:'deco',html:cardDeco(i)}), h('span',{class:'t',text:c.label}), h('span',{class:'d',text:d}));
-  };
-  const launch = h('div',{class:'stack'},
-    h('div',{},h('h2',{text:'אנגלית'}),h('div',{class:'launch'},['sc','rs','re'].map(mkBtn))),
-    h('div',{},h('h2',{text:'חשיבה מילולית בעברית'}),h('div',{class:'launch'},['sim','hv','an','hs','hi','lg','rh'].map(mkBtn))),
-    h('div',{},h('h2',{text:'חשיבה כמותית'}),h('div',{class:'launch'},['qsim','qw','qa','qn','qg','qd'].map(mkBtn))),
-    h('div',{},h('h2',{text:'מבחני עבר'}),h('div',{class:'launch'},h('button',{class:'btn',onclick:openPx},h('span',{class:'deco',html:cardDeco(2)}),h('span',{class:'t',text:'מבחני עבר מה־PDF'}),h('span',{class:'d num',text: PX_EXAMS.length + ' מועדים · טיימר, גיליון תשובות וציון'})))));
-
-  const course = h('a',{class:'card course',href:'https://campus.gov.il/course/mse-gov-psychometry-he',target:'_blank',rel:'noopener'},
-    h('div',{class:'ct'},'הקורס החינמי של קמפוס IL ↗'),
-    h('div',{class:'sub'},'מבחני עבר וסימולציות רשמיות. מומלץ: סימולציה מלאה פעם בשבוע בקורס, ותרגול יומי קצר כאן.'));
-  const hardRow = h('button',{class:'card hard-toggle','aria-pressed':String(HARD),onclick:()=>{HARD = !HARD; try{localStorage.setItem('amirnet-hard', HARD ? '1' : '0');}catch(e){} render();}},
-    h('span',{class:'sw-box'},h('i')),
-    h('span',{},h('span',{class:'ct',text:'מצב מתקדם'}),h('span',{class:'sub',text: HARD ? ' · מוצגות רק שאלות ברמה גבוהה' : ' · כבוי: שאלות קשות יעלו אוטומטית כשתגיע ל־70% דיוק'})));
   const stats = h('section',{class:'card'},
     h('h2',{text:'המילים שלך'}),
     h('div',{class:'grid4'},
       h('div',{class:'stat'},h('div',{class:'v',text: st.learned + '/' + WORDS.length}),h('div',{class:'k',text:'מילים שנלמדו'})),
       h('div',{class:'stat'},h('div',{class:'v',text: String(st.mature)}),h('div',{class:'k',text:'מילים יציבות'})),
       h('div',{class:'stat'},h('div',{class:'v',text: st.avgR == null ? '—' : Math.round(st.avgR*100) + '%'}),h('div',{class:'k',text:'זכירה משוערת כעת'})),
-      h('div',{class:'stat'},h('div',{class:'v',text: String(sk)}),h('div',{class:'k',text:'ימים ברצף'}))
-    )
-  );
-
+      h('div',{class:'stat'},h('div',{class:'v',text: String(sk)}),h('div',{class:'k',text:'ימים ברצף'}))));
   const act = h('section',{class:'card'},
     h('h2',{text:'פעילות ב־14 הימים האחרונים'}),
-    h('div',{class:'bars',role:'img','aria-label':'פעילות יומית'}, days.map((d,i)=>h('div',{class:'bar' + (i === days.length-1 ? ' today' : ''), style:'height:' + Math.max(3, Math.round(d.n/maxN*100)) + '%', title: d.k + ': ' + d.n}))),
-    h('div',{class:'bar-labels'}, days.map(d=>h('span',{text:d.wd})))
-  );
-
+    h('div',{class:'bars',role:'img','aria-label':'פעילות יומית'}, days.map((d,i)=>h('div',{class:'bar' + (i === days.length-1 ? ' today' : ''), style:'--b:' + i + ';height:' + Math.max(3, Math.round(d.n/maxN*100)) + '%', title: d.k + ': ' + d.n}))),
+    h('div',{class:'bar-labels'}, days.map(d=>h('span',{text:d.wd}))));
   const row = (name, a) => h('div',{class:'acc-row'},
     h('div',{class:'head'},h('span',{text:name}),h('span',{class:'num',text: a.seen ? Math.round(a.ok/a.seen*100) + '% · ' + a.seen + ' תשובות' : 'עוד לא התחלת'})),
     h('div',{class:'meter'},h('i',{style:'width:' + (a.seen ? Math.round(a.ok/a.seen*100) : 0) + '%'})));
+  const acc = Object.keys(CATS).map(k => h('section',{class:'card'},
+    h('h2',{text:'דיוק · ' + CATS[k].t}),
+    h('div',{class:'acc'}, CATS[k].keys.filter(q => !QUIZ[q].sim && !QUIZ[q].qsim).map(q => row(QUIZ[q].label, accFor(bankQs(QUIZ[q])))))));
+  const runs = PX.runs.filter(r => r.score != null).slice(-5).reverse();
+  const past = runs.length ? h('section',{class:'card'}, h('h2',{text:'מבחני עבר אחרונים'}),
+    h('div',{class:'acc'}, runs.map(r => row(pxTitle(r.ex) + ' · ' + pxCh(r.ch).t, {seen:r.n, ok:r.score})))) : null;
+  return h('div',{class:'app-inner',style:'display:contents'},
+    screenTop('התקדמות', 'מילים, פעילות ודיוק לפי נושא'), stats, act, ...acc, past, tabBar('progress'));
+}
+
+function settingsView(){
+  const hardRow = h('button',{class:'card hard-toggle','aria-pressed':String(HARD),onclick:()=>{HARD = !HARD; try{localStorage.setItem('amirnet-hard', HARD ? '1' : '0');}catch(e){} render();}},
+    h('span',{class:'sw-box'},h('i')),
+    h('span',{},h('span',{class:'ct',text:'מצב מתקדם'}),h('span',{class:'sub',text: HARD ? ' · מוצגות רק שאלות ברמה גבוהה' : ' · כבוי: שאלות קשות יעלו אוטומטית כשתגיע ל־70% דיוק'})));
   const vs = enVoices().slice().sort((a,b) => voiceScore(b) - voiceScore(a));
   const cur = bestVoice();
   const voiceCard = vs.length ? h('section',{class:'card'},
@@ -1633,9 +1907,9 @@ function homeView(){
         vs.map(v => { const o = h('option',{value:v.name}, v.name + ' (' + v.lang + ')'); if(cur && v.name === cur.name) o.selected = true; return o; })),
       h('button',{class:'icon-btn',onclick:()=>speak('The results were surprisingly consistent.')},'בדיקה')),
     h('div',{class:'sub',text:'קולות שמסומנים Natural, Enhanced או Premium נשמעים הכי טבעי. באייפון אפשר להוריד קול משופר: הגדרות ← נגישות ← תוכן מוקרא ← קולות ← English, ולבחור למשל Ava (Enhanced). באנדרואיד: הגדרות ← נגישות ← המרת טקסט לדיבור ← מנוע Google.'})) : null;
-  const acc = h('section',{class:'card'},
-    h('h2',{text:'דיוק בתרגול שאלות'}),
-    h('div',{class:'acc'}, Object.keys(QUIZ).filter(k => !QUIZ[k].sim && !QUIZ[k].daily && !QUIZ[k].err).map(k => row(QUIZ[k].label, accFor(bankQs(QUIZ[k]))))));
+  const course = h('a',{class:'card course',href:'https://campus.gov.il/course/mse-gov-psychometry-he',target:'_blank',rel:'noopener'},
+    h('div',{class:'ct'},'הקורס החינמי של קמפוס IL ↗'),
+    h('div',{class:'sub'},'מבחני עבר וסימולציות רשמיות. מומלץ: סימולציה מלאה פעם בשבוע, ותרגול יומי קצר כאן.'));
   const backup = h('section',{class:'card'},
     h('h2',{text:'גיבוי ההתקדמות'}),
     h('div',{class:'sub',text:'ההתקדמות נשמרת רק בטלפון הזה. כדאי לשמור גיבוי פעם בשבוע, או לפני החלפת מכשיר.'}),
@@ -1644,14 +1918,12 @@ function homeView(){
       h('label',{class:'btn btn-ghost'},'שחזור מגיבוי',h('input',{type:'file',accept:'application/json,.json',hidden:true,onchange:e=>{const f=e.target.files[0]; if(f) importData(f);}}))),
     h('div',{class:'sub',id:'bkmsg'}));
   const foot = h('p',{class:'foot',id:'foot'});
-  const node = h('div',{class:'app-inner',style:'display:contents'},
-    h('header',{class:'top'},
-      h('div',{},h('h1',{text:'מאמן אמירנט'}),h('div',{class:'sub',text:'אנגלית וחשיבה מילולית בעברית · חזרות מרווחות'})),
-      sk ? h('span',{class:'chip num',text:'רצף ' + sk}) : null),
-    hero, course, hardRow, launch, stats, act, acc, voiceCard, backup, foot);
   setTimeout(renderFoot, 0);
-  return node;
+  return h('div',{class:'app-inner',style:'display:contents'},
+    screenTop('הגדרות', 'רמת קושי, קול, גיבוי'),
+    hardRow, voiceCard, backup, course, foot, tabBar('settings'));
 }
+
 function renderFoot(){
   const f = document.getElementById('foot');
   if(!f) return;
@@ -1674,9 +1946,9 @@ function startWords(extra){
 function wordView(){
   const s = session;
   const top = h('div',{class:'sess-top'},
-    h('button',{class:'icon-btn',onclick:()=>go(null)},'יציאה'),
+    h('button',{class:'icon-btn close','aria-label':'יציאה',onclick:()=>go(null)}, ico('x', 20)),
     h('div',{class:'prog'},
-      h('div',{class:'cnt num'},h('span',{text:'מילים'}),h('span',{text: s.done + ' / ' + s.total})),
+      h('div',{class:'cnt num'},h('span',{text:'אוצר מילים'}),h('span',{dir:'ltr',text: s.done + ' / ' + s.total})),
       h('div',{class:'meter'},h('i',{style:'width:' + Math.round(s.done/s.total*100) + '%'}))));
   if(s.finished || !s.queue.length){
     return h('div',{class:'stack',style:'display:contents'}, top,
@@ -1720,7 +1992,7 @@ function rate(g){
   l[0]++; if(g >= 2) l[1]++; if(isNew) l[2]++;
   s.reviews++; if(g >= 2) s.good++;
   if(g === 1) s.queue.splice(Math.min(3, s.queue.length), 0, w); else s.done++;
-  s.revealed = false;
+  s.revealed = false; ANIM = true;
   if(!s.queue.length) s.finished = true;
   save();
   render();
@@ -1867,11 +2139,11 @@ function quizView(){
   const answered = s.picked != null;
   const ms = Date.now() - s.start;
   const top = h('div',{class:'sess-top'},
-    h('button',{class:'icon-btn',onclick:()=>go(null)},'יציאה'),
+    h('button',{class:'icon-btn close','aria-label':'יציאה',onclick:goBack}, ico('x', 20)),
     h('div',{class:'prog'},
       h('div',{class:'cnt num'},h('span',{text: s.cfg.label + ' · ' + (s.i+1) + ' מתוך ' + s.items.length}),
         h('span',{id:'timer',dir:'ltr',class:'timer' + (ms > s.cfg.target*1000 ? ' over' : ''),text: fmtTime(ms) + ' / ' + fmtTime(s.cfg.target*1000)})),
-      h('div',{class:'meter'},h('i',{style:'width:' + Math.round(s.i/s.items.length*100) + '%'}))));
+      qMeter(s)));
 
   let qBody;
   if(it.q.q.indexOf('_____') >= 0){
@@ -1895,7 +2167,8 @@ function quizView(){
     if(answered){
       if(o.ok) cls += ' ok'; else if(idx === s.picked) cls += ' no'; else cls += ' dim';
     }
-    return h('button',{class:cls, disabled: answered, onclick:()=>pick(idx)}, rich(o.t));
+    const mk = answered && o.ok ? ico('check', 16) : answered && idx === s.picked ? ico('x', 16) : String(idx+1);
+    return h('button',{class:cls, disabled: answered, onclick:()=>pick(idx)}, h('span',{class:'okey num'}, mk), h('span',{class:'otx'}, rich(o.t)));
   }));
 
   const kids = [top];
@@ -1914,7 +2187,7 @@ function quizView(){
     const good = it.opts[s.picked].ok;
     const last = s.i === s.items.length - 1;
     kids.push(h('div',{class:'fb ' + (good ? 'ok' : 'no')},
-      h('div',{class:'h'}, good ? 'נכון' : ['לא נכון. התשובה הנכונה: ', h('bdi',{}, rich(it.q.o[it.q.a]))]),
+      h('div',{class:'h'}, ico(good ? 'check' : 'x', 18), h('span',{}, good ? 'תשובה נכונה' : ['התשובה הנכונה: ', h('bdi',{}, rich(it.q.o[it.q.a]))])),
       h('div',{}, rich(it.q.e))));
     kids.push(h('button',{class:'btn btn-primary',onclick: last ? finishQuiz : nextQ}, last ? 'סיום הסט' : 'השאלה הבאה'));
   }
@@ -1925,6 +2198,7 @@ function pick(idx){
   const it = s.items[s.i];
   const ok = it.opts[idx].ok;
   s.picked = idx;
+  buzz(ok ? 12 : [18, 50, 18]);
   s.answers.push({it, ok});
   const st = S.q[it.q.id] || [0,0,0,0];
   st[0]++; if(ok) st[1]++; st[2] = ok ? 1 : 0; st[3] = Date.now();
@@ -1932,14 +2206,14 @@ function pick(idx){
   const l = logToday(); l[3]++; if(ok) l[4]++;
   save();
   if(s.cfg.sim){
-    if(s.i < s.items.length - 1){ s.i++; s.picked = null; render(); window.scrollTo(0,0); }
+    if(s.i < s.items.length - 1){ s.i++; s.picked = null; ANIM = true; render(); window.scrollTo(0,0); }
     else finishQuiz();
     return;
   }
   render();
 }
-function nextQ(){session.i++; session.picked = null; render(); window.scrollTo(0,0);}
-function finishQuiz(){stopTimer(); session.done = true; session.end = Date.now(); render(); window.scrollTo(0,0);}
+function nextQ(){session.i++; session.picked = null; ANIM = true; render(); window.scrollTo(0,0);}
+function finishQuiz(){stopTimer(); session.done = true; session.end = Date.now(); ANIM = true; render(); window.scrollTo(0,0);}
 function rich(s){
   const parts = String(s).split('`'); const out = [];
   parts.forEach((p, i) => { if(!p) return; out.push(i % 2 ? h('bdi',{class:'m',dir:'ltr'},p) : p); });
@@ -1957,11 +2231,13 @@ function resultView(){
   const ms = s.end - s.start;
   const missed = s.answers.filter(a => !a.ok);
   const kids = [
-    h('div',{class:'sess-top'},h('button',{class:'icon-btn',onclick:()=>go(null)},'דף הבית')),
-    h('section',{class:'card flash'},
-      h('div',{class:'sub',text: s.cfg.label}),
-      h('div',{class:'score',text: ok + '/' + s.items.length}),
-      h('div',{class:'sub num',text:'זמן: ' + fmtTime(ms) + ' (יעד: ' + fmtTime(s.cfg.target*1000) + ')'}))
+    screenTop('סיכום', s.cfg.label, goBack),
+    h('section',{class:'card rsum'},
+      h('div',{class:'rmain'}, h('div',{class:'scw'}, h('div',{class:'score num','data-count':String(Math.round(ok / Math.max(1, s.items.length) * 100)),'data-suf':'%',text: Math.round(ok / Math.max(1, s.items.length) * 100) + '%'}), ok / Math.max(1, s.items.length) >= .9 ? burst() : null), h('div',{class:'rmsg',text: ok === s.items.length ? 'מושלם. ממשיכים לשאלות קשות יותר.' : ok / s.items.length >= .7 ? 'יפה מאוד. עוד קצת חזרה על הטעויות.' : 'כדאי לעבור על ההסברים ולנסות שוב.'})),
+      h('div',{class:'rstats'},
+        h('div',{}, h('b',{class:'num',text: ok + '/' + s.items.length}), h('span',{text:'נכונות'})),
+        h('div',{}, h('b',{class:'num',text: fmtTime(ms)}), h('span',{text:'זמן'})),
+        h('div',{}, h('b',{class:'num',text: fmtTime(s.cfg.target*1000)}), h('span',{text:'יעד'}))))
   ];
   if(s.cfg.sim){
     const secs = []; s.items.forEach(x => { if(secs.indexOf(x.sec) < 0) secs.push(x.sec); });
@@ -1975,7 +2251,7 @@ function resultView(){
   }
   if(missed.length){
     kids.push(h('section',{class:'card'},
-      h('h2',{text:'לחזור על הטעויות'}),
+      h('h2',{text:'לחזור על הטעויות · ' + missed.length}),
       missed.map(a => h('div',{class:'miss'},
         h('div',{class:'s ' + ((a.it.lang || s.cfg.lang) === 'he' ? 'heb' : 'en')}, rich(filled(a.it.q) + (a.it.q.q.indexOf('_____') >= 0 ? '' : '  ←  ' + a.it.q.o[a.it.q.a]))),
         h('div',{class:'sub'}, rich(a.it.q.e))))));
@@ -1999,7 +2275,7 @@ function pxBest(ex, ch){ let b = null; for(const r of PX.runs) if(r.ex === ex &&
 function openPx(){ go({kind:'pxmenu'}); }
 
 function pxMenuView(){
-  const top = h('div',{class:'sess-top'}, h('button',{class:'icon-btn',onclick:()=>go(null)},'חזרה'), h('div',{class:'ptitle',text:'מבחני עבר מה־PDF שלך'}));
+  const top = screenTop('מבחני עבר', 'פותרים מה־PDF שלך · טיימר, גיליון וציון', () => go(null));
   const intro = h('section',{class:'card'},
     h('div',{class:'sub',text:'פותחים את הפרק בקובץ ה־PDF, מפעילים כאן טיימר של 20 דקות ומסמנים תשובות בגיליון. בסוף מקלידים את מפתח התשובות מהקובץ, פעם אחת לכל פרק, ומקבלים ציון ורשימת טעויות. המפתח נשמר רק במכשיר שלך.'}));
   const draft = PX.draft ? h('button',{class:'card pxdraft',onclick:()=>go(Object.assign({kind:'pxrun'}, PX.draft))},
@@ -2042,7 +2318,7 @@ function pxRunView(){
   stopTimer(); timerId = setInterval(pxTick, 1000);
   const done = s.ans.filter(Boolean).length;
   const top = h('div',{class:'sess-top'},
-    h('button',{class:'icon-btn',onclick:()=>{ pxSync(s); go({kind:'pxmenu'}); }},'יציאה'),
+    h('button',{class:'icon-btn close','aria-label':'יציאה',onclick:()=>{ pxSync(s); go({kind:'pxmenu'}); }}, ico('x', 20)),
     h('div',{class:'prog'},
       h('div',{class:'cnt num'}, h('span',{text: pxTitle(s.ex) + ' · ' + c.t + ' · ' + done + '/' + c.n}), h('span',{id:'timer',dir:'ltr',class:'timer',text:fmtTime(PX_LIMIT)})),
       h('div',{class:'meter'}, h('i',{style:'width:' + Math.round(done/c.n*100) + '%'}))));
@@ -2073,7 +2349,7 @@ function pxScore(run, key){
 function pxKeyView(){
   const run = session.run, c = pxCh(run.ch);
   const msg = h('div',{class:'sub',id:'pxkmsg'});
-  const inp = h('input',{class:'pxkey num',dir:'ltr',inputmode:'numeric',autocomplete:'off',placeholder:'למשל 3433321311142421132241',value: PX.keys[run.ex + '-' + run.ch] || ''});
+  const inp = h('input',{class:'pxkey num',dir:'ltr',inputmode:'numeric',autocomplete:'off',placeholder:'3 4 3 3 3 2 1 …',value: PX.keys[run.ex + '-' + run.ch] || ''});
   const ok = () => {
     const k = inp.value.replace(/[^1-4]/g, '');
     if(k.length !== c.n){ msg.textContent = 'צריך בדיוק ' + c.n + ' ספרות בין 1 ל־4. הוקלדו ' + k.length + '.'; return; }
@@ -2082,11 +2358,10 @@ function pxKeyView(){
     pxSave(); go({kind:'pxres', run});
   };
   return h('div',{style:'display:contents'},
-    h('div',{class:'sess-top'}, h('button',{class:'icon-btn',onclick:()=>go({kind:'pxmenu'})},'אחר כך'), h('div',{class:'ptitle',text: pxTitle(run.ex) + ' · ' + c.t})),
+    screenTop('מפתח התשובות', pxTitle(run.ex) + ' · ' + c.t, () => go({kind:'pxmenu'})),
     h('section',{class:'card'},
-      h('h2',{text:'מפתח התשובות'}),
       h('div',{class:'sub',text:'בקובץ ה־PDF, בסוף כל מבחן, יש טבלת תשובות נכונות. הקלידו את ' + c.n + ' התשובות של הפרק הזה ברצף, משאלה 1 והלאה. אפשר עם רווחים. צריך לעשות את זה רק פעם אחת לכל פרק.'}),
-      inp, msg, h('button',{class:'btn btn-primary',onclick:ok},'בדיקה')));
+      inp, msg, h('button',{class:'btn btn-primary wide',onclick:ok},'בדיקה')));
 }
 function pxResView(){
   const run = session.run, c = pxCh(run.ch);
@@ -2096,15 +2371,17 @@ function pxResView(){
   for(let i = 0; i < run.n; i++){ if(run.ans[i] !== +run.key[i]) wrong.push(i); if(run.flag[i]) flagged.push(i); }
   const cell = i => h('div',{class:'pxr' + (run.ans[i] === +run.key[i] ? ' ok' : ' bad')},
     h('span',{class:'pxn num',text:String(i+1)}),
-    h('span',{class:'num',text: (run.ans[i] ? 'סימנת ' + run.ans[i] : 'לא סימנת') + (run.ans[i] === +run.key[i] ? '' : ' · נכונה ' + run.key[i])}),
+    run.ans[i] === +run.key[i] ? h('span',{class:'pxv num'}, ico('check', 16), String(run.ans[i])) : h('span',{class:'pxv num'}, h('s',{text: run.ans[i] ? String(run.ans[i]) : '—'}), h('b',{text: run.key[i]})),
     run.flag[i] ? h('span',{class:'pxtag',text:'?'}) : null);
   return h('div',{style:'display:contents'},
-    h('div',{class:'sess-top'}, h('button',{class:'icon-btn',onclick:()=>go({kind:'pxmenu'})},'לרשימת המבחנים'), h('div',{class:'ptitle',text: pxTitle(run.ex) + ' · ' + c.t})),
-    h('section',{class:'card pxsum'},
-      h('div',{class:'big num',text: run.score + '/' + run.n}),
-      h('div',{class:'meta num',text: pct + '% · זמן ' + fmtTime(run.ms) + (run.ms > PX_LIMIT ? ' (מעל 20 דק׳)' : '')}),
-      h('div',{class:'sub',text: wrong.length ? 'לחזור בקובץ לשאלות: ' + wrong.map(i => i+1).join(', ') : 'אין טעויות בפרק הזה.'}),
-      flagged.length ? h('div',{class:'sub',text:'סימנת לחזרה: ' + flagged.map(i => i+1).join(', ')}) : null),
+    screenTop(c.t, pxTitle(run.ex), () => go({kind:'pxmenu'})),
+    h('section',{class:'card rsum'},
+      h('div',{class:'rmain'}, h('div',{class:'scw'}, h('div',{class:'score num','data-count':String(pct),'data-suf':'%',text: pct + '%'}), pct >= 90 ? burst() : null), h('div',{class:'rmsg',text: !wrong.length ? 'אין טעויות בפרק הזה.' : wrong.length > 6 ? wrong.length + ' שאלות לחזרה בקובץ. הן מסומנות באדום למטה.' : 'לחזור בקובץ לשאלות: ' + wrong.map(i => i+1).join(', ')})),
+      flagged.length ? h('div',{class:'sub',text:'סימנת לחזרה: ' + flagged.map(i => i+1).join(', ')}) : null,
+      h('div',{class:'rstats'},
+        h('div',{}, h('b',{class:'num',text: run.score + '/' + run.n}), h('span',{text:'נכונות'})),
+        h('div',{}, h('b',{class:'num' + (run.ms > PX_LIMIT ? ' over' : ''),text: fmtTime(run.ms)}), h('span',{text:'זמן'})),
+        h('div',{}, h('b',{class:'num',text:'20:00'}), h('span',{text:'יעד'})))),
     h('section',{class:'card'}, h('h2',{text:'כל התשובות'}), h('div',{class:'pxres'}, Array.from({length:run.n}, (_, i) => cell(i)))),
     h('div',{class:'bk'},
       h('button',{class:'btn btn-primary',onclick:()=>{ PX.draft = null; pxStart(run.ex, run.ch); }},'לפתור שוב'),
@@ -2136,6 +2413,7 @@ function importData(file){
 /* ---------- boot ---------- */
 loadLocal();
 pxLoad();
+ANIM = true;
 render();
 try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); }catch(e){}
 if('serviceWorker' in navigator){ window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(()=>{}); }); }
