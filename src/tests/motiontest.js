@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const RM=process.argv[2]==='rm';
 (async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,reducedMotion:RM?'reduce':'no-preference'});const p=await ctx.newPage();
 const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error')errs.push(m.text())});
-await p.goto('file://'+__dirname+'/amirnet-trainer.html');
+await p.goto('file://'+process.cwd()+'/amirnet-trainer.html');
 const check=async(tag)=>{await p.waitForTimeout(2200);
  const r=await p.evaluate(()=>{const hidden=[...document.querySelectorAll('#app *')].filter(e=>{const cs=getComputedStyle(e);return e.offsetParent!==null&&parseFloat(cs.opacity)<0.99&&!e.closest('.dim,[disabled],.burst,.pxf,.pxv s')&&!e.matches('.opt.dim,.pxf,.tile[disabled]')}).map(e=>e.className||e.tagName).slice(0,5);
   return {inLeft:document.querySelectorAll('.in').length,hidden,sw:document.documentElement.scrollWidth}});
@@ -29,6 +29,5 @@ await p.locator('.tile',{hasText:'אוצר מילים'}).click(); await check('w
 await p.locator('button',{hasText:'הצג תשובה'}).click(); await p.waitForTimeout(150); await p.screenshot({path:'m_word_150.png'}); await check('word-back');
 await p.locator('.rate.r3').click(); await check('word-next');
 await p.locator('button[aria-label="יציאה"]').click();
-await p.locator('.tile',{hasText:'מבחני עבר'}).click(); await check('past');
-await p.locator('.pch').first().click(); await p.locator('.pxrow').nth(0).locator('.pxb').nth(1).click(); await check('sheet');
+console.log('past link', await p.locator('a.tile',{hasText:'מבחני עבר'}).getAttribute('href'));
 console.log('errors',errs); await b.close();})();

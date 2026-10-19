@@ -417,6 +417,7 @@ h2{font-size:.78rem;letter-spacing:.04em;margin:4px 2px 0}
   .hero-svg [data-slot]{transform-box:fill-box;transform-origin:center}
 }
 /* @end-hero-css */
+a.tile{text-decoration:none;color:var(--fg)}
 /* ---------- hero, gold & shop ---------- */
 .chip.gold{cursor:pointer;font-weight:700;gap:5px;padding:3px 12px 3px 9px;min-height:36px}
 .chip.gold span{display:flex}
@@ -1981,10 +1982,11 @@ function homeView(){
     h('div',{class:'tt',text:title}), h('div',{class:'td',text:sub}), p != null ? meterEl(p) : null);
   const ca = k => catAcc(k);
   const cat = k => { const a = ca(k); return tile(k, CATS[k].t, CATS[k].d, pctTxt(a), a.seen ? a.ok/a.seen*100 : 0, () => go({kind:'cat', cat:k})); };
-  const pxDone = PX.runs.filter(r => r.score != null).length;
   const grid = h('div',{class:'tiles'},
     cat('en'), cat('he'), cat('qn'),
-    tile('past','מבחני עבר', PX_EXAMS.length + ' מועדים מה־PDF שלך · טיימר וציון', pxDone ? pxDone + ' פרקים' : '', null, openPx),
+    h('a',{class:'tile',href:'https://www.nite.org.il/psychometric-entrance-test/preparation/hebrew-practice-tests/',target:'_blank',rel:'noopener'},
+      h('div',{class:'trow'}, ico('past', 30), h('span',{class:'tpct',text:'↗'})),
+      h('div',{class:'tt',text:'מבחני עבר'}), h('div',{class:'td',text:'באתר הרשמי של מאל״ו · נפתח בדפדפן'})),
     tile('words','אוצר מילים', st.due ? st.due + ' מילים לחזרה עכשיו' : (unseen ? 'עוד ' + Math.min(10, unseen) + ' מילים חדשות' : 'כל המילים נלמדו'), st.learned + '/' + WORDS.length, st.learned/WORDS.length*100, () => startWords(!st.due && !!unseen), !st.due && !unseen),
     tile('err','מחברת טעויות', nWrong ? 'שאלות שטעית בהן, עד שתצליח' : 'אין כרגע טעויות לתרגול', nWrong ? String(nWrong) : '', null, () => startQuiz('err'), !nWrong));
   return h('div',{class:'app-inner',style:'display:contents'},
@@ -2037,11 +2039,8 @@ function progressView(){
   const acc = Object.keys(CATS).map(k => h('section',{class:'card'},
     h('h2',{text:'דיוק · ' + CATS[k].t}),
     h('div',{class:'acc'}, CATS[k].keys.filter(q => !QUIZ[q].sim && !QUIZ[q].qsim).map(q => row(QUIZ[q].label, accFor(bankQs(QUIZ[q])))))));
-  const runs = PX.runs.filter(r => r.score != null).slice(-5).reverse();
-  const past = runs.length ? h('section',{class:'card'}, h('h2',{text:'מבחני עבר אחרונים'}),
-    h('div',{class:'acc'}, runs.map(r => row(pxTitle(r.ex) + ' · ' + pxCh(r.ch).t, {seen:r.n, ok:r.score})))) : null;
   return h('div',{class:'app-inner',style:'display:contents'},
-    screenTop('התקדמות', 'מילים, פעילות ודיוק לפי נושא'), stats, act, ...acc, past, tabBar('progress'));
+    screenTop('התקדמות', 'מילים, פעילות ודיוק לפי נושא'), stats, act, ...acc, tabBar('progress'));
 }
 
 function settingsView(){
@@ -2399,7 +2398,7 @@ function resultView(){
         h('div',{}, h('b',{class:'num',text: ok + '/' + s.items.length}), h('span',{text:'נכונות'})),
         h('div',{}, h('b',{class:'num',text: fmtTime(ms)}), h('span',{text:'זמן'})),
         h('div',{}, h('b',{class:'num',text: fmtTime(s.cfg.target*1000)}), h('span',{text:'יעד'})))),
-    h('section',{class:'card rgold'}, h('span',{'aria-hidden':'true',html:COIN}), h('span',{}, 'הרווחת '), h('b',{class:'num','data-count':String(s.gold || 0),text:String(s.gold || 0)}), h('span',{text:' זהב' + (s.gx === 2 ? ' · כפול' : s.gx > 1 ? ' · +50%' : '')}), h('button',{class:'chip gold',onclick:()=>go({kind:'hero'})}, 'לגיבור'))
+    h('section',{class:'card rgold'}, h('span',{'aria-hidden':'true',html:COIN}), h('span',{}, 'הרווחת '), h('b',{class:'num','data-count':String(s.gold || 0),text:String(s.gold || 0)}), h('span',{text:' זהב' + (s.gx === 3 ? ' · משולש' : s.gx === 2 ? ' · כפול' : s.gx > 1 ? ' · +50%' : '')}), h('button',{class:'chip gold',onclick:()=>go({kind:'hero'})}, 'לגיבור'))
   ];
   if(s.cfg.sim){
     const secs = []; s.items.forEach(x => { if(secs.indexOf(x.sec) < 0) secs.push(x.sec); });
@@ -2689,7 +2688,7 @@ const EARN = [
   ['תשובה נכונה', '4'], ['תשובה נכונה בשאלה ברמה גבוהה', '6'], ['תשובה שגויה (על המאמץ)', '1'],
   ['סיום סט תרגול', '10'], ['סט בלי טעויות', '+15'], ['סימולציה של פרק מלא', '+30'],
   ['כרטיס מילה', '1 · זכרת: 2'], ['סיום התרגול היומי', '+25'],
-  ['פרק ממבחן עבר', '25 + 2 לכל תשובה נכונה'], ['בונוס רצף, פעם ביום', '5 לכל יום ברצף, עד 50']
+  ['בונוס רצף, פעם ביום', '5 לכל יום ברצף, עד 50']
 ];
 const CLASSES = [
   {k:'fighter', he:'לוחם / לוחמת',  en:'Fighter', start:['longsword','chain'],      focus:'התקפה והגנה', titles:['טירון','שכיר חרב','לוחם','אביר','גיבור','אגדה']},
@@ -2709,13 +2708,13 @@ Object.assign(FX, {
   goldRead:  'כל עוד הוא אצלך: ‎+20% זהב בהבנת הנקרא',
   goldGeo:   'כל עוד היא אצלך: ‎+20% זהב בגאומטריה',
   goldWords: 'כל עוד הוא אצלך: זהב כפול על כרטיסי מילים',
-  goldSim:   'כל עוד הוא אצלך: ‎+20% זהב בסימולציות ובמבחני עבר',
+  goldSim:   'כל עוד הוא אצלך: ‎+20% זהב בסימולציות',
   goldAll5:  'כל עוד הוא איתך: ‎+5% זהב על הכול',
   goldAll10: 'כל עוד הוא איתך: ‎+10% זהב על הכול',
   streakX:   'כל עוד הוא איתך: בונוס הרצף היומי כפול',
   hintDay2:  'שני רמזים חינם בכל יום',
   x15:       'שימוש: ‎+50% זהב בסט הבא',
-  x3past:    'שימוש: זהב משולש על פרק אחד ממבחן עבר',
+  x3:        'שימוש: זהב משולש בסט הבא',
   timer3:    'שימוש: ‎+3 דקות לזמן היעד בסימולציה הבאה',
   permD1:    'שימוש: ‎+1 הגנה לתמיד',
   permM1:    'שימוש: ‎+1 קסם לתמיד',
@@ -2806,7 +2805,7 @@ ITEMS.push(
   {id:'p_climb',     he:'שיקוי טיפוס',       en:'Potion of Climbing',  slot:'potion', r:'mundane', p:70,   look:'potion', fx:'x15',    d:'מטפסים בקלות כמו עכביש.'},
   {id:'p_growth',    he:'שיקוי צמיחה',       en:'Potion of Growth',    slot:'potion', r:'uncommon',p:180,  look:'potion', fx:'permD1', d:'גדלים לגובה של ענק לזמן מה.'},
   {id:'p_speed',     he:'שיקוי מהירות',      en:'Potion of Speed',     slot:'potion', r:'rare',    p:220,  look:'potion', fx:'timer3', d:'הכול סביבך נראה איטי.'},
-  {id:'p_flying',    he:'שיקוי תעופה',       en:'Potion of Flying',    slot:'potion', r:'rare',    p:260,  look:'potion', fx:'x3past', d:'עפים באוויר לכמה דקות.'},
+  {id:'p_flying',    he:'שיקוי תעופה',       en:'Potion of Flying',    slot:'potion', r:'rare',    p:260,  look:'potion', fx:'x3', d:'עפים באוויר לכמה דקות.'},
   {id:'p_mind',      he:'שיקוי קריאת מחשבות', en:'Potion of Mind Reading', slot:'potion', r:'rare', p:300, look:'potion', fx:'permM1', d:'שומעים את המחשבות של אחרים.'},
   // ---- original items, inspired by the genre (written for this app) ----
   {id:'o_quill',     he:'נוצת הסופר הנודד',  en:'Wanderer\'s Quill',   slot:'trinket',r:'uncommon',p:480,  s:{m:3},       look:'quill', fx:'goldRead', src:'orig', d:'נוצה שכותבת לבד את מה שקראת.'},
@@ -3333,7 +3332,8 @@ function goldChip(){
 function gStart(s){
   if(s._g) return; s._g = true; s.gold = 0; s.gx = 1;
   const b = GS().boost;
-  if(b.x2){ s.gx = 2; delete b.x2; } else if(b.x15){ s.gx = 1.5; delete b.x15; }
+  if(b.x3past){ b.x3 = true; delete b.x3past; }
+  if(b.x3){ s.gx = 3; delete b.x3; } else if(b.x2){ s.gx = 2; delete b.x2; } else if(b.x15){ s.gx = 1.5; delete b.x15; }
   if(b.retry){ s.retry = true; delete b.retry; }
   if(b.timer3 && s.cfg && s.cfg.sim){ s.cfg = Object.assign({}, s.cfg, {target: s.cfg.target + 180}); s.timerBoost = true; delete b.timer3; }
   if(s.gx > 1 || s.retry || s.timerBoost) save();
@@ -3378,7 +3378,7 @@ function useHint(){
 }
 function boostChips(s){
   const c = [];
-  if(s.gx > 1) c.push(s.gx === 2 ? 'זהב כפול' : 'זהב +50%');
+  if(s.gx > 1) c.push(s.gx === 3 ? 'זהב משולש' : s.gx === 2 ? 'זהב כפול' : 'זהב +50%');
   if(s.retry && !s.retryUsed) c.push('ניסיון נוסף לטעות הראשונה');
   if(s.timerBoost) c.push('+3 דקות');
   return c.length ? h('div',{class:'boosts'}, c.map(t => h('span',{class:'chip bchip',text:t}))) : null;
@@ -3403,7 +3403,7 @@ function heroView(){
   const bl = [];
   if(g.boost.x2) bl.push('זהב כפול בסט הבא'); if(g.boost.x15) bl.push('+50% זהב בסט הבא');
   if(g.boost.retry) bl.push('ניסיון נוסף לטעות הראשונה בסט הבא'); if(g.boost.timer3) bl.push('+3 דקות בסימולציה הבאה');
-  if(g.boost.x3past) bl.push('זהב משולש בפרק הבא ממבחן עבר');
+  if(g.boost.x3 || g.boost.x3past) bl.push('זהב משולש בסט הבא');
   const fh = freeHintsLeft(), hp = hintPotions();
   if(fh) bl.push(fh + ' רמזים חינם היום'); if(hp) bl.push(hp + ' שיקויי ראייה רחוקה לרמזים');
   const boosts = bl.length ? h('section',{class:'card'}, h('h2',{text:'פעיל עכשיו'}), h('ul',{class:'blist'}, bl.map(t => h('li',{text:t})))) : null;
@@ -3515,9 +3515,9 @@ function buy(it){
 function usePotion(it){
   const g = GS(), b = g.boost, m = document.getElementById('smsg');
   const say = t => { if(m) m.textContent = t; };
-  const map = {x2:'x2', x15:'x15', retry:'retry', timer3:'timer3', x3past:'x3past'};
+  const map = {x2:'x2', x15:'x15', x3:'x3', retry:'retry', timer3:'timer3'};
   if(map[it.fx]){
-    if(b[map[it.fx]] || ((it.fx === 'x2' || it.fx === 'x15') && (b.x2 || b.x15))) return say('יש כבר שיקוי כזה פעיל. הוא ייגמר בסט הבא.');
+    if(b[map[it.fx]] || ((it.fx === 'x2' || it.fx === 'x15' || it.fx === 'x3') && (b.x2 || b.x15 || b.x3))) return say('יש כבר שיקוי כזה פעיל. הוא ייגמר בסט הבא.');
     b[map[it.fx]] = true;
   } else if(it.fx === 'permA1' || it.fx === 'permD1' || it.fx === 'permM1'){
     const k = it.fx[4].toLowerCase(); g.perm[k] = (g.perm[k] || 0) + 1;
