@@ -1,0 +1,34 @@
+const {chromium}=require('playwright');
+const RM=process.argv[2]==='rm';
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,reducedMotion:RM?'reduce':'no-preference'});const p=await ctx.newPage();
+const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error')errs.push(m.text())});
+await p.goto('file://'+__dirname+'/amirnet-trainer.html');
+const check=async(tag)=>{await p.waitForTimeout(2200);
+ const r=await p.evaluate(()=>{const hidden=[...document.querySelectorAll('#app *')].filter(e=>{const cs=getComputedStyle(e);return e.offsetParent!==null&&parseFloat(cs.opacity)<0.99&&!e.closest('.dim,[disabled],.burst,.pxf,.pxv s')&&!e.matches('.opt.dim,.pxf,.tile[disabled]')}).map(e=>e.className||e.tagName).slice(0,5);
+  return {inLeft:document.querySelectorAll('.in').length,hidden,sw:document.documentElement.scrollWidth}});
+ console.log(tag,JSON.stringify(r));};
+const frames=async(pre)=>{for(const t of [40,160,420]){await p.waitForTimeout(t===40?40:t-([40,160,420][[40,160,420].indexOf(t)-1]));await p.screenshot({path:`m_${pre}_${t}.png`});}};
+await frames('home'); await check('home');
+const big=await p.textContent('.hero .big'); console.log('hero count final',big);
+await p.locator('.tile',{hasText:'אנגלית'}).click(); await frames('cat'); await check('cat');
+await p.locator('.prow').first().click(); await check('q1');
+// wrong then right
+const opts=p.locator('.opt'); await opts.nth(0).click(); await p.waitForTimeout(120); await p.screenshot({path:'m_ans_120.png'}); await check('answered');
+const meterBefore=await p.evaluate(()=>document.querySelector('.prog .meter i').style.width);
+await p.locator('button',{hasText:'השאלה הבאה'}).click(); await p.waitForTimeout(60); const mid=await p.evaluate(()=>getComputedStyle(document.querySelector('.prog .meter i')).width); await p.waitForTimeout(700); const end=await p.evaluate(()=>getComputedStyle(document.querySelector('.prog .meter i')).width); console.log('progress glide',meterBefore,mid,end);
+await opts.nth(1).click(); const mw2=await p.evaluate(()=>getComputedStyle(document.querySelector('.prog .meter i')).width); console.log('meter after pick (no jump)',mw2);
+for(let g=0;g<8;g++){const f=p.locator('button',{hasText:'סיום הסט'}); if(await f.count()){await f.click();break;} const n=p.locator('button',{hasText:'השאלה הבאה'}); if(await n.count()) await n.click(); await p.locator('.opt').first().click();}
+await frames('res'); await check('result'); console.log('score final',await p.textContent('.rsum .score'));
+await p.locator('.top .back').click(); await check('cat-back');
+await p.locator('.top .back').click();
+await p.locator('.tab',{hasText:'התקדמות'}).click(); await frames('prog'); await check('progress');
+await p.locator('.tab',{hasText:'הגדרות'}).click(); await check('settings');
+await p.locator('.hard-toggle').click(); await check('settings-toggle');
+await p.locator('.tab',{hasText:'בית'}).click();
+await p.locator('.tile',{hasText:'אוצר מילים'}).click(); await check('word');
+await p.locator('button',{hasText:'הצג תשובה'}).click(); await p.waitForTimeout(150); await p.screenshot({path:'m_word_150.png'}); await check('word-back');
+await p.locator('.rate.r3').click(); await check('word-next');
+await p.locator('button[aria-label="יציאה"]').click();
+await p.locator('.tile',{hasText:'מבחני עבר'}).click(); await check('past');
+await p.locator('.pch').first().click(); await p.locator('.pxrow').nth(0).locator('.pxb').nth(1).click(); await check('sheet');
+console.log('errors',errs); await b.close();})();

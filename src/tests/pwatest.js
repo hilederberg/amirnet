@@ -1,0 +1,22 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'}).catch(()=>chromium.launch());
+const ctx=await b.newContext({viewport:{width:400,height:820},deviceScaleFactor:2});const p=await ctx.newPage();const errs=[];
+p.on('pageerror',e=>errs.push(e.message));
+await p.goto('http://localhost:8771/');
+await p.waitForFunction(()=>navigator.serviceWorker && navigator.serviceWorker.controller!==null,null,{timeout:10000}).catch(()=>{});
+await p.reload(); await p.waitForTimeout(800);
+console.log('sw controlled', await p.evaluate(()=>!!navigator.serviceWorker.controller));
+const m=await p.evaluate(async()=>{const r=await fetch('manifest.webmanifest');return (await r.json()).display});console.log('manifest',m);
+// practice something then offline reload
+await p.locator('.hero .btn').click(); await p.locator('button',{hasText:'הצג תשובה'}).click(); await p.locator('.rate.r3').click(); await p.locator('button[aria-label="יציאה"]').click();
+await ctx.setOffline(true);
+await p.reload(); await p.waitForTimeout(800);
+await p.locator('.tab',{hasText:'התקדמות'}).click();
+console.log('offline title', await p.title(), '| learned:', await p.locator('.stat .v').first().innerText());
+await p.locator('.tab',{hasText:'בית'}).click(); await p.locator('.tile',{hasText:'חשיבה מילולית'}).click(); await p.locator('.prow',{hasText:'אנלוגיות'}).click(); await p.locator('.opt').first().click();
+console.log('offline quiz ok', await p.locator('.fb').count());
+await p.locator('button[aria-label="יציאה"]').click();
+await p.locator('.top .back').click(); await p.locator('.tab',{hasText:'הגדרות'}).click();
+await p.locator('text=גיבוי ההתקדמות').scrollIntoViewIfNeeded();
+await p.screenshot({path:'pwa_backup.png'});
+console.log('errors',errs);await b.close();})();

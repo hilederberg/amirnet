@@ -1,0 +1,169 @@
+<title>חנות הגיבור</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: one narrow ink column like the app; catalog grid widens to two columns on desktop. Single committed paper-and-ink theme. */
+:root{
+  --paper:#FBF6EE; --paper-2:#EFE6D6; --ink:#111111; --muted:#4A443C; --line:#111111; --rule:#CFC5B3;
+  --display:'Rubik','Heebo',system-ui,sans-serif; --ui:'Rubik','Heebo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --bw:2px; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--ui);direction:rtl}
+.wrap{max-width:880px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:flex;flex-direction:column;gap:34px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.hero{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:var(--bw) solid var(--line);border-radius:26px;padding:24px}
+.hero h1{font:900 clamp(2rem,6vw,3rem)/1.05 var(--display);letter-spacing:-.01em}
+.hero p{margin:10px 0 0;color:var(--muted);max-width:52ch}
+.hero .seal{width:112px;height:112px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+section>h2{font:900 1.45rem/1.2 var(--display);margin-bottom:6px}
+section>.lead{color:var(--muted);margin:0 0 14px;max-width:62ch}
+.card{border:var(--bw) solid var(--line);border-radius:22px;padding:18px;background:var(--paper)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{padding:9px 4px;border-bottom:1px solid var(--rule);text-align:start;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+td.n{text-align:end;font-weight:700;white-space:nowrap}
+.coin{display:inline-flex;align-items:center;gap:4px}
+.coin svg{width:16px;height:16px}
+.rar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.rar .card{padding:14px;display:flex;flex-direction:column;gap:4px}
+.rbadge{display:inline-flex;align-self:flex-start;border:var(--bw) solid currentColor;border-radius:99px;padding:1px 10px;font-size:.78rem;font-weight:700}
+.rar .pr{font-weight:700;font-variant-numeric:tabular-nums}
+.rar .lv{font-size:.82rem;color:var(--muted)}
+.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.classes .card{display:flex;flex-direction:column;gap:6px}
+.classes h3{font:700 1.05rem/1.2 var(--display)}
+.classes .en{font-size:.8rem;color:var(--muted);direction:ltr;text-align:right}
+.classes .k{font-size:.8rem;color:var(--muted)}
+.classes ol{margin:4px 0 0;padding-inline-start:18px;font-size:.85rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filters button{font:inherit;font-size:.9rem;font-weight:500;min-height:40px;padding:0 14px;border-radius:99px;border:var(--bw) solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.filters .ct{opacity:.7;margin-inline-start:4px;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{display:grid;grid-template-columns:56px 1fr;gap:12px;border:var(--bw) solid var(--line);border-radius:20px;padding:14px;min-width:0}
+.ib{width:56px;height:56px;border-radius:16px;background:var(--paper-2);display:flex;align-items:center;justify-content:center}
+.ib svg{width:34px;height:34px}
+.it{min-width:0;display:flex;flex-direction:column;gap:4px}
+.ih{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.iname{font-weight:700;font-size:1.02rem;line-height:1.25}
+.ien{font-size:.76rem;color:var(--muted);direction:ltr;text-align:right}
+.price{display:inline-flex;align-items:center;gap:4px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price svg{width:17px;height:17px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.78rem}
+.chip{border:1.5px solid var(--rule);border-radius:99px;padding:0 8px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip.orig{border-color:var(--ink);background:var(--paper-2);color:var(--ink);font-weight:700}
+.chip.st{border-color:var(--line);color:var(--ink);font-weight:500}
+.desc{font-size:.88rem;color:var(--muted);margin:0}
+.fx{font-size:.84rem;font-weight:500;border-top:1px dashed var(--rule);padding-top:6px;margin-top:2px}
+.fx b{font-weight:700}
+.foot{font-size:.8rem;color:var(--muted);border-top:var(--bw) solid var(--line);padding-top:14px}
+.foot a{color:var(--ink)}
+.summary{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.summary b{color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .two,.grid{grid-template-columns:1fr}
+  .rar{grid-template-columns:1fr 1fr}
+  .classes{grid-template-columns:1fr 1fr}
+  .hero{grid-template-columns:1fr}
+  .hero .seal{display:none}
+}
+@media (max-width:460px){.classes{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){
+  .item{animation:rise .6s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i,0) * 35ms)}
+  @keyframes rise{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+</style>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">מאמן אמירנט · קטלוג לאישור</div>
+      <h1>חנות הגיבור</h1>
+      <p>כל תשובה, סט ומבחן מכניסים זהב. בזהב קונים לדמות נשקים, שריונות, חפצים קסומים ושיקויים, ועולים ברמות עד המבחן. הפריטים לקוחים מעולם מבוכים ודרקונים, ולצידם פריטים מקוריים, חיות לוויה ורקעים לדמות.</p>
+      <div class="summary" id="summary"></div>
+    </div>
+    <svg class="seal" viewBox="0 0 120 120" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="44" stroke-dasharray="3 6"/>
+      <path d="M78 26l6 6-30 30-6-6z"/><path d="M42 50l18 18M50 62L36 76"/><circle cx="33" cy="79" r="3.5"/>
+      <path d="M60 64l17 7v11c0 9-7 15-17 18-10-3-17-9-17-18V71z" fill="#FBF6EE"/><path d="M60 72v20M52 80h16"/>
+      <path d="M92 70v10M87 75h10M24 38v8M20 42h8" stroke-width="2.2"/>
+    </svg>
+  </header>
+
+  <section>
+    <h2>איך מרוויחים זהב</h2>
+    <p class="lead">זהב נכנס על כל פעולה באפליקציה. הזהב שהרווחת אי פעם נספר גם כנקודות ניסיון, כך שקנייה לא מורידה את הרמה.</p>
+    <div class="two">
+      <div class="card"><table id="earn"><thead><tr><th>פעולה</th><th style="text-align:end">זהב</th></tr></thead><tbody></tbody></table></div>
+      <div class="card"><table id="levels"><thead><tr><th>רמה</th><th>ניסיון נדרש</th><th style="text-align:end">בערך אחרי</th></tr></thead><tbody></tbody></table>
+        <p class="desc" style="margin-top:10px">ההערכה מניחה תרגול יומי רגיל, בערך 80 זהב ביום. רמה 20 יוצאת בערך באפריל 2027, בזמן המבחן.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>דרגות נדירות</h2>
+    <p class="lead">ככל שהפריט נדיר יותר הוא חזק ויקר יותר, ונפתח לקנייה רק מרמה מסוימת.</p>
+    <div class="rar" id="rarity"></div>
+  </section>
+
+  <section>
+    <h2>מחלקות</h2>
+    <p class="lead">בתחילת המשחק בוחרים לוחם או לוחמת, ומחלקה. כל מחלקה מתחילה עם ציוד בסיסי משלה ומקבלת תארים לפי הרמה.</p>
+    <div class="classes" id="classes"></div>
+  </section>
+
+  <section>
+    <h2>הקטלוג</h2>
+    <p class="lead">מסודר לפי מחיר בכל קטגוריה. פריט שמסומן ✦ משפיע גם על התרגול עצמו. פריט עם התגית "מקורי" נכתב במיוחד לאפליקציה, בהשראת עולם הפנטזיה.</p>
+    <div class="filters" id="filters" role="toolbar" aria-label="סינון לפי קטגוריה"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer class="foot">
+    שמות הפריטים, הנדירות והמחלקות לקוחים מתוך System Reference Document 5.1 של Wizards of the Coast LLC, ברישיון
+    <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener">Creative Commons Attribution 4.0</a>.
+    התיאורים בעברית, המחירים, ההשפעות באפליקציה, חיות הלוויה, הרקעים והפריטים שמסומנים "מקורי" נכתבו במיוחד למאמן אמירנט.
+  </footer>
+</div>
+<script>
+/*DATA*/
+const coin = '<svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ICONS.coin + '</svg>';
+const ic = k => '<svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[k] + '</svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bd = t => esc(t).replace(/([+−-]?\d[\d,.]*%?)/g, '<bdi dir="ltr">$1</bdi>');
+const catOf = it => CATS.find(c => c.slots.includes(it.slot));
+document.getElementById('summary').innerHTML =
+  '<span><b>' + ITEMS.length + '</b> פריטים</span><span><b>' + CATS.length + '</b> קטגוריות</span><span><b>5</b> דרגות נדירות</span><span><b>' + CLASSES.length + '</b> מחלקות</span><span><b>' + ITEMS.filter(i => i.src === 'orig').length + '</b> פריטים מקוריים</span>';
+document.querySelector('#earn tbody').innerHTML = EARN.map(r => '<tr><td>' + esc(r[0]) + '</td><td class="n"><span class="coin">' + bd(r[1]) + coin + '</span></td></tr>').join('');
+document.querySelector('#levels tbody').innerHTML = [2,3,5,6,8,10,12,15,18,20].map(L => '<tr><td>רמה ' + L + '</td><td>' + xpFor(L).toLocaleString('he-IL') + '</td><td class="n">' + Math.max(1, Math.round(xpFor(L)/80)) + ' ימים</td></tr>').join('');
+const rr = {};
+ITEMS.forEach(i => { (rr[i.r] = rr[i.r] || []).push(i.p); });
+document.getElementById('rarity').innerHTML = Object.keys(RARITY).map(k => {
+  const R = RARITY[k], ps = rr[k] || [0];
+  return '<div class="card"><span class="rbadge" style="color:' + R.color + '">' + R.he + '</span><span class="pr">' + Math.min(...ps).toLocaleString('he-IL') + ' עד ' + Math.max(...ps).toLocaleString('he-IL') + ' זהב</span><span class="lv">נפתח מרמה ' + R.lvl + ' · ' + ps.length + ' פריטים</span></div>';
+}).join('');
+const nameOf = id => (ITEMS.find(i => i.id === id) || {he:id}).he;
+document.getElementById('classes').innerHTML = CLASSES.map(c => '<div class="card"><h3>' + c.he + '</h3><div class="en">' + c.en + '</div><div class="k">מתמחה ב' + c.focus + '</div><div class="k">ציוד התחלתי: ' + c.start.map(nameOf).join(' + ') + '</div><ol>' +
+  c.titles.map((t, i) => '<li>' + t + ' <span class="k">(רמה ' + LEVEL_BANDS[i][0] + (LEVEL_BANDS[i][1] < 99 ? '–' + LEVEL_BANDS[i][1] : '+') + ')</span></li>').join('') + '</ol></div>').join('');
+const statTxt = s => s ? [['a','התקפה'],['d','הגנה'],['m','קסם']].filter(x => s[x[0]]).map(x => '<span class="chip st">' + x[1] + ' <bdi dir="ltr">+' + s[x[0]] + '</bdi></span>').join('') : '';
+let cur = 'all';
+function draw(){
+  const list = ITEMS.filter(i => cur === 'all' || catOf(i).k === cur).slice().sort((a, b) => CATS.indexOf(catOf(a)) - CATS.indexOf(catOf(b)) || a.p - b.p);
+  document.getElementById('grid').innerHTML = list.map((it, n) => {
+    const R = RARITY[it.r];
+    return '<article class="item" style="--i:' + Math.min(n, 14) + '"><div class="ib">' + ic(it.look) + '</div><div class="it">' +
+      '<div class="ih"><div><div class="iname">' + bd(it.he) + (it.fx ? ' ✦' : '') + '</div><div class="ien">' + esc(it.en) + '</div></div><span class="price">' + it.p.toLocaleString('he-IL') + coin + '</span></div>' +
+      '<div class="meta"><span class="rbadge" style="color:' + R.color + '">' + R.he + '</span><span class="chip">' + SLOTS[it.slot].he + '</span>' + (it.src === 'orig' ? '<span class="chip orig">מקורי</span>' : '') + '<span class="chip">מרמה ' + R.lvl + '</span>' + statTxt(it.s) + '</div>' +
+      '<p class="desc">' + esc(it.d) + '</p>' + (it.fx ? '<div class="fx"><b>✦ </b>' + bd(FX[it.fx].replace(/\u200e/g,'')) + '</div>' : '') + '</div></article>';
+  }).join('');
+}
+const f = document.getElementById('filters');
+const counts = {}; ITEMS.forEach(i => { const k = catOf(i).k; counts[k] = (counts[k] || 0) + 1; });
+f.innerHTML = [{k:'all', he:'הכול'}].concat(CATS).map(c => '<button type="button" data-k="' + c.k + '" aria-pressed="' + (c.k === cur) + '">' + c.he + '<span class="ct">' + (c.k === 'all' ? ITEMS.length : counts[c.k]) + '</span></button>').join('');
+f.addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; cur = b.dataset.k; f.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); draw(); });
+draw();
+</script>

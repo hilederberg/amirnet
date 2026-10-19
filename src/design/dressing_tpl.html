@@ -1,0 +1,250 @@
+<title>חדר הגיבור</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: phone-sized hero screen beside a dressing-room item browser; stacks on phones. Single committed paper-and-ink theme like the app. */
+:root{
+  --paper:#FBF6EE; --paper-2:#EFE6D6; --ink:#111111; --muted:#4A443C; --rule:#CFC5B3;
+  --ui:'Rubik','Heebo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --soft:cubic-bezier(.16,1,.3,1); --spring:cubic-bezier(.34,1.35,.64,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);direction:rtl}
+button{font:inherit;color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 56px;display:grid;grid-template-columns:400px 1fr;gap:28px;align-items:start}
+.intro{grid-column:1/-1;display:flex;flex-direction:column;gap:6px}
+.intro h1{margin:0;font:900 clamp(1.8rem,5vw,2.6rem)/1.05 var(--ui)}
+.intro p{margin:0;color:var(--muted);max-width:66ch}
+/* phone */
+.phone{position:sticky;top:16px;border:2.5px solid var(--ink);border-radius:44px;padding:14px 16px 18px;background:var(--paper);display:flex;flex-direction:column;gap:10px}
+.ptop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sq{width:44px;height:44px;border-radius:14px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;background:var(--paper)}
+.sq.round{border-radius:50%;background:var(--ink);color:var(--paper)}
+.ttl{text-align:center;line-height:1.15}
+.ttl b{display:block;font-weight:900;letter-spacing:.02em}
+.ttl span{font-size:.78rem;color:var(--muted)}
+.gold{display:inline-flex;align-items:center;gap:5px;font-weight:700;border:2px solid var(--ink);border-radius:99px;padding:3px 10px 3px 8px;font-variant-numeric:tabular-nums}
+.gold svg{width:18px;height:18px}
+.stage{position:relative;margin-inline:-6px}
+.name{text-align:center}
+.name b{display:block;font:900 1.7rem/1.1 var(--ui)}
+.name span{font-size:.95rem}
+.name small{color:var(--muted)}
+.xp{display:flex;flex-direction:column;gap:4px}
+.bar{height:16px;border:2.5px solid var(--ink);border-radius:99px;overflow:hidden;background:var(--paper)}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:99px;transition:width 1.1s var(--soft)}
+.xpl{display:flex;justify-content:space-between;font-size:.8rem;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{border:2px solid var(--ink);border-radius:16px;padding:6px 8px;text-align:center}
+.stat b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.75rem;color:var(--muted)}
+.stat.up{animation:statup .8s var(--spring)}
+@keyframes statup{0%{transform:scale(1)}40%{transform:scale(1.12);background:var(--paper-2)}100%{transform:scale(1)}}
+.cta{min-height:54px;border-radius:99px;border:0;background:var(--ink);color:var(--paper);font-weight:900;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:12px;cursor:pointer}
+.cta svg{width:14px;height:14px}
+.btns{display:flex;justify-content:space-between;gap:10px}
+.rb{flex:1;aspect-ratio:1;max-width:96px;border-radius:50%;border:2.5px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;font-size:.72rem;font-weight:500}
+.rb svg{width:34px;height:34px}
+.rb[aria-pressed="true"]{background:var(--paper-2)}
+/* controls */
+.side{display:flex;flex-direction:column;gap:22px;min-width:0}
+h2{margin:0 0 8px;font:900 1.25rem/1.2 var(--ui)}
+.lead{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:99px;padding:3px;gap:3px}
+.seg button{border:0;background:transparent;border-radius:99px;min-height:38px;padding:0 16px;cursor:pointer;font-weight:500;transition:background-color .3s,color .3s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:2px solid var(--ink);border-radius:99px;background:var(--paper);min-height:38px;padding:0 14px;cursor:pointer;font-size:.9rem;font-weight:500;transition:background-color .2s,color .2s,transform .2s var(--soft)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip.ghost{border-color:var(--rule)}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.it{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:start;border:2px solid var(--ink);border-radius:18px;background:var(--paper);padding:10px;cursor:pointer;transition:transform .25s var(--soft),box-shadow .25s var(--soft),background-color .25s}
+.it:hover{transform:translateY(-2px);box-shadow:0 4px 0 -1px var(--ink)}
+.it:active{transform:scale(.98)}
+.it[aria-pressed="true"]{background:var(--paper-2)}
+.it[aria-pressed="true"]::after{content:"מצויד";position:absolute;top:8px;left:8px;font-size:.68rem;font-weight:700;background:var(--ink);color:var(--paper);border-radius:99px;padding:1px 7px}
+.it .ic{width:40px;height:40px;border-radius:12px;background:var(--paper-2);display:flex;align-items:center;justify-content:center}
+.it[aria-pressed="true"] .ic{background:var(--paper)}
+.it .ic svg{width:26px;height:26px}
+.it .n{font-weight:700;font-size:.92rem;line-height:1.2}
+.it .m{display:flex;gap:6px;align-items:center;font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.rd{width:8px;height:8px;border-radius:50%;display:inline-block}
+.detail{border:2px solid var(--ink);border-radius:22px;padding:16px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;min-height:96px}
+.detail .ic{width:56px;height:56px;border-radius:16px;background:var(--paper-2);display:flex;align-items:center;justify-content:center}
+.detail .ic svg{width:36px;height:36px}
+.detail b{font-size:1.05rem}
+.detail p{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.detail .look{color:var(--ink);font-weight:500}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.compare .card{border:2px solid var(--ink);border-radius:22px;padding:6px 6px 10px;text-align:center;font-size:.85rem;font-weight:700}
+.compare .arrow{font-size:1.6rem}
+.foot{grid-column:1/-1;font-size:.78rem;color:var(--muted);border-top:2px solid var(--ink);padding-top:12px}
+.foot a{color:var(--ink)}
+/* bursts */
+.burst{position:absolute;pointer-events:none;width:0;height:0}
+.burst i{position:absolute;left:0;top:0;width:14px;height:14px;margin:-7px;background:var(--ink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.coinfly{position:absolute;pointer-events:none;font-weight:900;font-size:1.1rem}
+@media (prefers-reduced-motion:no-preference){
+  .burst i{animation:burst .9s var(--soft) forwards}
+  @keyframes burst{0%{transform:translate(0,0) scale(.2);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(1) rotate(90deg);opacity:0}}
+  .coinfly{animation:coinfly 1s var(--soft) forwards}
+  @keyframes coinfly{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-46px);opacity:0}}
+  .intro,.phone,.side>*{animation:rise .8s var(--soft) both}
+  .phone{animation-delay:.08s}.side>*:nth-child(2){animation-delay:.16s}.side>*:nth-child(3){animation-delay:.24s}.side>*:nth-child(4){animation-delay:.32s}
+  @keyframes rise{from{opacity:.001;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .items .it{animation:rise .55s var(--soft) both;animation-delay:calc(var(--i,0) * 22ms)}
+  .gold.bump{animation:statup .6s var(--spring)}
+}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  .phone{position:static;max-width:420px;margin-inline:auto;width:100%}
+}
+/*HERO_CSS*/
+</style>
+<div class="wrap">
+  <header class="intro">
+    <h1>חדר הגיבור</h1>
+    <p>טיוטת עיצוב לעמוד הדמות והחנות. הדמות מתחילה בלי ציוד, וכל פריט שבוחרים מופיע עליה עם האפקט שלו. בתצוגה הזאת כל הפריטים פתוחים, כדי שאפשר יהיה לנסות הכול.</p>
+  </header>
+
+  <section class="phone" aria-label="מסך הדמות">
+    <div class="ptop">
+      <span class="gold" id="gold"></span>
+      <div class="ttl"><b id="cls">לוחם</b><span id="lvlline">רמה 1</span></div>
+      <span class="sq round" aria-hidden="true"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="13" r="1.6" fill="currentColor"/><circle cx="20" cy="13" r="1.6" fill="currentColor"/><path d="M10 19q6 6 12 0"/></svg></span>
+    </div>
+    <div class="stage" id="stage"></div>
+    <div class="name"><b id="title">טירון</b><span id="lv">רמה 1</span> <small id="xpn"></small></div>
+    <div class="xp"><div class="bar"><i id="xpbar" style="width:0%"></i></div><div class="xpl"><span id="xpa"></span><span id="xpb"></span></div></div>
+    <div class="stats">
+      <div class="stat" id="stA"><b>0</b><span>התקפה</span></div>
+      <div class="stat" id="stD"><b>0</b><span>הגנה</span></div>
+      <div class="stat" id="stM"><b>0</b><span>קסם</span></div>
+    </div>
+    <button class="cta" type="button" id="lvlup"><svg viewBox="0 0 24 24"><path d="M12 1c.6 5 2 6.4 11 11-9 4.6-10.4 6-11 11-.6-5-2-6.4-11-11 9-4.6 10.4-6 11-11z" fill="currentColor"/></svg>לחנות<svg viewBox="0 0 24 24"><path d="M12 1c.6 5 2 6.4 11 11-9 4.6-10.4 6-11 11-.6-5-2-6.4-11-11 9-4.6 10.4-6 11-11z" fill="currentColor"/></svg></button>
+    <div class="btns" id="quick"></div>
+  </section>
+
+  <div class="side">
+    <section>
+      <h2>הדמות</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="מין הדמות"><button type="button" data-g="m" aria-pressed="true">לוחם</button><button type="button" data-g="f" aria-pressed="false">לוחמת</button></div>
+        <button class="chip ghost" type="button" id="clear">בלי ציוד</button>
+      </div>
+      <p class="lead" style="margin-top:12px">דוגמאות מוכנות, מההתחלה ועד דמות אגדית:</p>
+      <div class="row" id="presets"></div>
+    </section>
+    <section>
+      <h2>מה הפריט מוסיף</h2>
+      <div class="detail" id="detail"><div class="ic"></div><div><b>בחרו פריט מהרשימה</b><p>הפריט יופיע על הדמות, והשינוי בכוח יוצג למעלה.</p></div></div>
+    </section>
+    <section>
+      <h2>לפני ואחרי</h2>
+      <div class="compare"><div class="card" id="cmpA"></div><div class="arrow" aria-hidden="true">←</div><div class="card" id="cmpB"></div></div>
+    </section>
+    <section>
+      <h2>הציוד</h2>
+      <div class="row" id="cats" role="toolbar" aria-label="קטגוריות"></div>
+      <div class="items" id="items" style="margin-top:12px"></div>
+    </section>
+  </div>
+  <footer class="foot">שמות הפריטים מבוססים על System Reference Document 5.1 של Wizards of the Coast LLC, ברישיון <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener">CC-BY-4.0</a>. הציורים, התיאורים, חיות הלוויה, הרקעים והפריטים המקוריים נוצרו במיוחד למאמן אמירנט.</footer>
+</div>
+<script>
+/*DATA*/
+const byId = Object.fromEntries(ITEMS.map(i => [i.id, i]));
+const SLOT_OF = s => s === 'tome' || s === 'potion' ? null : s;
+const LOOKTXT = {weapon:'מופיע ביד של הדמות', armor:'מחליף את הבגד על הגוף', shield:'נאחז ביד השנייה', cloak:'נפרש מאחורי הגב', head:'מופיע על הראש', hands:'מופיע על הידיים', ring:'נוצץ על האצבע', neck:'נתלה על הצוואר', feet:'מחליף את הנעליים', waist:'נחגר על המותניים', trinket:'מרחף ליד הדמות', pet:'מצטרף לצד הדמות', scene:'מחליף את הרקע'};
+const FXTXT = {glow:'נצנוצים', stars:'כוכבים מנצנצים', flame:'להבות מרצדות', frost:'פתיתי שלג מסתובבים', bolt:'ברקים מהבהבים', holy:'הילה של קרני אור', rays:'קרני אור', runes:'אותיות קסם פועמות', vorpal:'שובל חיתוך', drip:'טיפות רעל', cracks:'סדקים', ink:'טיפות דיו ושובל מכחול', ghost:'השתקפות רפאים', float:'מרחף', speed:'קווי מהירות', leaf:'עלים נושרים', orb:'כדור אנרגיה פועם', gems:'אבני חן נוצצות', dragon:'קשקשים ושריון כתפיים', eyes:'עיניים ממצמצות', web:'קורי עכביש', arrows:'חצים תקועים', bat:'שוליים של כנפי עטלף', book:'צורת ספר', owl:'ינשוף ממצמץ', wings:'כנפיים מתנפנפות'};
+const st = {gender:'m', eq:{}};
+let cat = 'weapons', last = null;
+const coin = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ICONS.coin + '</svg>';
+const ic = (k, sw, id) => iconSVG(k, id, sw);
+const catOf = it => CATS.find(c => c.slots.includes(it.slot));
+function stats(){ const t = {a:0, d:0, m:0}; Object.values(st.eq).forEach(id => { const s = byId[id] && byId[id].s; if(s) for(const k in s) t[k] += s[k]; }); return t; }
+function spent(){ return Object.values(st.eq).reduce((a, id) => a + (byId[id] ? byId[id].p : 0), 0); }
+function levelNow(){ const x = spent(); return Math.max(1, Math.min(25, levelFor(x))); }
+function title(){ const L = levelNow(); const c = CLASSES[0]; const band = LEVEL_BANDS.findIndex(b => L >= b[0] && L <= b[1]); return c.titles[Math.max(0, band)]; }
+function countTo(el, to){ const from = +el.textContent || 0; if(from === to){ el.textContent = to; return; } const t0 = performance.now(), dur = 700; const step = n => { const k = Math.min(1, (n - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(from + (to - from) * e); if(k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+function burstAt(x, y, host){ const b = document.createElement('div'); b.className = 'burst'; b.style.left = x + 'px'; b.style.top = y + 'px'; for(let i = 0; i < 8; i++){ const a = i / 8 * Math.PI * 2, r = 34 + (i % 2) * 16; const s = document.createElement('i'); s.style.setProperty('--x', Math.cos(a) * r + 'px'); s.style.setProperty('--y', Math.sin(a) * r + 'px'); s.style.width = s.style.height = (i % 2 ? 10 : 14) + 'px'; b.appendChild(s); } host.appendChild(b); setTimeout(() => b.remove(), 1000); }
+function drawHero(changed){
+  const stage = document.getElementById('stage');
+  stage.innerHTML = renderHero(st, byId);
+  if(changed){
+    const el = stage.querySelector('[data-slot="' + changed + '"]');
+    if(el){
+      el.classList.add('equip');
+      const box = el.getBBox ? el.getBBox() : null, svg = stage.querySelector('svg'), r = svg.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+      if(box){ const k = r.width / 260; burstAt(r.left - sr.left + (box.x + box.width / 2) * k, r.top - sr.top + (box.y + box.height / 2) * k, stage); }
+    }
+  }
+}
+function drawStats(pulse){
+  const s = stats();
+  [['stA','a'],['stD','d'],['stM','m']].forEach(([id, k]) => { const box = document.getElementById(id), b = box.querySelector('b'); const before = +b.textContent || 0; countTo(b, s[k]); if(pulse && s[k] !== before){ box.classList.remove('up'); void box.offsetWidth; box.classList.add('up'); } });
+  const x = spent(), L = levelNow(), a = xpFor(L), bnext = xpFor(L + 1);
+  document.getElementById('lv').textContent = 'רמה ' + L;
+  document.getElementById('lvlline').textContent = 'רמה ' + L + ' ↑';
+  document.getElementById('xpn').textContent = '(' + x.toLocaleString('he-IL') + ' ניסיון)';
+  document.getElementById('xpa').textContent = a.toLocaleString('he-IL') + ' ניסיון';
+  document.getElementById('xpb').textContent = bnext.toLocaleString('he-IL') + ' ניסיון';
+  requestAnimationFrame(() => { document.getElementById('xpbar').style.width = Math.max(4, Math.min(100, (x - a) / Math.max(1, bnext - a) * 100)) + '%'; });
+  document.getElementById('title').textContent = title();
+  document.getElementById('cls').textContent = st.gender === 'f' ? 'לוחמת' : 'לוחם';
+  const g = document.getElementById('gold'); g.innerHTML = coin + '<span>' + Math.max(0, 50000 - x).toLocaleString('he-IL') + '</span>';
+  if(pulse){ g.classList.remove('bump'); void g.offsetWidth; g.classList.add('bump'); }
+}
+function drawCompare(){
+  document.getElementById('cmpA').innerHTML = 'בלי ציוד' + renderHero({gender:st.gender, eq:{}}, byId);
+  document.getElementById('cmpB').innerHTML = 'עם הציוד שבחרת' + renderHero(st, byId);
+}
+function drawDetail(it){
+  const d = document.getElementById('detail');
+  if(!it){ d.innerHTML = '<div class="ic"></div><div><b>בחרו פריט מהרשימה</b><p>הפריט יופיע על הדמות, והשינוי בכוח יוצג למעלה.</p></div>'; return; }
+  const R = RARITY[it.r], s = it.s || {};
+  const parts = [['a','התקפה'],['d','הגנה'],['m','קסם']].filter(x => s[x[0]]).map(x => x[1] + ' ‎+' + s[x[0]]);
+  const slot = SLOT_OF(it.slot);
+  const look = slot ? LOOKTXT[slot] + (it.fxv && FXTXT[it.fxv] ? ', עם ' + FXTXT[it.fxv] : '') : (it.slot === 'potion' ? 'שיקוי לא מופיע על הדמות. משתמשים בו בתרגול.' : 'ספר שדרוג נקרא פעם אחת ומשדרג את הדמות לתמיד.');
+  d.innerHTML = '<div class="ic">' + ic(it.look, 0, it.id) + '</div><div><b>' + it.he + '</b> <span class="m" style="font-size:.8rem;color:' + R.color + ';font-weight:700">' + R.he + '</span><p class="look">' + look + '</p><p>' + it.d + (parts.length ? ' · ' + parts.join(' · ') : '') + (it.fx ? ' · ✦ ' + FX[it.fx].replace(/‎/g, '') : '') + '</p></div>';
+}
+function toggle(it){
+  const slot = SLOT_OF(it.slot);
+  drawDetail(it);
+  if(!slot){ const host = document.getElementById('stage'); const c = document.createElement('div'); c.className = 'coinfly'; c.textContent = it.slot === 'potion' ? 'נשמר בתיק' : 'נקרא!'; c.style.left = '42%'; c.style.top = '40%'; host.appendChild(c); setTimeout(() => c.remove(), 1000); return; }
+  if(st.eq[slot] === it.id){ delete st.eq[slot]; drawHero(null); }
+  else { st.eq[slot] = it.id; drawHero(slot); }
+  drawStats(true); drawItems(false); drawCompare();
+}
+function drawItems(anim){
+  const list = ITEMS.filter(i => catOf(i).k === cat).slice().sort((a, b) => a.p - b.p);
+  const box = document.getElementById('items');
+  box.innerHTML = list.map((it, n) => { const slot = SLOT_OF(it.slot); const on = slot && st.eq[slot] === it.id; return '<button type="button" class="it" data-id="' + it.id + '" aria-pressed="' + !!on + '" style="' + (anim ? '--i:' + Math.min(n, 30) : 'animation:none') + '"><span class="ic">' + ic(it.look, 0, it.id) + '</span><span class="n">' + it.he + '</span><span class="m"><span class="rd" style="background:' + RARITY[it.r].color + '"></span>' + RARITY[it.r].he + ' · ' + it.p.toLocaleString('he-IL') + '</span></button>'; }).join('');
+}
+document.getElementById('items').addEventListener('click', e => { const b = e.target.closest('.it'); if(b) toggle(byId[b.dataset.id]); });
+const cats = document.getElementById('cats');
+cats.innerHTML = CATS.map(c => '<button type="button" class="chip" data-k="' + c.k + '" aria-pressed="' + (c.k === cat) + '">' + c.he + '</button>').join('');
+cats.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; cat = b.dataset.k; cats.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === b))); drawItems(true); });
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => { st.gender = b.dataset.g; document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); drawHero(null); drawStats(false); drawCompare(); }));
+document.getElementById('clear').addEventListener('click', () => { st.eq = {}; drawHero(null); drawStats(true); drawItems(false); drawCompare(); drawDetail(null); });
+const PRESETS = [
+  ['בסיס, בלי כלום', {}],
+  ['לוחם מתחיל', {weapon:'longsword', armor:'chain'}],
+  ['סיירת ביער', {weapon:'longbow', armor:'leather', cloak:'cloak_elf', feet:'boots_elf', hands:'bracers_arch', pet:'pet_fox', scene:'sc_forest'}],
+  ['קוסמת ברמה 10', {weapon:'staff_power', armor:'robe_stars', head:'hat_disg', neck:'medallion', pet:'pet_owl', trinket:'crystal', scene:'sc_library'}],
+  ['רוכב הדרקון', {weapon:'flame', armor:'dragonscale', shield:'shield2', cloak:'wings', head:'helm_bril', pet:'pet_dragon', scene:'sc_lair'}],
+  ['פלדין אגדי', {weapon:'holy', armor:'invuln', shield:'shield3', cloak:'cloak_prot', head:'helm_lang', neck:'talisman', waist:'belt_giant', feet:'boots_speed', pet:'pet_griffin', scene:'sc_castle'}],
+  ['אביר הדיו', {weapon:'o_inkblade', armor:'o_inkscale', shield:'o_bookshield', head:'o_glasses', ring:'ring_wishes', trinket:'o_hourglass', scene:'sc_library'}]
+];
+const pr = document.getElementById('presets');
+pr.innerHTML = PRESETS.map((p, i) => '<button type="button" class="chip' + (i ? '' : ' ghost') + '" data-i="' + i + '">' + p[0] + '</button>').join('');
+pr.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; st.eq = Object.assign({}, PRESETS[+b.dataset.i][1]); if(b.dataset.i === '3' || b.dataset.i === '6') { st.gender = 'f'; } else if(b.dataset.i !== '0') { st.gender = b.dataset.i === '2' ? 'f' : 'm'; } document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.g === st.gender))); drawHero('weapon'); drawStats(true); drawItems(false); drawCompare(); drawDetail(null); });
+const QB = [['weapons','נשקים','sword'],['potions','שיקויים','potion'],['pets','חיות','owl']];
+const qb = document.getElementById('quick');
+qb.innerHTML = QB.map(q => '<button type="button" class="rb" data-k="' + q[0] + '">' + ic(q[2], 2.2) + q[1] + '</button>').join('');
+qb.addEventListener('click', e => { const b = e.target.closest('.rb'); if(!b) return; cat = b.dataset.k; cats.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.k === cat))); drawItems(true); document.getElementById('items').scrollIntoView({behavior:'smooth', block:'start'}); });
+document.getElementById('lvlup').addEventListener('click', () => document.getElementById('cats').scrollIntoView({behavior:'smooth', block:'start'}));
+drawHero(null); drawStats(false); drawItems(true); drawCompare();
+</script>
