@@ -1960,7 +1960,7 @@ function homeView(){
   const cat = k => { const a = ca(k); return tile(k, CATS[k].t, CATS[k].d, pctTxt(a), a.seen ? a.ok/a.seen*100 : 0, () => go({kind:'cat', cat:k})); };
   const grid = h('div',{class:'tiles'},
     cat('en'), cat('he'), cat('qn'),
-    h('a',{class:'tile',href:'https://www.nite.org.il/psychometric-entrance-test/preparation/hebrew-practice-tests/',target:'_blank',rel:'noopener'},
+    h('a',{class:'tile',href:'https://www.nite.org.il/practice-tests/',target:'_blank',rel:'noopener'},
       h('div',{class:'trow'}, ico('past', 30), h('span',{class:'tpct',text:'↗'})),
       h('div',{class:'tt',text:'מבחני עבר'}), h('div',{class:'td',text:'באתר הרשמי של מאל״ו · נפתח בדפדפן'})),
     tile('words','אוצר מילים', st.due ? st.due + ' מילים לחזרה עכשיו' : (unseen ? 'עוד ' + Math.min(10, unseen) + ' מילים חדשות' : 'כל המילים נלמדו'), st.learned + '/' + WORDS.length, st.learned/WORDS.length*100, () => startWords(!st.due && !!unseen), !st.due && !unseen),

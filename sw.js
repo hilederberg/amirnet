@@ -1,6 +1,6 @@
 /* Offline support: precache the app shell, network-first for the page so updates arrive,
    cache-first for everything else (including Google Fonts once fetched). */
-const VERSION = 'amirnet-v16';
+const VERSION = 'amirnet-v17';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
