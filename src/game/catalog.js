@@ -134,7 +134,7 @@ const EARN = [
   ['תשובה נכונה', '4'], ['תשובה נכונה בשאלה ברמה גבוהה', '6'], ['תשובה שגויה (על המאמץ)', '1'],
   ['סיום סט תרגול', '10'], ['סט בלי טעויות', '+15'], ['סימולציה של פרק מלא', '+30'],
   ['כרטיס מילה', '1 · זכרת: 2'], ['סיום התרגול היומי', '+25'],
-  ['פרק ממבחן עבר', '25 + 2 לכל תשובה נכונה'], ['בונוס רצף, פעם ביום', '5 לכל יום ברצף, עד 50']
+  ['בונוס רצף, פעם ביום', '5 לכל יום ברצף, עד 50']
 ];
 const CLASSES = [
   {k:'fighter', he:'לוחם / לוחמת',  en:'Fighter', start:['longsword','chain'],      focus:'התקפה והגנה', titles:['טירון','שכיר חרב','לוחם','אביר','גיבור','אגדה']},
@@ -154,13 +154,13 @@ Object.assign(FX, {
   goldRead:  'כל עוד הוא אצלך: ‎+20% זהב בהבנת הנקרא',
   goldGeo:   'כל עוד היא אצלך: ‎+20% זהב בגאומטריה',
   goldWords: 'כל עוד הוא אצלך: זהב כפול על כרטיסי מילים',
-  goldSim:   'כל עוד הוא אצלך: ‎+20% זהב בסימולציות ובמבחני עבר',
+  goldSim:   'כל עוד הוא אצלך: ‎+20% זהב בסימולציות',
   goldAll5:  'כל עוד הוא איתך: ‎+5% זהב על הכול',
   goldAll10: 'כל עוד הוא איתך: ‎+10% זהב על הכול',
   streakX:   'כל עוד הוא איתך: בונוס הרצף היומי כפול',
   hintDay2:  'שני רמזים חינם בכל יום',
   x15:       'שימוש: ‎+50% זהב בסט הבא',
-  x3past:    'שימוש: זהב משולש על פרק אחד ממבחן עבר',
+  x3:        'שימוש: זהב משולש בסט הבא',
   timer3:    'שימוש: ‎+3 דקות לזמן היעד בסימולציה הבאה',
   permD1:    'שימוש: ‎+1 הגנה לתמיד',
   permM1:    'שימוש: ‎+1 קסם לתמיד',
@@ -251,7 +251,7 @@ ITEMS.push(
   {id:'p_climb',     he:'שיקוי טיפוס',       en:'Potion of Climbing',  slot:'potion', r:'mundane', p:70,   look:'potion', fx:'x15',    d:'מטפסים בקלות כמו עכביש.'},
   {id:'p_growth',    he:'שיקוי צמיחה',       en:'Potion of Growth',    slot:'potion', r:'uncommon',p:180,  look:'potion', fx:'permD1', d:'גדלים לגובה של ענק לזמן מה.'},
   {id:'p_speed',     he:'שיקוי מהירות',      en:'Potion of Speed',     slot:'potion', r:'rare',    p:220,  look:'potion', fx:'timer3', d:'הכול סביבך נראה איטי.'},
-  {id:'p_flying',    he:'שיקוי תעופה',       en:'Potion of Flying',    slot:'potion', r:'rare',    p:260,  look:'potion', fx:'x3past', d:'עפים באוויר לכמה דקות.'},
+  {id:'p_flying',    he:'שיקוי תעופה',       en:'Potion of Flying',    slot:'potion', r:'rare',    p:260,  look:'potion', fx:'x3', d:'עפים באוויר לכמה דקות.'},
   {id:'p_mind',      he:'שיקוי קריאת מחשבות', en:'Potion of Mind Reading', slot:'potion', r:'rare', p:300, look:'potion', fx:'permM1', d:'שומעים את המחשבות של אחרים.'},
   // ---- original items, inspired by the genre (written for this app) ----
   {id:'o_quill',     he:'נוצת הסופר הנודד',  en:'Wanderer\'s Quill',   slot:'trinket',r:'uncommon',p:480,  s:{m:3},       look:'quill', fx:'goldRead', src:'orig', d:'נוצה שכותבת לבד את מה שקראת.'},
