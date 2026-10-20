@@ -25,7 +25,7 @@ async function exportData(){
   const blob=new Blob([JSON.stringify(Object.assign({},S,{px:PX}))],{type:'application/json'});
   try{
     const file=new File([blob],name,{type:'application/json'});
-    if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'גיבוי מאמן אמירנט'}); bkMsg('הגיבוי נשמר.'); return; }
+    if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'גיבוי מאמן פסיכומטרי'}); bkMsg('הגיבוי נשמר.'); return; }
   }catch(e){ if(e && e.name==='AbortError') return; }
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.append(a); a.click(); a.remove();
   bkMsg('הגיבוי ירד לקובץ ' + name);
@@ -55,12 +55,12 @@ doc=f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>מאמן אמירנט</title>
+<title>מאמן פסיכומטרי</title>
 <meta name="theme-color" content="#FBF6EE">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="אמירנט">
+<meta name="apple-mobile-web-app-title" content="פסיכומטרי">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">

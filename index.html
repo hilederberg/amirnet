@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>מאמן אמירנט</title>
+<title>מאמן פסיכומטרי</title>
 <meta name="theme-color" content="#FBF6EE">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="אמירנט">
+<meta name="apple-mobile-web-app-title" content="פסיכומטרי">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -1938,9 +1938,9 @@ const ICO = {
 };
 function ico(k, size){ return h('span',{class:'ico','aria-hidden':'true',html:'<svg viewBox="0 0 32 32" width="' + (size||28) + '" height="' + (size||28) + '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ICO[k] + '</svg>'}); }
 const CATS = {
-  en:{t:'אנגלית', d:'השלמת משפטים · ניסוח מחדש · הבנת הנקרא', keys:['sc','rs','re']},
   he:{t:'חשיבה מילולית', d:'אנלוגיות · מילים וביטויים · הבנה והסקה', keys:['sim','hv','an','hs','hi','lg','rh'], feat:'sim'},
-  qn:{t:'חשיבה כמותית', d:'אלגברה · גאומטריה · בעיות מילוליות', keys:['qsim','qw','qa','qn','qg','qd'], feat:'qsim'}
+  qn:{t:'חשיבה כמותית', d:'אלגברה · גאומטריה · בעיות מילוליות', keys:['qsim','qw','qa','qn','qg','qd'], feat:'qsim'},
+  en:{t:'אנגלית', d:'השלמת משפטים · ניסוח מחדש · הבנת הנקרא', keys:['sc','rs','re']}
 };
 function catAcc(k){ let seen = 0, ok = 0; for(const q of CATS[k].keys){ const a = accFor(bankQs(QUIZ[q])); seen += a.seen; ok += a.ok; } return {seen, ok}; }
 function pctTxt(a){ return a.seen ? Math.round(a.ok/a.seen*100) + '%' : ''; }
@@ -1972,8 +1972,8 @@ function homeView(){
   const hero = h('section',{class:'hero'},
     h('div',{class:'deco',html: heroDeco()}),
     h('div',{class:'lbl',text: doneToday ? 'המשך התרגול היומי' : 'התרגול היומי שלך'}),
-    h('div',{class:'hrow'}, h('div',{class:'big num','data-count':String(total + 8),text: String(total + 8)}), h('div',{class:'meta num',text:'משימות להיום'})),
-    h('div',{class:'meta num',text: (total ? total + ' כרטיסי מילים · ' : '') + '8 שאלות, עם דגש על הנושאים החלשים שלך'}),
+    h('div',{class:'hrow'}, h('div',{class:'big num','data-count':String(DAILY_PER * 3 + 2),text: String(DAILY_PER * 3 + 2)}), h('div',{class:'meta num',text:'שאלות להיום'})),
+    h('div',{class:'meta',text:'חלוקה כמו במבחן: מילולי, כמותי ואנגלית, עם דגש על הנושאים החלשים שלך ועל טעויות קודמות'}),
     h('button',{class:'btn',onclick:startDaily},'התחל תרגול יומי'),
     h('div',{class:'lvl'},h('span',{class:'num',text:'רמה ' + lvl}),h('div',{class:'meter'},h('i',{style:'width:' + (st.learned % 10)*10 + '%'})),h('span',{class:'num',text:'היום ' + doneToday})));
 
@@ -1983,15 +1983,13 @@ function homeView(){
   const ca = k => catAcc(k);
   const cat = k => { const a = ca(k); return tile(k, CATS[k].t, CATS[k].d, pctTxt(a), a.seen ? a.ok/a.seen*100 : 0, () => go({kind:'cat', cat:k})); };
   const grid = h('div',{class:'tiles'},
-    cat('en'), cat('he'), cat('qn'),
-    h('a',{class:'tile',href:'https://www.nite.org.il/practice-tests/',target:'_blank',rel:'noopener'},
-      h('div',{class:'trow'}, ico('past', 30), h('span',{class:'tpct',text:'↗'})),
-      h('div',{class:'tt',text:'מבחני עבר'}), h('div',{class:'td',text:'באתר הרשמי של מאל״ו · נפתח בדפדפן'})),
-    tile('words','אוצר מילים', st.due ? st.due + ' מילים לחזרה עכשיו' : (unseen ? 'עוד ' + Math.min(10, unseen) + ' מילים חדשות' : 'כל המילים נלמדו'), st.learned + '/' + WORDS.length, st.learned/WORDS.length*100, () => startWords(!st.due && !!unseen), !st.due && !unseen),
+    cat('he'), cat('qn'), cat('en'),
+    tile('past','מבחני עבר','טיימר, גיליון תשובות וציון · פותרים מה־PDF','',null,openPx),
+    tile('words','אוצר מילים באנגלית', st.due ? st.due + ' מילים לחזרה עכשיו' : (unseen ? 'עוד ' + Math.min(10, unseen) + ' מילים חדשות' : 'כל המילים נלמדו'), st.learned + '/' + WORDS.length, st.learned/WORDS.length*100, () => startWords(!st.due && !!unseen), !st.due && !unseen),
     tile('err','מחברת טעויות', nWrong ? 'שאלות שטעית בהן, עד שתצליח' : 'אין כרגע טעויות לתרגול', nWrong ? String(nWrong) : '', null, () => startQuiz('err'), !nWrong));
   return h('div',{class:'app-inner',style:'display:contents'},
     h('header',{class:'top'},
-      h('div',{class:'ttl'}, h('h1',{text:'מאמן אמירנט'}), h('div',{class:'sub',text:'פסיכומטרי ואמירנט · תרגול יומי'})),
+      h('div',{class:'ttl'}, h('h1',{text:'מאמן פסיכומטרי'}), h('div',{class:'sub',text:'מילולי, כמותי ואנגלית · תרגול יומי'})),
       h('div',{class:'chips'}, sk ? h('span',{class:'chip num',text:'רצף ' + sk + ' ימים'}) : null, goldChip())),
     hero, h('h2',{text:'נושאים לתרגול'}), grid, tabBar('home'));
 }
@@ -2154,7 +2152,7 @@ document.addEventListener('keydown', e => {
 /* ---------- question sets ---------- */
 const READ_EN = READ.filter(p => p.lang === 'en'), READ_HE = READ.filter(p => p.lang === 'he');
 const QUIZ = {
-  daily:{label:'תרגול יומי', daily:true, target:480, lang:'he', inst:''},
+  daily:{label:'תרגול יומי', daily:true, target:660, lang:'he', inst:''},
   err:{label:'מחברת טעויות', err:true, target:600, lang:'he', inst:''},
   qsim:{label:'סימולציה: פרק כמותי מלא', qsim:true, sim:true, math:true, target:1200, lang:'he', inst:'20 שאלות ב־20 דקות, בלי משוב במהלך הפרק.'},
   qw:{label:'בעיות מילוליות', bank:QW, n:5, target:375, lang:'he', math:true, inst:'פתרו ובחרו את התשובה הנכונה.'},
@@ -2173,6 +2171,8 @@ const QUIZ = {
   lg:{label:'היגיון', bank:LG, n:4, target:240, lang:'he', inst:'ענו לפי מה שנובע מהנתונים בלבד.'},
   rh:{label:'הבנת הנקרא בעברית', bank:READ_HE, reading:true, target:390, lang:'he', inst:'ענו על השאלה לפי הכתוב בקטע.'}
 };
+// numeric options stay in ascending order (as in the exam); non-numeric ones are shuffled so the answer slot varies
+function mathOpts(o){ return o.every(x => /^[-−]?\d+(\.\d+)?%?$/.test(String(x.t).trim())) ? o : shuffle(o); }
 function bankQs(cfg){if(cfg.sim || cfg.daily || cfg.err) return []; return cfg.reading ? cfg.bank.reduce((a,p) => a.concat(p.qs), []) : cfg.bank;}
 let HARD = false;
 try{ HARD = localStorage.getItem('amirnet-hard') === '1'; }catch(e){}
@@ -2199,33 +2199,34 @@ const POOLS = () => [
   ['qw',QW,'he',1],['qa',QA,'he',1],['qn',QN,'he',1],['qg',QG,'he',1],['qd',QD,'he',1]];
 function mkItem(q, k, lang, math){
   const o = q.o.map((t,i) => ({t, ok: i === q.a}));
-  return {q, sec: QUIZ[k].label + (lang === 'en' ? ' (אנגלית)' : ''), lang, math: !!math, passage: null, opts: math ? o : shuffle(o)};
+  return {q, sec: QUIZ[k].label + (lang === 'en' ? ' (אנגלית)' : ''), lang, math: !!math, passage: null, opts: math ? mathOpts(o) : shuffle(o)};
 }
 function wrongList(){
   const out = [];
   for(const [k, bank, lang, math] of POOLS()) for(const q of bank){ const st = S.q[q.id]; if(st && st[0] > 0 && !st[2]) out.push({q, k, lang, math, t: st[3] || 0}); }
   return out.sort((a,b) => a.t - b.t);
 }
+/* daily set: a few review questions, then equal parts verbal, quantitative and English (weakest topics first inside each section) */
+const DAILY_SECS = [['hv','an','hs','hi','lg'], ['qw','qa','qn','qg','qd'], ['sc','rs']];
+const DAILY_PER = 3;
 function dailyItems(){
-  const pools = POOLS().map(([k, bank, lang, math]) => {
-    let seen = 0, ok = 0; for(const q of bank){ const s = S.q[q.id]; if(s){ seen += s[0]; ok += s[1]; } }
-    return {k, bank, lang, math, acc: seen ? ok/seen : 0.55, r: Math.random()};
-  }).sort((a,b) => (a.acc - b.acc) || (a.r - b.r));
   const items = [], used = new Set();
   for(const w of wrongList().slice(0, 2)){ items.push(mkItem(w.q, w.k, w.lang, w.math)); used.add(w.q.id); }
-  for(const pl of pools.slice(0, 3)){
-    for(const q of pickQuestions(pl.bank.filter(q => !used.has(q.id)), 2)){ items.push(mkItem(q, pl.k, pl.lang, pl.math)); used.add(q.id); }
+  for(const keys of DAILY_SECS){
+    const pools = POOLS().filter(pl => keys.indexOf(pl[0]) >= 0).map(([k, bank, lang, math]) => {
+      let seen = 0, ok = 0; for(const q of bank){ const st = S.q[q.id]; if(st){ seen += st[0]; ok += st[1]; } }
+      return {k, bank, lang, math, acc: seen ? ok/seen : 0.55, r: Math.random()};
+    }).sort((x, y) => (x.acc - y.acc) || (x.r - y.r));
+    let got = 0, i = 0, guard = 0;
+    while(got < DAILY_PER && guard++ < 30){
+      const pl = pools[i++ % pools.length];
+      const q = pickQuestions(pl.bank.filter(q => !used.has(q.id)), 1)[0];
+      if(q){ items.push(mkItem(q, pl.k, pl.lang, pl.math)); used.add(q.id); got++; }
+    }
   }
-  let i = 3;
-  while(items.length < 8 && i < pools.length){ const pl = pools[i++]; const q = pickQuestions(pl.bank.filter(q => !used.has(q.id)), 1)[0]; if(q){ items.push(mkItem(q, pl.k, pl.lang, pl.math)); used.add(q.id); } }
-  return shuffle(items);
+  return items;
 }
-function startDaily(){
-  const st = wordStats(); const l = logToday();
-  const newAvail = Math.min(Math.max(0, NEW_PER_DAY - l[2]), WORDS.length - st.learned);
-  if(st.due + newAvail > 0){ startWords(false); if(session) session.thenDaily = true; }
-  else startQuiz('daily');
-}
+function startDaily(){ startQuiz('daily'); }
 function startQuiz(kind){
   const cfg = QUIZ[kind];
   let qs, passage = null;
@@ -2237,7 +2238,7 @@ function startQuiz(kind){
     return;
   }
   if(cfg.qsim){
-    const mq = (q, sec) => ({q, sec, passage: null, opts: q.o.map((t,i) => ({t, ok: i === q.a}))});
+    const mq = (q, sec) => ({q, sec, passage: null, opts: mathOpts(q.o.map((t,i) => ({t, ok: i === q.a})))});
     const qd = pickQuestions(QD, 2);
     let items = pickQuestions(QW, 6).map(q => mq(q,'בעיות מילוליות')).concat(
       pickQuestions(QA, 5).map(q => mq(q,'אלגברה')),
@@ -2269,7 +2270,7 @@ function startQuiz(kind){
   } else {
     qs = pickQuestions(cfg.bank, cfg.n);
   }
-  const mkOpts = q => { const o = q.o.map((t,i) => ({t, ok: i === q.a})); return cfg.math ? o : shuffle(o); };
+  const mkOpts = q => { const o = q.o.map((t,i) => ({t, ok: i === q.a})); return cfg.math ? mathOpts(o) : shuffle(o); };
   const items = qs.map(q => ({q, opts: mkOpts(q)}));
   go({kind, cfg, passage, items, i: 0, picked: null, answers: [], start: Date.now(), done: false, end: 0});
   timerId = setInterval(tick, 1000);
@@ -2453,7 +2454,10 @@ function pxMenuView(){
     h('div',{class:'acc'}, runs.map(r => h('button',{class:'pxhist',onclick:()=>go({kind:'pxres', run:r})},
       h('span',{text: pxTitle(r.ex) + ' · ' + pxCh(r.ch).t}),
       h('span',{class:'num',text: r.score != null ? r.score + '/' + r.n + ' · ' + new Date(r.ts).toLocaleDateString('he-IL') : 'ממתין למפתח'}))))) : null;
-  return h('div',{style:'display:contents'}, top, intro, draft, hist, list);
+  const nite = h('a',{class:'card course',href:'https://www.nite.org.il/practice-tests/',target:'_blank',rel:'noopener'},
+    h('div',{class:'ct'},'מבחנים רשמיים באתר מאל״ו ↗'),
+    h('div',{class:'sub'},'נפתח בדפדפן'));
+  return h('div',{style:'display:contents'}, top, intro, nite, draft, hist, list);
 }
 
 function pxStart(ex, ch){
@@ -3414,7 +3418,7 @@ function heroView(){
     h('header',{class:'top'}, h('div',{class:'ttl'}, h('h1',{text:'הגיבור שלך'}), h('div',{class:'sub',text:'מרוויחים זהב בתרגול וקונים ציוד'})), goldChip()),
     stage, actions, boosts, earnCard, srdNote(), tabBar('hero'));
 }
-function srdNote(){ return h('p',{class:'foot',text:'שמות רבים מהפריטים מבוססים על System Reference Document 5.1 של Wizards of the Coast LLC, ברישיון CC-BY-4.0. הציורים, התיאורים, חיות הלוויה, הרקעים והפריטים המקוריים נוצרו במיוחד למאמן אמירנט.'}); }
+function srdNote(){ return h('p',{class:'foot',text:'שמות רבים מהפריטים מבוססים על System Reference Document 5.1 של Wizards of the Coast LLC, ברישיון CC-BY-4.0. הציורים, התיאורים, חיות הלוויה, הרקעים והפריטים המקוריים נוצרו במיוחד למאמן פסיכומטרי.'}); }
 function setupView(){
   const s = session; s.gender = s.gender || 'm'; s.cls = s.cls || 'fighter';
   const kit = c => c.start.map(id => GI[id]).filter(Boolean);
@@ -3539,7 +3543,7 @@ async function exportData(){
   const blob=new Blob([JSON.stringify(Object.assign({},S,{px:PX}))],{type:'application/json'});
   try{
     const file=new File([blob],name,{type:'application/json'});
-    if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'גיבוי מאמן אמירנט'}); bkMsg('הגיבוי נשמר.'); return; }
+    if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'גיבוי מאמן פסיכומטרי'}); bkMsg('הגיבוי נשמר.'); return; }
   }catch(e){ if(e && e.name==='AbortError') return; }
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.append(a); a.click(); a.remove();
   bkMsg('הגיבוי ירד לקובץ ' + name);

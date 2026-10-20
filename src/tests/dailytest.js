@@ -7,9 +7,6 @@ p.on('pageerror',e=>errs.push(e.message));
 await p.goto('file://'+process.cwd()+'/amirnet-trainer.html');await p.waitForTimeout(300);
 await p.screenshot({path:'d_home.png'});
 await p.locator('.hero .btn').click();
-let w=0; while(await p.locator('button',{hasText:'הצג תשובה'}).count()){w++; await p.locator('button',{hasText:'הצג תשובה'}).click(); await p.locator('.rate.r3').click();}
-console.log('words',w);
-await p.locator('button',{hasText:'המשך ל־8 שאלות'}).click();
 let n=0; const secs=[];
 while(await p.locator('.opt').count()){ n++; secs.push(await p.locator('.inst').first().innerText()); await p.locator('.opt').nth(n%4).click();
  if(n===3) await p.screenshot({path:'d_q.png',fullPage:true});
